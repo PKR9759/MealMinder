@@ -133,11 +133,11 @@ $showSucess=false;
                 </div>
 
                 <br>
-                <div>
+                <!-- <div>
                     <button id="submit" name="submit" type="submit"
                         style="background-color:#195fce;color:aliceblue; width:100px;padding:7px;border-radius:7px; ">Sign
                         Up</button>
-                </div>
+                </div> -->
 
             </form>
         </div>
