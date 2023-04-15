@@ -47,9 +47,7 @@ if(!isset($_SESSION['logedin']) || $_SESSION['logedin']==false){
             
         }
         
-        /* .navbar{
-            float:right;
-        } */
+       
         .navbar a{
             margin-left: 20px;
             text-decoration: none;
