@@ -8,7 +8,7 @@
     }
     catch(Exception $e)
     {
-       // echo "An error occur red: " . $e->getMessage();
+       echo "An error  hekkkkk bnhj gjhj occur red: " . $e->getMessage();
     }
      
  
