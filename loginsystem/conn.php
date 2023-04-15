@@ -3,6 +3,7 @@
     $username="root";
     $pass="";
     $db="rbh";
+  
     try{
     $conn=mysqli_connect($server,$username,$pass,$db);
     }
