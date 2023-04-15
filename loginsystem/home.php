@@ -109,7 +109,7 @@ if(!isset($_SESSION['logedin']) || $_SESSION['logedin']==false){
             outline:2px solid black;
         }
        
-/*         .rgt{
+        .rgt{
             display:flexbox;
             float:right;
             
@@ -119,7 +119,7 @@ if(!isset($_SESSION['logedin']) || $_SESSION['logedin']==false){
             background-color:grey;
 
         }
- */
+
 
 
 
