@@ -8,7 +8,7 @@
             margin: 0;
             padding: 0;
         }
-        /* .cont{
+        .cont{
             display:flex;
             flex-direction: column;
             float:left;
@@ -18,7 +18,7 @@
             padding:4px;
             background-color: black;
             color: white;
-        } */
+        }
         .logoname{
           display:flex;
           padding:10px;
