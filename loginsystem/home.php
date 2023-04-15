@@ -47,9 +47,7 @@ if(!isset($_SESSION['logedin']) || $_SESSION['logedin']==false){
             
         }
         
-        /* .navbar{
-            float:right;
-        } */
+       
         .navbar a{
             margin-left: 20px;
             text-decoration: none;
@@ -134,7 +132,7 @@ if(!isset($_SESSION['logedin']) || $_SESSION['logedin']==false){
         <div class="logoname">
 
         <div><img src="/logos/linkd.png" alter="logo"></img></div>
-        <p class="cname">RBH</p>
+        <p class="cname"></p>
         </div>
         <div class="navbar">
             <ul>
