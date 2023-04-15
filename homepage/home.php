@@ -1,3 +1,6 @@
+<?php
+    include 'C:\xampp\htdocs\rbh\navbar.php';
+ ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -11,7 +14,9 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    
+  
+
+  
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
