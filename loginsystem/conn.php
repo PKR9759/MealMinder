@@ -4,7 +4,7 @@
     $pass="u";
     $db="rbh";
     try{
-    $conn=mysqli_connect($server,$username,$pass,$db);
+   // $conn=mysqli_connect($server,$username,$pass,$db);
     }
     catch(Exception $e)
     {
