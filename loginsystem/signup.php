@@ -118,11 +118,11 @@ $showSucess=false;
                     <input type="password" id="password" name="password" placeholder="Enter Password Here" required>
                 </div>
                 <br>
-                <div>
+                <!-- <div>
                     <label for="cpassword">Confirm Password:</label>
                     <input type="password" id="cpassword" name="cpassword" placeholder="Re-enter password Here"
                         required>
-                </div>
+                </div> -->
                 <div class="valid">
                     <?php
                     if ( (isset($_POST['submit'])) && !$passSame ) {
