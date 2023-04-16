@@ -1,6 +1,14 @@
-
+<style>.idea li{
+        padding: 15px;
+        height: 50%;
+    }
+    body{
+        font-size: 30px;
+     color: whitesmoke;
+        background-color: #1f242d;
+    }</style>
 <div class="idea">
-<nav class="navbar navbar-expand-lg navbar-expand-lg navbar-expand-sm navbar-expand-xl " style="background-color:rgb(14, 62, 66">
+<nav class="navbar navbar-expand-lg navbar-expand-lg navbar-expand-sm navbar-expand-xl " style="background-color:rgb(14, 62, 66)">
     <!-- <a class="navbar-brand" style=" color:aliceblue" href="#">Navbar</a> -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
