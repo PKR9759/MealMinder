@@ -5,7 +5,7 @@ include 'C:\xampp\htdocs\rbh\navbar.php';
 <html>
 
 
-</html>
+
 <!doctype html>
 <html lang="en">
 
@@ -22,6 +22,52 @@ include 'C:\xampp\htdocs\rbh\navbar.php';
         display: flex;
         margin: 30px 0;
         justify-content: center;
+
+    }
+.social-media a {
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #1f242d;
+    color: #fff;
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #0ef;
+    border-radius: 50%; 
+    font-size: 30px;
+    color: #0ef;
+    text-decoration: none;
+    margin-right: 15px;
+    transition: 0.5s ease;
+    opacity: 0;
+    animation: slide-left 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.social-media a:hover{
+    background: #0ef;
+    color: #1f242d;
+    /* most important for hovereffect */
+    box-shadow: 0 0 20px #0ef;
+}
+
+   .h1 {
+font-family: 'Roboto', sans-serif;
+font-size: 60px;
+font-weight: 700;
+
+   }
+   .p {
+    font-size: 28px;
+			color: #4B5563;
+            margin-left: 100px;
+			line-height: 1.75;
+			text-align: justify;
+			max-width: 800px;
+			margin-bottom: 20px;
     }
 
     .social-media a {
