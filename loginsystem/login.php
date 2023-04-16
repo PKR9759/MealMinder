@@ -48,6 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <style>
         body {
             display: flex;
+            font-size: xx-large;
             align-items: center;
             justify-content: center;
             background-color: #195fce;
@@ -67,6 +68,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             outline: 2px inset;
             border-radius: 15px;
         }
+        form label {
+  font-size: 30px;
+  
+}
+
     </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -108,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                             style="background-color:#195fce;color:aliceblue; width:100px;padding:7px;border-radius:7px; ">Login</button>
                     </div>
                     <br>
-                    <a href="signup.php">Not have an Account,Sign-Up first</a>
+                    <a href="signup.php">Not Have An Account Sign-Up</a>
         </form>
     </div>
 </body>

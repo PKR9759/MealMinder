@@ -50,12 +50,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 <head>
     <style>
+       
         .container {
             display: flex;
             align-items: center;
             justify-content: center;
             background-color: #195fce;
-
+          font-size: xx-large;
             height: 100vh;
             width: 100vw;
             padding: 0;
@@ -72,6 +73,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             outline: 2px inset;
             border-radius: 15px;
         }
+      
+        form label {
+  font-size: 30px;
+  
+}
+
 
     </style>
     <meta charset="UTF-8">
@@ -98,7 +105,7 @@ $showSucess=false;
             <form class="form" method="POST">
                 <h1>Sign Up</h1>
                 <div>
-                    <label for="email">Email:</label>
+                    <label for="email" >Email:</label>
                     <input type="email" id="email" name="email" placeholder="Enter E-mail Here" required>
                 </div>
                 <div class="valid">
@@ -115,8 +122,8 @@ $showSucess=false;
 
                 <br>
                 <div>
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" placeholder="Enter Password Here" required>
+                    <label for="password" >Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter Password Here" required >
                 </div>
                 <br>
                 <div>
