@@ -6,7 +6,7 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
 <html>
 
 
-</html>
+
 <!doctype html>
 <html lang="en">
   
@@ -21,6 +21,7 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
 .social-media {
     display: flex;
     margin: 30px 0;
+  
 }
 
 .social-media a {
