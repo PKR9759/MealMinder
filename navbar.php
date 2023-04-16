@@ -1,6 +1,6 @@
 
 <nav class="navbar navbar-expand-lg navbar-expand-lg navbar-expand-sm navbar-expand-xl " style="background-color:#EC451C ;">
-    <a class="navbar-brand" style=" color:aliceblue" href="#">Navbar</a>
+    <!-- <a class="navbar-brand" style=" color:aliceblue" href="#">Navbar</a> -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
