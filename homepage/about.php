@@ -1,5 +1,5 @@
 <?php
-include 'C:\xampp\htdocs\rbh\navbar.php';
+include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,6 +18,15 @@ include 'C:\xampp\htdocs\rbh\navbar.php';
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <style>
+    .idea li{
+        padding: 15px;
+        height: 50%;
+    }
+    body{
+        font-size: 30px;
+     color: whitesmoke;
+        background-color: #1f242d;
+    }
     .social-media {
         display: flex;
         margin: 30px 0;
@@ -62,7 +71,7 @@ font-weight: 700;
    }
    .p {
     font-size: 28px;
-			color: #4B5563;
+			color: #0ef;
             margin-left: 100px;
 			line-height: 1.75;
 			text-align: justify;
@@ -101,24 +110,34 @@ font-weight: 700;
     }
 
     .h1 {
-        font-family: 'Roboto', sans-serif;
+        margin-top: 40px;
+        margin-left: 70px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         font-size: 60px;
         font-weight: 700;
 
     }
 
-    .p {
+    /* .p {
         font-size: 28px;
-        color: #4B5563;
+        color: #dbdcdf;
         margin-left: 100px;
         line-height: 1.75;
         text-align: justify;
         max-width: 800px;
         margin-bottom: 20px;
-    }
+    } */
     .imgcont{
         display:flex;
         justify-content: space-around;
+        margin-top: -800px;
+        margin-left: 1000px;
+    }
+    .imgcont-b{
+        display:flex;
+        justify-content: space-around;
+        margin-top: 50px;
+        margin-left: 1000px;
     }
     .img {
         height:300px;
@@ -174,7 +193,7 @@ font-weight: 700;
     <p class="p">We hope you enjoy using Food Token and welcome any feedback you may have. Thank you for choosing our
         platform!</p>
     <div class="imgcont">
-        <div><img src="https://source.unsplash.com/random/?Gujrati" alt="photo" class="img">
+        <div><img src="kuldip.jpeg" alt="photo" class="img">
             <div class="social-media">
                 <a href="#" style="--i:7;"><i class='bx bxl-facebook'></i></a>
                 <a href="#" style="--i:8;"><i class='bx bxl-twitter'></i></a>
@@ -182,8 +201,10 @@ font-weight: 700;
                 <a href="#" style="--i:10;"><i class='bx bxl-github'></i></a>
             </div>
         </div>
-        <div>
-            <img src="https://source.unsplash.com/random/?Gujratifood-circle" alt="photo" class="img">
+    </div>
+        <div class="imgcont-b">
+            <div>
+            <img src="lakhman.jpeg" alt="photo" class="img">
             <div class="social-media" >
             <a href="#" style="--i:7;"><i class='bx bxl-facebook'></i></a>
             <a href="#" style="--i:8;"><i class='bx bxl-twitter'></i></a>
@@ -191,7 +212,7 @@ font-weight: 700;
             <a href="#" style="--i:10;"><i class='bx bxl-github'></i></a>
         </div>
     </div>
-    </div>
+   </div>
     <div class="copyright">
     <footer >
         <p>&copy; 2023 Food Token</p>
