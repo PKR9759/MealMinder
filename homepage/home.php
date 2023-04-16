@@ -77,7 +77,7 @@ include 'C:\xampp\htdocs\rbh\navbar.php';
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-  <title>Hello, world!</title>
+  <title>home</title>
 </head>
 
 <body>
@@ -130,19 +130,19 @@ include 'C:\xampp\htdocs\rbh\navbar.php';
     <h3> Which type you Eat today? </h3>
     <div class="catsec">
       <div class="cat">
-        <img src="https://source.unsplash.com/random/?Gujratifood-circle," alt="First catagory">
+        <a href='/rbh/catagory/gujrati.php'><img src="https://source.unsplash.com/random/?Gujratifood-circle," alt="First catagory"></a>
         <p>Gujrati</p>
       </div>
       <div class="cat">
-        <img src="https://source.unsplash.com/random/?Punjabifood-circle," alt="First catagory">
+        <a href='/rbh/catagory/punjabi.php'><img src="https://source.unsplash.com/random/?Punjabifood-circle," alt="First catagory"></a>
         <p>Punjabi</p>
       </div>
       <div class="cat">
-        <img src="https://source.unsplash.com/random/?jainfood-circle," alt="First catagory">
+        <a href='/rbh/catagory/jain.php'><img src="https://source.unsplash.com/random/?jainfood-circle," alt="First catagory"></a>
         <p>Jain</p>
       </div>
       <div class="cat">
-        <img src="https://source.unsplash.com/random/?chinesefood-circle," alt="First catagory">
+        <a href='/rbh/catagory/chinese.php'><img src="https://source.unsplash.com/random/?chinesefood-circle," alt="First catagory"></a>
         <p>Chinese</p>
       </div>
 
