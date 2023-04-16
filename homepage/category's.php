@@ -5,48 +5,134 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
    <style>
-     .card-group {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
+    *{
+        background-color: #0ef;
+    }
+     .card-table {
+        display: table;
+        width: 100%;
+    }
 
-.card {
-  flex-basis: calc(33.33% - 10px);
-  margin-bottom: 20px;
-}
+    .card-column {
+        display: table-cell;
+        vertical-align: middle;
+    }
 
-.card-img-top {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-.h2{
-  text-align: center;
-  color: rgb(7, 28, 111);
-}
+    .card {
+        border: none;
+        border-radius: 0;
+        margin-bottom: 20px;
+    }
+
+    .card-img-top {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .card-body {
+        padding: 10px;
+    }
+
+    .card-text {
+        margin-bottom: 10px;
+    }
+
+    .btn-primary {
+      font-size: 80px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        
+        border-radius: 4px;
+        padding: 12px 20px;
+        font-size: 30px;
+        cursor: pointer;
+       
+    }
+
+    .btn-primary:hover {
+        background-color: #0069d9;
+    }
+
+    .btn-primary:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    td.availability {
+        vertical-align: middle;
+        font-size: 80px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: green;
+    }
+    
+    td.out-of-stock {
+        vertical-align: middle;
+        font-size: 80px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: red;
+    }
+
+    .btn-primary:disabled {
+      
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    .h2{
+        text-align: center;
+        color: #1a1d5b;
+        font-weight: 700;
+        font-size: 100px;
+    }
+
    </style>
 
 </head>
 <body>
-  <h1 class="h2">GUJARATI FOOD</h1>
-<div class="card-group">
-  <div class="card">
-    <img src="food1.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h2 class="card-title">dhokala</h2>
-      
-  <div class="card">
-    <img src="food2.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h2 class="card-title">Dhokala</h2>
-     
-  <div class="card">
-    <img src="food1.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h2 class="card-title">Thepla</h2>
-  
-  </div> 
-</div>
+    <h2 class="h2"> GUJARAT'S ITEMS</h2>
+    <table class="card-table">
+        <tr>
+            <td class="card-column">
+                <div class="card">
+                    <img src="food1.jpg" class="card-img-top" alt="...">
+                </div>
+            </td>
+            <td class="card-column availability">
+                <p>In Stock</p>
+            </td>
+            <td class="card-column">
+                <button class="btn btn-primary">Buy Now</button>
+            </td>
+        </tr>
+        <tr>
+            <td class="card-column">
+                <div class="card">
+                    <img src="food2.jpg" class="card-img-top" alt="...">
+                </div>
+            </td>
+            <td class="card-column out-of-stock">
+                <p>Out of Stock</p>
+            </td>
+            <td class="card-column">
+                <button class="btn btn-primary" disabled>Buy Now</button>
+            </td>
+        </tr>
+        <tr>
+            <td class="card-column">
+                <div class="card">
+                    <img src="food1.jpg" class="card-img-top" alt="...">
+                </div>
+            </td>
+            <td class="card-column availability">
+                <p>In Stock</p>
+            </td>
+            <td class="card-column">
+                <button class="btn btn-primary">Buy Now</button>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
