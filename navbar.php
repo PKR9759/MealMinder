@@ -2,7 +2,7 @@
         padding: 15px;
         height: 50%;
     }
-    body{
+    .idea{
         font-size: 30px;
      color: whitesmoke;
         background-color: #1f242d;
@@ -17,13 +17,13 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav" style="color:white">
             <li class="nav-item active">
-                <a class="nav-link" style="color:white" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" style="color:white" href="/food2/homepage/home.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" style="color:white" href="#">Feedback</a>
+                <a class="nav-link" style="color:white" href="/food2/homepage/form.php">Feedback</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" style="color:white" href="homepage/about.php">About</a>
+                <a class="nav-link" style="color:white" href="/food2/homepage/about.php">About</a>
             </li>
 
             <li class="nav-item dropdown">

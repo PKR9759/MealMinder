@@ -1,5 +1,5 @@
 <?php
-include 'C:\xampp\htdocs\rbh\navbar.php';
+include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -7,6 +7,7 @@ include 'C:\xampp\htdocs\rbh\navbar.php';
 
 <head>
   <style>
+   
     .serch {
       display: flex;
       margin-bottom: 10px;
