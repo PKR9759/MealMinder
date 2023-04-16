@@ -3,6 +3,7 @@ include 'C:\xampp\htdocs\rbh\navbar.php';
 ?>
 <!doctype html>
 <html lang="en">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia|DynaPuff">
 
 <head>
   <style>
@@ -11,7 +12,63 @@ include 'C:\xampp\htdocs\rbh\navbar.php';
       margin-bottom: 10px;
     }
 
-    .slide {}
+    #carouselExampleIndicators {
+      padding: 19px 15px;
+      width: 100%;
+      height: 400px;
+
+      overflow: hidden;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+    }
+
+    .catsec {
+      display: flex;
+      overflow: auto;
+      margin: 0;
+      padding: 0;
+
+    }
+
+    .cat {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      margin-left: 20px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .cat img {
+      overflow: hidden;
+
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+
+      /* margin-bottom:10px; */
+    }
+
+    .cat p {
+      font-size: larger;
+      font-family: 'DynaPuff', sans-serif;
+    }
+    .recsec{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content:space-around;
+      /* grid-template-rows: repeat(4,1fr); */
+      /* flex-wrap: wrap; */
+      
+      
+      
+    }
+    .card{
+      margin-top:20px;
+      border-radius: 20px; 
+      
+    }
   </style>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -34,7 +91,7 @@ include 'C:\xampp\htdocs\rbh\navbar.php';
       </form>
     </nav>
   </div><br><br>
-  <hr />
+
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -43,19 +100,19 @@ include 'C:\xampp\htdocs\rbh\navbar.php';
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block w-100" src="" alt="First slide">
+        <img class="d-block w-100" src="https://source.unsplash.com/featured/?food,punjabi" alt="First slide">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="C:\xampp\htdocs\rbh\logos\sl1.jpeg" alt="Second slide">
+        <img class="d-block w-100" src="https://source.unsplash.com/featured/?food,chinese" alt="Second slide">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="C:\xampp\htdocs\rbh\logos\sl2.webp" alt="Third slide">
+        <img class="d-block w-100" src="https://source.unsplash.com/featured/?food,gujrati" alt="Third slide">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="C:\xampp\htdocs\rbh\logos\sl3.jpg" alt="Third slide">
+        <img class="d-block w-100" src="https://source.unsplash.com/featured/?food,south-indian" alt="Third slide">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="C:\xampp\htdocs\rbh\logos\sl4.jpeg" alt="Third slide">
+        <img class="d-block w-100" src="https://source.unsplash.com/featured/?food,marathi" alt="Third slide">
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -67,9 +124,117 @@ include 'C:\xampp\htdocs\rbh\navbar.php';
       <span class="sr-only">Next</span>
     </a>
   </div>
+  <br>
+  <hr>
+  <div class="catagory">
+    <h3> Which type you Eat today? </h3>
+    <div class="catsec">
+      <div class="cat">
+        <img src="https://source.unsplash.com/random/?Gujratifood-circle," alt="First catagory">
+        <p>Gujrati</p>
+      </div>
+      <div class="cat">
+        <img src="https://source.unsplash.com/random/?Punjabifood-circle," alt="First catagory">
+        <p>Punjabi</p>
+      </div>
+      <div class="cat">
+        <img src="https://source.unsplash.com/random/?jainfood-circle," alt="First catagory">
+        <p>Jain</p>
+      </div>
+      <div class="cat">
+        <img src="https://source.unsplash.com/random/?chinesefood-circle," alt="First catagory">
+        <p>Chinese</p>
+      </div>
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    </div>
+
+  </div>
+  <hr>
+  <div class="recsec">
+
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+
+      </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+
+      </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+
+      </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+
+      </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+
+      </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+
+      </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+
+      </div>
+    </div>
+
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+
+      </div>
+    </div>
+
+  </div>
+
+  
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
