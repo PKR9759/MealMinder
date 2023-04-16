@@ -150,7 +150,6 @@ include 'C:\xampp\htdocs\rbh\navbar.php';
         <img src="https://source.unsplash.com/random/?chinesefood-circle," alt="First catagory">
         <p>Chinese</p>
       </div>
-
     </div>
 
   </div>
