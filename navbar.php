@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-expand-lg navbar-expand-lg navbar-expand-sm navbar-expand-xl " style="background-color:#EC451C ;">
     <a class="navbar-brand" style=" color:aliceblue" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -26,9 +27,13 @@
                     <a class="dropdown-item" href="#">Something else here</a>
                 </div>
             </li>
+            
 
 
         </ul>
+        <div style="float:right" >
+                <img style=" height:40px ; width:40px ;" src="https://media.istockphoto.com/id/469047076/vector/white-icon-of-a-shopping-cart-on-orange-background.jpg?s=170667a&w=0&k=20&c=5OH1VrFlZ-Ndu1fL1h_ha_1p2hfPRIXPE1ZciKSVpXI=">
+        </div>
         
     </div>
 </nav>
