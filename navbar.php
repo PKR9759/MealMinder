@@ -14,7 +14,7 @@
                 <a class="nav-link" style="color:white" href="#">Feedback</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" style="color:white" href="#">About</a>
+                <a class="nav-link" style="color:white" href="homepage/about.php">About</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" style="color:white" href="#" id="navbarDropdownMenuLink"

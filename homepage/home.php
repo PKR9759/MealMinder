@@ -157,7 +157,6 @@ include 'C:\xampp\htdocs\rbh\navbar.php';
         <a href='/rbh/catagory/chinese.php'><img src="https://source.unsplash.com/random/?chinesefood-circle," alt="First catagory"></a>
         <p>Chinese</p>
       </div>
-
     </div>
 
   </div>
