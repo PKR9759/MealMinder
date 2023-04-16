@@ -26,6 +26,7 @@
                     <a class="dropdown-item" href='/rbh/catagory/punjabi.php'>Punjabi Items</a>
                     <a class="dropdown-item" href='/rbh/catagory/jain.php'>Jain Items</a>
                     <a class="dropdown-item" href='/rbh/catagory/chinese.php'>Chinese Items</a>
+                    <a class="dropdown-item" href='/rbh/catagory/snacks.php'>Snacks</a>
                 </div>
             </li>
             

@@ -129,6 +129,8 @@ include 'C:\xampp\htdocs\rbh\navbar.php';
   </div>
   <br>
   <hr>
+
+
   <div class="catagory">
     <h3> Which type you Eat today? </h3>
     <div class="catsec">
@@ -146,11 +148,10 @@ include 'C:\xampp\htdocs\rbh\navbar.php';
       <div class="cat">
         <a href='/rbh/catagory/jain.php'><img src="https://source.unsplash.com/random/?jainfood-circle," alt="First catagory"></a>
         <p>Jain</p>
-        <img src="https://source.unsplash.com/random/?Punjabifood-circle," alt="First catagory">
-       <a href="punjabi.php"> <p>Punjabi</p></a>
+        
       </div>
       <div class="cat">
-        <img src="https://source.unsplash.com/random/?jainfood-circle," alt="First catagory">
+      <a href='/rbh/catagory/snacks.php'><img src="https://source.unsplash.com/random/?jainfood-circle," alt="First catagory"></a>
         <p>Snacks</p>
       </div>
       <div class="cat">

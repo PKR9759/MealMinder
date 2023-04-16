@@ -37,10 +37,10 @@ include 'C:\xampp\htdocs\rbh\navbar.php';
 <body>
     <br>
     <div class="jumbotron" style="background-color:#F17766">
-        <h1 class="display-4">Gujrati Dishes</h1>
+        <h1 class="display-4">Snacks Dishes</h1>
         
         <hr class="my-3" style="font-family:'Lobster',sans-serif">
-        <p>Whether you are a lifelong fan of Gujarati cuisine or trying it for the first time, our site  is the perfect place to savor the flavors and textures of this unique regional cuisine. So come and join us for a culinary journey through the tastes and traditions of Gujarat!</p>
+        <p>Snacks are the perfect food items for a quick and convenient bite on-the-go or as a treat during a break. Whether you're craving something savory or sweet, there are endless options to satisfy your taste buds. From classic potato chips and popcorn to healthier options like fruit or veggie chips, there's a snack for everyone. With the convenience of online food delivery services.</p>
         
     </div>
     <h4>Chose Your food and cold-drinks ...<h4>
