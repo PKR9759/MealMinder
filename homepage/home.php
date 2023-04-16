@@ -100,7 +100,10 @@ include 'C:\xampp\htdocs\rbh\navbar.php';
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block w-100" src="https://source.unsplash.com/featured/?food,punjabi" alt="First slide">
+       <a href="gujarati.php">
+  <img class="d-block w-100" src="https://source.unsplash.com/featured/?food,punjabi" alt="First slide">
+</a>
+
       </div>
       <div class="carousel-item">
         <img class="d-block w-100" src="https://source.unsplash.com/featured/?food,chinese" alt="Second slide">
@@ -131,7 +134,10 @@ include 'C:\xampp\htdocs\rbh\navbar.php';
     <div class="catsec">
       <div class="cat">
         <a href='/rbh/catagory/gujrati.php'><img src="https://source.unsplash.com/random/?Gujratifood-circle," alt="First catagory"></a>
-        <p>Gujrati</p>
+      
+        
+      <p>Gujrati</p>
+      </a>
       </div>
       <div class="cat">
         <a href='/rbh/catagory/punjabi.php'><img src="https://source.unsplash.com/random/?Punjabifood-circle," alt="First catagory"></a>
@@ -140,6 +146,12 @@ include 'C:\xampp\htdocs\rbh\navbar.php';
       <div class="cat">
         <a href='/rbh/catagory/jain.php'><img src="https://source.unsplash.com/random/?jainfood-circle," alt="First catagory"></a>
         <p>Jain</p>
+        <img src="https://source.unsplash.com/random/?Punjabifood-circle," alt="First catagory">
+       <a href="punjabi.php"> <p>Punjabi</p></a>
+      </div>
+      <div class="cat">
+        <img src="https://source.unsplash.com/random/?jainfood-circle," alt="First catagory">
+        <p>Snacks</p>
       </div>
       <div class="cat">
         <a href='/rbh/catagory/chinese.php'><img src="https://source.unsplash.com/random/?chinesefood-circle," alt="First catagory"></a>
