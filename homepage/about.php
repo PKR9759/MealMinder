@@ -19,7 +19,7 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
 </head>
 <style>
     .idea li{
-        padding: 15px;
+        padding: 15pxa;
         height: 50%;
     }
     body{
