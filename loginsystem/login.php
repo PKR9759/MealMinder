@@ -68,8 +68,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             outline: 2px inset;
             border-radius: 15px;
         }
+
+        input{
+            width: 300px;
+            height: 30px;
+        }
         form label {
-  font-size: 30px;
+  font-size: 20px;
   
 }
 
@@ -92,27 +97,49 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $login=true;
         }
         ?>
+<table>
 
-            <div>
-                <label for="username">E-mail:</label>
-                <input type="email" id="email" name="email" placeholder="Enter E-mail Here" required>
-            </div>
+<tr>
+        
+    <td>            <label for="username">E-mail:</label>
+    </td><td>   
+    <input type="email" id="email" name="email" placeholder="Enter E-mail Here" required>
+    </td>            
+
+    </tr>
             <br>
-            <div>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" placeholder="Enter Password Here" required>
-                <div>
-                    <br>
-                    <div>
-                        <input type="checkbox" id="remember-me" name="rme">
 
-                        <label for="remember-me">Remember me</label>
+            <tr>
+
+        
+                <td >
+                <label for="password">Password:</label>
+    </td>
+<td>
+                <input type="password" id="password" name="password" placeholder="Enter Password Here" required>
+    </td>
+
+    </tr>
+        
+                    <tr>
+                        <td ><input type="checkbox" id="remember-me" name="rme">
+                        <label for="remember-me">Remember me</label></td><td></td>
+                    </tr>
+                    <div>
+                        
+
+                        
                     </div>
                     <br>
-                    <div>
+                    <tr>
+
+                        <td>
                         <button type="submit" name="submit"
                             style="background-color:#195fce;color:aliceblue; width:100px;padding:7px;border-radius:7px; ">Login</button>
-                    </div>
+    </td>
+                    
+    </tr>
+                    </table>
                     <br>
                     <a href="signup.php">Not Have An Account Sign-Up</a>
         </form>
