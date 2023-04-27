@@ -121,15 +121,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         background-color: #cf7c34;
        }
 
-        input {
-            width: 300px;
-            height: 30px;
-        }
-
-        form label {
-            font-size: 20px;
-
-        }
     </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
