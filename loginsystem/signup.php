@@ -50,13 +50,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 <head>
     <style>
-       
+       body{
+        margin:0;padding:0;
+       }
         .container {
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #195fce;
-          font-size: xx-large;
+            background-color: #f49644;
+          
             height: 100vh;
             width: 100vw;
             padding: 0;
@@ -66,18 +68,49 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         .cont {
             background-color: whitesmoke;
             display: flex;
-            outline: 1px solid black;
+           
             justify-content: center;
             align-items: center;
             padding: 50px;
-            outline: 2px inset;
-            border-radius: 15px;
+           
+            /* border-radius: 15px; */
+            border-radius: 17px;
+            box-shadow: 0px 2px 6px #7D7975;
         }
-      
-        form label {
-  font-size: 30px;
-  
-}
+          
+        #submit
+        {
+            color: #fff;
+            background-color:#f49644;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            
+            margin: 7% 0px 0px 6%;
+        }
+        
+        #submit:hover
+        {
+            background-color: #cf7c34;
+        }
+        
+
+        input{
+            width: 100%;
+            padding: 10px;
+            /* margin-bottom: 20px; */
+            font-size: 16px;
+            border: none;
+            border-radius: 20px;
+            background-color: #DDDCDB;
+        }
+        input:focus{
+            outline: none;
+            border: 2px solid #f49644;
+        }
+
 
 
     </style>
@@ -105,8 +138,8 @@ $showSucess=false;
             <form class="form" method="POST">
                 <h1>Sign Up</h1>
                 <div>
-                    <label for="email" >Email:</label>
-                    <input type="email" id="email" name="email" placeholder="Enter E-mail Here" required>
+                   
+                    <input type="email" id="email" name="email" placeholder=" E-mail " required>
                 </div>
                 <div class="valid">
                     
@@ -122,13 +155,13 @@ $showSucess=false;
 
                 <br>
                 <div>
-                    <label for="password" >Password:</label>
-                    <input type="password" id="password" name="password" placeholder="Enter Password Here" required >
+                    
+                    <input type="password" id="password" name="password" placeholder=" Password " required >
                 </div>
                 <br>
                 <div>
-                    <label for="cpassword">Confirm Password:</label>
-                    <input type="password" id="cpassword" name="cpassword" placeholder="Re-enter password Here"
+                    
+                    <input type="password" id="cpassword" name="cpassword" placeholder="Confirm password "
                         required>
                 </div>
                 <div class="valid">
@@ -142,9 +175,7 @@ $showSucess=false;
 
                 <br>
                 <div>
-                    <button id="submit" name="submit" type="submit"
-                        style="background-color:#195fce;color:aliceblue; width:100px;padding:7px;border-radius:7px; ">Sign
-                        Up</button>
+                    <button id="submit" name="submit" type="submit">Sign Up</button>
                 </div>
 
             </form>
