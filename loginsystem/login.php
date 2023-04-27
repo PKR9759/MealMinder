@@ -1,42 +1,40 @@
 <?php
 
 
-$login=true;
+$login = true;
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     if (isset($_POST['submit'])) {
         include 'conn.php';
         $email = $_POST['email'];
         $password = $_POST['password'];
-        
-        
+
+
         $cnt = "SELECT * FROM users WHERE email='$email'";
-        
+
         $res = mysqli_query($conn, $cnt);
-        if (($num=mysqli_num_rows($res)) > 0) {
-             $arrdata = mysqli_fetch_assoc($res);
-             $rpass = $arrdata['password'];
-             $same = password_verify($password,$rpass);
-             if($same){
-                
-              $login=true;
+        if (($num = mysqli_num_rows($res)) > 0) {
+            $arrdata = mysqli_fetch_assoc($res);
+            $rpass = $arrdata['password'];
+            $same = password_verify($password, $rpass);
+            if ($same) {
+
+                $login = true;
                 session_start();
 
-                $_SESSION['logedin']=true;
-                if(isset($_POST['rme'])){
-                $_SESSION['email']=$email;
+                $_SESSION['logedin'] = true;
+                if (isset($_POST['rme'])) {
+                    $_SESSION['email'] = $email;
                 }
-                
-                
+
+
                 header("location: home.php");
-                
+
                 exit();
             }
-        } 
-        else {
-            $login=false;
+        } else {
+            $login = false;
         }
-        
     }
 }
 ?>
@@ -48,10 +46,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <style>
         body {
             display: flex;
-            font-size: xx-large;
+
             align-items: center;
             justify-content: center;
-            background-color: #195fce;
+            background-color: #cf7c34;
             background-size: cover;
             backdrop-filter: blur(15px);
 
@@ -59,19 +57,69 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         .cont {
 
-            background-color: whitesmoke;
+            background-color: white;
             display: flex;
-            outline: 1px solid black;
+            max-width: 25%;
             justify-content: center;
             align-items: center;
             padding: 50px;
-            outline: 2px inset;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
             border-radius: 15px;
         }
-        form label {
-  font-size: 30px;
-  
-}
+
+        input[type="email"],input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 12px 0px;
+            font-size: 16px;
+            border: none;
+            border-radius: 20px;
+            background-color: #E8E4E1;
+        }
+
+        input:focus {
+            outline: none;
+            border: 2px solid #f49644;
+        }
+
+        #submit {
+            color: #fff;
+            background-color: #f49644;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            margin: 7% 0px 0px 6%;
+        }
+
+        #submit:hover {
+            background-color: #cf7c34;
+        }
+
+       
+
+        .rem {
+           
+        }
+        .rem input,.rem label{
+            display:inline;
+        }
+
+        #submit{
+        color: #fff;
+            background-color: #f49644;
+            border: none;
+            border-radius: 18px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            margin: 7% 0px 0px 6%;
+            width:30%;
+       }
+       #submit:hover{
+        background-color: #cf7c34;
+       }
 
     </style>
     <meta charset="UTF-8">
@@ -82,39 +130,32 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 <body>
     <div class="cont">
-        <form class="form" method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
+        <form class="form" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
             <h1>Login</h1>
-        <?php
-        if((!$login) && (isset($_POST['submit']))){
-            echo "
-        <p style='color:white;background-color:red;'>invalid Details </p>
-        ";
-        $login=true;
-        }
-        ?>
-
+            <?php
+            if ((!$login) && (isset($_POST['submit']))) {
+                echo "
+            <p style='color:white;background-color:red;'>invalid Details </p>
+            ";
+                $login = true;
+            }
+            ?>
             <div>
-                <label for="username">E-mail:</label>
-                <input type="email" id="email" name="email" placeholder="Enter E-mail Here" required>
-            </div>
+            <input type="email" id="email" name="email" placeholder="E-mail" required>
+            <input type="password" id="password" name="password" placeholder="Password " required>
+            <div>
             <br>
+            <div class="rem">
+                <input type="checkbox" id="remember-me" name="rme">
+                <label for="remember-me">Remember me</label>
+            </div>
             <div>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" placeholder="Enter Password Here" required>
-                <div>
-                    <br>
-                    <div>
-                        <input type="checkbox" id="remember-me" name="rme">
-
-                        <label for="remember-me">Remember me</label>
-                    </div>
-                    <br>
-                    <div>
-                        <button type="submit" name="submit"
-                            style="background-color:#195fce;color:aliceblue; width:100px;padding:7px;border-radius:7px; ">Login</button>
-                    </div>
-                    <br>
-                    <a href="signup.php">Not Have An Account Sign-Up</a>
+            <button type="submit" id="submit" name="submit">Login</button>
+            </div>   
+            <br><br>
+            <div>
+            <a href=" signup.php">Not Have An Account , Sign-Up first</a>
+            </div>
         </form>
     </div>
 </body>
