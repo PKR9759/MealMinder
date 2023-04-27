@@ -10,15 +10,41 @@
         padding: 15px;
         height: 50%;
     }
-    .
+    
     .idea{
         
-        font-size: 30px;
-     color: whitesmoke;
-        background-color: #1f242d;
-    }</style>
+        font-size: 20px;
+        color: whitesmoke;
+        background-color: #E56C23;
+    }
+    .cart{
+        position:relative;
+        display: inline-block;
+        
+    }
+    .cart img{
+        border-radius: 30%;
+        border:outset;
+    }
+    .ind{
+        position: absolute;
+        top:-8px;
+        right:9px;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: red;
+        color: white;
+        text-align: center;
+        font-size: 12px;
+        line-height: 20px;
+        font-weight: 700;
+        border:1px solid white;
+        
+    }
+    </style>
 <div class="idea">
-<nav class="navbar navbar-expand-lg navbar-expand-lg navbar-expand-sm navbar-expand-xl " style="background-color:rgb(14, 62, 66)">
+<nav class="navbar navbar-expand-lg navbar-expand-lg navbar-expand-sm navbar-expand-xl " style="background-color:#E56C23;padding:2px">
     <!-- <a class="navbar-brand" style=" color:aliceblue" href="#">Navbar</a> -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,8 +77,11 @@
             </li>
             </div>
         </ul>
-        <div style="float:right" >
-                <img style=" height:40px ; width:40px ;" src="https://media.istockphoto.com/id/469047076/vector/white-icon-of-a-shopping-cart-on-orange-background.jpg?s=170667a&w=0&k=20&c=5OH1VrFlZ-Ndu1fL1h_ha_1p2hfPRIXPE1ZciKSVpXI=">
+        <div  class="cart" style="float:right" >
+                <img style=" height:40px ; width:40px ;margin-right:20px;" src="https://media.istockphoto.com/id/469047076/vector/white-icon-of-a-shopping-cart-on-orange-background.jpg?s=170667a&w=0&k=20&c=5OH1VrFlZ-Ndu1fL1h_ha_1p2hfPRIXPE1ZciKSVpXI=">
+                <div class="ind">
+                       2
+                </div>
         </div>
         
     </div>

@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 }
 
 
-                header("location: home.php");
+                header('location:\rbh\homepage\home.php');
 
                 exit();
             }
@@ -99,9 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
        
 
-        .rem {
-           
-        }
+        
         .rem input,.rem label{
             display:inline;
         }
@@ -135,8 +133,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <?php
             if ((!$login) && (isset($_POST['submit']))) {
                 echo "
-            <p style='color:white;background-color:red;'>invalid Details </p>
+            <p style='color:white;background-color:red;padding:3px;'>invalid Details </p>
             ";
+           
                 $login = true;
             }
             ?>

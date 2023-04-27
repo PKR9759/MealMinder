@@ -116,11 +116,22 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <?php
 if(isset($_POST['submit']) && $showSucess){
 echo "
-<p style='color:white;background-color:#00FF00;'>Sign-Up Sucessfully </p>
+<p style='color:white;background-color:#00FF00;padding:4px;'>Sign-Up Sucessfully </p>
 ";
-$showSucess=false;
-}
+echo "
+<p style='color:#5D5855;padding:4px;'>Indirecting you to Home page......</p>
+";
 
+$showSucess=false;
+
+?>
+<script>
+setTimeout(function() {
+  window.location.href = "/rbh/homepage/home.php";
+}, 2000); // 2000 milliseconds = 2 seconds
+</script>
+<?php
+}
 ?>
 </div>
     <div class="container">
