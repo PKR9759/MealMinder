@@ -1,5 +1,5 @@
 <?php
-include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
+include '/food2/navbar.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -133,27 +133,27 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
     <h3> Which type you Eat today? </h3>
     <div class="catsec">
       <div class="cat">
-        <a href='/rbh/catagory/gujrati.php'><img src="https://source.unsplash.com/random/?Gujratifood-circle," alt="First catagory"></a>
+        <a href='/food2/catagory/gujrati.php'><img src="https://source.unsplash.com/random/?Gujratifood-circle," alt="First catagory"></a>
       
         
       <p>Gujrati</p>
       </a>
       </div>
       <div class="cat">
-        <a href='/rbh/catagory/punjabi.php'><img src="https://source.unsplash.com/random/?Punjabifood-circle," alt="First catagory"></a>
+        <a href='/food2/catagory/punjabi.php'><img src="https://source.unsplash.com/random/?Punjabifood-circle," alt="First catagory"></a>
         <p>Punjabi</p>
       </div>
       <div class="cat">
-        <a href='/rbh/catagory/jain.php'><img src="https://source.unsplash.com/random/?jainfood-circle," alt="First catagory"></a>
+        <a href='/food2/catagory/jain.php'><img src="https://source.unsplash.com/random/?jainfood-circle," alt="First catagory"></a>
         <p>Jain</p>
         
       </div>
       <div class="cat">
-      <a href='/rbh/catagory/snacks.php'><img src="https://source.unsplash.com/random/?jainfood-circle," alt="First catagory"></a>
+      <a href='/food2/catagory/snacks.php'><img src="https://source.unsplash.com/random/?jainfood-circle," alt="First catagory"></a>
         <p>Snacks</p>
       </div>
       <div class="cat">
-        <a href='/rbh/catagory/chinese.php'><img src="https://source.unsplash.com/random/?chinesefood-circle," alt="First catagory"></a>
+        <a href='/food2/catagory/chinese.php'><img src="https://source.unsplash.com/random/?chinesefood-circle," alt="First catagory"></a>
         <p>Chinese</p>
       </div>
     </div>

@@ -1,5 +1,5 @@
 <?php
-include 'C:\xampp\htdocs\rbh\navbar.php';
+include 'C:\xampp\htdocs\food2\navbar.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -47,7 +47,7 @@ $conn = mysqli_connect($servername,$username,$password,$database);
 if (!$conn) {
     die("sorry we failed to connect:" . mysqli_connect_error());
 } else {
-    echo "connected successfully  ";
+    // echo "connected successfully  ";
     echo "<br>";
 }
 
