@@ -7,54 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PHP Image Upload Example</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color:  #081828;
-        }
-        form {
-            max-width: 500px;
-            margin: 50px auto;
-            padding: 30px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.1);
-        }
-        form label {
-            font-weight: bold;
-            color: #555;
-            margin-bottom: 5px;
-            display: block;
-        }
-        form input, form textarea {
-            margin-bottom: 20px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            padding: 10px;
-            width: 100%;
-            font-size: 16px;
-            font-family: Arial, sans-serif;
-        }
-        form input[type="file"] {
-            margin-bottom: 0;
-            padding: 0;
-            border: none;
-            font-size: 14px;
-        }
-        form button[type="submit"] {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        form button[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-    </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
@@ -71,7 +24,25 @@
             <label for="description">Description:</label>
             <textarea class="form-control" id="description" name="description" rows="3" placeholder="Enter description"></textarea>
         </div>
-       
+        <div class="form-group">
+        <label for="category">Category:</label>
+        <select class="form-control" id="category" name="category">
+            <option value="1" id="1">Gujarati</option>
+            <option value="2" id="2">Punjabi</option>
+            <option value="3" id="3">Chinese</option>
+            <option value="4" id="4">Snacks</option>
+        </select>
+    </div>
+  
+    <label for="aviability">Availability:</label>
+<div>
+    <input type="radio" name="aviability" id="aviable" value="1">
+    <label for="aviable" class="radio-label green-label">In Stock</label>
+    <input type="radio" name="aviability" id="not-aviable" value="0">
+    <label for="not-aviable" class="radio-label red-label">Out of Stock</label>
+</div>
+
+
         <div class="form-group">
             <label for="file">File:</label>
             <input type="file" class="form-control-file" id="chooseFile" name="fileUpload">

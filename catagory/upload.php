@@ -1,4 +1,4 @@
-<?php
+<?php    
 // Database connection
 include "config.php";
 
@@ -33,12 +33,21 @@ if (isset($_POST["submit"])) {
             $name = $_POST["name"];
             $price = $_POST["price"];
             $description = $_POST["description"];
-
-            $sql = "INSERT INTO `files` (`id`, `file_path`, `name`, `price`, `description`) 
-                    VALUES (NULL, ?, ?, ?, ?)";
-            $stmt = mysqli_prepare($link, $sql);
-            mysqli_stmt_bind_param($stmt, "ssss", $param_path, $name, $price, $description);
+            $aviability = $_POST["aviability"];
+            $category = $_POST["category"];
             $param_path = $target_file;
+
+            if ($category == 1) {
+                $sql = "INSERT INTO `Gujarati_items` (`id`, `file_path`, `name`, `price`, `description`, `aviability`) 
+                        VALUES (NULL, ?, ?, ?, ?, ?)";
+            } else if ($category == 2) {
+                $sql = "INSERT INTO `Punjabi_items` (`id`, `file_path`, `name`, `price`, `description`, `aviability`) 
+                        VALUES (NULL, ?, ?, ?, ?, ?)";
+            }
+
+            $stmt = mysqli_prepare($link, $sql);
+            mysqli_stmt_bind_param($stmt, "sssss", $param_path, $name, $price, $description, $aviability);
+            
             if (mysqli_stmt_execute($stmt)) {
                 $resMessage = array(
                     "message" => "File uploaded successfully.",
@@ -55,3 +64,4 @@ if (isset($_POST["submit"])) {
         }
     }
 }
+?>

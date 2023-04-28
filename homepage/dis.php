@@ -56,7 +56,7 @@ if (!$conn) {
     echo "<br>";
 }
 
-$sql = "SELECT * FROM `files`";
+$sql = "SELECT * FROM `gujarati_items`";
 $result = mysqli_query($conn,$sql);
 
 //find the number of records if greater than zero we will do further process
