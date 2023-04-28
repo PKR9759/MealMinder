@@ -61,9 +61,6 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
       justify-content:space-around;
       /* grid-template-rows: repeat(4,1fr); */
       /* flex-wrap: wrap; */
-      
-      
-      
     }
     .card{
       margin-top:20px;

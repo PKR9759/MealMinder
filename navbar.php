@@ -68,9 +68,8 @@
                     Catagory
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="/food2/catagory/gujrati.php">Gujrati Items</a>
+                    <a class="dropdown-item" href="/food2/catagory/gujarati.php">Gujrati Items</a>
                     <a class="dropdown-item" href='/food2/catagory/punjabi.php'>Punjabi Items</a>
-                    <a class="dropdown-item" href='/food2/catagory/jain.php'>Jain Items</a>
                     <a class="dropdown-item" href='/food2/catagory/chinese.php'>Chinese Items</a>
                     <a class="dropdown-item" href='/food2/catagory/snacks.php'>Snacks</a>
                 </div>
