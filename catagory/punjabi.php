@@ -5,6 +5,17 @@ include 'C:\xampp\htdocs\food2\navbar.php';
 <html lang="en">
 
 <head>
+    <style>
+        .cardcont{
+            width:100vw;
+            display:grid;
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            /* grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(5,1fr); */
+        }
+        </style>
 <link rel="stylesheet" href="cat.css">
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -59,6 +70,7 @@ $num = mysqli_num_rows($result);
 if ($num) {
     // start of container
     echo '<div class="recsec" >';
+    echo '<div class="cardcont" >';
 
     // loop through the records and create a card for each one
     while ($row = mysqli_fetch_assoc($result)) {
@@ -77,6 +89,7 @@ if ($num) {
         echo '</div>';
     }
  
+    echo '</div>';
     echo '</div>';
 }
 ?>
