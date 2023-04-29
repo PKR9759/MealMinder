@@ -5,23 +5,7 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
 <html lang="en">
 
 <head>
-    <style>
-       .recsec{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content:space-around;
-      /* grid-template-rows: repeat(4,1fr); */
-      /* flex-wrap: wrap; */
-      
-      
-      
-    }
-    .card{
-      margin-top:20px;
-      border-radius: 20px; 
-      
-    }
-    </style>
+<link rel="stylesheet" href="cat.css">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -45,89 +29,51 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
     </div>
     <h4>Chose Your food and cold-drinks ...<h4>
     <hr>
-    <div class="recsec">
+    <?php
+//connecting to the database
+$servername = "localhost";
+$username="root";
+$password="";
+$database="RBH";
+//creating a connection
+$conn = mysqli_connect($servername,$username,$password,$database);
 
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
+if (!$conn) {
+    die("sorry we failed to connect:" . mysqli_connect_error());
+} else {
+    echo "connected successfully  ";
+    echo "<br>";
+}
 
-      </div>
-    </div>
+$sql = "SELECT * FROM `chinese_items`";
+$result = mysqli_query($conn,$sql);
 
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
+//find the number of records if greater than zero we will do further process
+$num = mysqli_num_rows($result);
+if ($num) {
+    // start of container
+    echo '<div class="recsec" >';
 
-      </div>
-    </div>
-
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-
-      </div>
-    </div>
-
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-
-      </div>
-    </div>
-
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-
-      </div>
-    </div>
-
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-
-      </div>
-    </div>
-
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-
-      </div>
-    </div>
-
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-
-      </div>
-    </div>
-
-  </div>
+    // loop through the records and create a card for each one
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo '<div class="card" style="width: 18rem;">';
+        echo '<img class="card-img-top" src="' . $row['file_path'] . '" alt="' . $row['name'] . '">';
+        echo '<div class="card-body">';
+        echo '<h5 class="card-title">' . $row['name'] . '</h5>';
+        if ($row['aviability'] == 1) {
+            echo '<p class="card-text"><span class="stock green">In Stock</span> - Price: ' . $row['price'] . '</p>';
+        } else {
+            echo '<p class="card-text"><span class="stock red">Out of Stock</span></p>';
+        }
+        
+        
+        echo '</div>';
+        echo '</div>';
+    }
+ 
+    echo '</div>';
+}
+?>
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

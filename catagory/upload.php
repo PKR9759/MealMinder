@@ -44,6 +44,13 @@ if (isset($_POST["submit"])) {
                 $sql = "INSERT INTO `Punjabi_items` (`id`, `file_path`, `name`, `price`, `description`, `aviability`) 
                         VALUES (NULL, ?, ?, ?, ?, ?)";
             }
+            else if ($category == 3) {
+                $sql = "INSERT INTO `chinese_items` (`id`, `file_path`, `name`, `price`, `description`, `aviability`) 
+                        VALUES (NULL, ?, ?, ?, ?, ?)";
+            }else   {
+                $sql = "INSERT INTO `snacks` (`id`, `file_path`, `name`, `price`, `description`, `aviability`) 
+                        VALUES (NULL, ?, ?, ?, ?, ?)";
+            }
 
             $stmt = mysqli_prepare($link, $sql);
             mysqli_stmt_bind_param($stmt, "sssss", $param_path, $name, $price, $description, $aviability);
