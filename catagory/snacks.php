@@ -1,5 +1,5 @@
 <?php
-include 'C:\xampp\htdocs\rbh\navbar.php';
+include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -46,9 +46,9 @@ include 'C:\xampp\htdocs\rbh\navbar.php';
     <h4>Chose Your food and cold-drinks ...<h4>
     <hr>
     <div class="recsec">
-
+    
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
+      <img class="card-img-top" src="img_dir/fafda.png" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's

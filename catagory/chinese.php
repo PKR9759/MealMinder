@@ -1,5 +1,5 @@
 <?php
-include 'C:\xampp\htdocs\food2\navbar.php';
+include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
 ?>
 <!doctype html>
 <html lang="en">

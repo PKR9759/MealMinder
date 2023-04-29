@@ -3,7 +3,7 @@
 include "config.php";
 
 if (isset($_POST["submit"])) {
-    // Set image placement folder
+    // Set image placement folder 
     $target_dir = "img_dir/";
     // Get file path
     $target_file = $target_dir . basename($_FILES["fileUpload"]["name"]);
