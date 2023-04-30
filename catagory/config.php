@@ -14,4 +14,3 @@ if ($link === false) {
 } else {
     echo "Welcome!";
 }
-//Applications/XAMPP/xamppfiles/htdocs/dashbord/img_dir

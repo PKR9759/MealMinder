@@ -10,7 +10,7 @@ if (isset($_POST["submit"])) {
     // Get file extension
     $imageExt = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
     // Allowed file types
-    $allowd_file_ext = array("jpg", "jpeg", "png","php");
+    $allowd_file_ext = array("jpg", "jpeg", "png");
 
     if (!file_exists($_FILES["fileUpload"]["tmp_name"])) {
         $resMessage = array(
@@ -20,7 +20,7 @@ if (isset($_POST["submit"])) {
         $resMessage = array(
             "message" => "Allowed file formats .jpg, .jpeg and .png.",
         );
-    } else if ($_FILES["fileUpload"]["size"] > 209715200) {
+    } else if ($_FILES["fileUpload"]["size"] > 209715234) {
         $resMessage = array(
             "message" => "File is too large. File size should be less than 2 megabytes.",
         );
