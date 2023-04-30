@@ -24,7 +24,9 @@
     }
     .cart img{
         border-radius: 30%;
-        border:outset;
+        border:outset whitesmoke;
+        outline: none;
+
     }
     .ind{
         position: absolute;
@@ -41,6 +43,14 @@
         font-weight: 700;
         border:1px solid white;
         
+    }
+    .cart img:hover{
+        
+        border:inset whitesmoke;
+    }
+    .cart img:focus{
+        box-shadow: 0px 2px 4px #E56C23;
+        border:none;
     }
     </style>
 <div class="idea">
@@ -77,7 +87,7 @@
             </div>
         </ul>
         <div  class="cart" style="float:right" >
-                <img style=" height:40px ; width:40px ;margin-right:20px;" src="https://media.istockphoto.com/id/469047076/vector/white-icon-of-a-shopping-cart-on-orange-background.jpg?s=170667a&w=0&k=20&c=5OH1VrFlZ-Ndu1fL1h_ha_1p2hfPRIXPE1ZciKSVpXI=">
+               <a class="cartbtn" href="/food2/cart/maincart.php"  style="background-color:#E56C23;"> <img style="  height:40px ; width:40px ;margin-right:20px;" src="https://media.istockphoto.com/id/469047076/vector/white-icon-of-a-shopping-cart-on-orange-background.jpg?s=170667a&w=0&k=20&c=5OH1VrFlZ-Ndu1fL1h_ha_1p2hfPRIXPE1ZciKSVpXI="></a>
                 <div class="ind">
                        2
                 </div>
