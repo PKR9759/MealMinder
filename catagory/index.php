@@ -1,4 +1,8 @@
-<?php include "upload.php";?>
+<?php include "upload.php";
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
