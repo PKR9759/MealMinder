@@ -82,7 +82,7 @@
 <body>
     <div class="cont">
         <div class="logoname">
-        <i class="fa-sharp fa-solid fa-music fa-3x"></i>
+        <img src="restaurant-cutlery-circular-symbol-of-a-spoon-and-a-fork-in-a-circle.png">
         <p>Music</p>
         </div>
         
