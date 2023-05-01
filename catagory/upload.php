@@ -3,14 +3,14 @@
 include "config.php";
 
 if (isset($_POST["submit"])) {
-    // Set image placement folder
+    // Set image placement folder 
     $target_dir = "img_dir/";
     // Get file path
     $target_file = $target_dir . basename($_FILES["fileUpload"]["name"]);
     // Get file extension
     $imageExt = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
     // Allowed file types
-    $allowd_file_ext = array("jpg", "jpeg", "png","php");
+    $allowd_file_ext = array("jpg", "jpeg", "png");
 
     if (!file_exists($_FILES["fileUpload"]["tmp_name"])) {
         $resMessage = array(
@@ -20,7 +20,7 @@ if (isset($_POST["submit"])) {
         $resMessage = array(
             "message" => "Allowed file formats .jpg, .jpeg and .png.",
         );
-    } else if ($_FILES["fileUpload"]["size"] > 209715200) {
+    } else if ($_FILES["fileUpload"]["size"] > 209715234) {
         $resMessage = array(
             "message" => "File is too large. File size should be less than 2 megabytes.",
         );
@@ -42,6 +42,13 @@ if (isset($_POST["submit"])) {
                         VALUES (NULL, ?, ?, ?, ?, ?)";
             } else if ($category == 2) {
                 $sql = "INSERT INTO `Punjabi_items` (`id`, `file_path`, `name`, `price`, `description`, `aviability`) 
+                        VALUES (NULL, ?, ?, ?, ?, ?)";
+            }
+            else if ($category == 3) {
+                $sql = "INSERT INTO `chinese_items` (`id`, `file_path`, `name`, `price`, `description`, `aviability`) 
+                        VALUES (NULL, ?, ?, ?, ?, ?)";
+            }else   {
+                $sql = "INSERT INTO `snacks` (`id`, `file_path`, `name`, `price`, `description`, `aviability`) 
                         VALUES (NULL, ?, ?, ?, ?, ?)";
             }
 
