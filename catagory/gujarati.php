@@ -62,6 +62,7 @@ if ($num) {
         echo '<img class="card-img-top" src="' . $row['file_path'] . '" alt="' . $row['name'] . '">';
         echo '<div class="card-body">';
         echo '<h5 class="card-title">' . $row['name'] . '</h5>';
+        
         if ($row['aviability'] == 1) {
             echo '<p class="card-text"><span class="stock green">In Stock</span> - Price: ' . $row['price'] . '</p>';
         } else {
