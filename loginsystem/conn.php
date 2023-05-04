@@ -2,7 +2,7 @@
     $server="localhost";
     $username="root";
     $pass="";
-    $db="RBH";
+    $db="rbh";
     try{
     $conn=mysqli_connect($server,$username,$pass,$db);
     }

@@ -1,7 +1,7 @@
 
 <?php
 session_start();
-include 'C:\xampp2\htdocs\food2\navbar.php';
+include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
 ?>
 
 <!doctype html>

@@ -34,7 +34,7 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
 $servername = "localhost";
 $username="root";
 $password="";
-$database="RBH";
+$database="rbh";
 //creating a connection
 $conn = mysqli_connect($servername,$username,$password,$database);
 

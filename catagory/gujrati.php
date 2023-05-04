@@ -1,6 +1,6 @@
 
 <?php
-include 'C:\xampp2\htdocs\food2\navbar.php';
+include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
 ?>
 
 <!doctype html>
@@ -81,7 +81,7 @@ include 'C:\xampp2\htdocs\food2\navbar.php';
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $database = "RBH";
+        $database = "rbh";
         //creating a connection
         $conn = mysqli_connect($servername, $username, $password, $database);
 
@@ -160,17 +160,13 @@ include 'C:\xampp2\htdocs\food2\navbar.php';
 
 
 
-                if ($row['available'] == 1) {
+                if ($row['aviability'] == 1) {
 
                     echo ' <button class="addcart" type="submit" name="addcart" class="btn btn-secondary">Add to Cart</button>';
                 } else {
                     echo '<p class="card-text"><span class="stock" style="color:red">Out of Stock</span></p>';
                 }
                 echo '</form>';
-
-
-
-
                 echo '</div>';
                 echo '</div>';
             }
