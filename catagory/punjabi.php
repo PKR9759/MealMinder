@@ -1,22 +1,23 @@
 <?php
-//include 'C:\xampp\htdocs\food2\navbar.php';
-include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
+session_start();
+
+// get the current session id
+
+?>
+
+<?php
+//include 'C:\xampp\htdocs\food\navbar.php';
+include '/Applications/XAMPP/xamppfiles/htdocs/food/navbar.php';
+// start the session
+
+// get the current session id
+
 ?>
 <!doctype html>
 <html lang="en">
 
 <head>
-    <style>
-        .cardcont{
-            width:100vw;
-            display:grid;
-            display:flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            /* grid-template-columns: repeat(3,1fr);
-            grid-template-rows: repeat(5,1fr); */
-        }
-        </style>
+   
 <link rel="stylesheet" href="cat.css">
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -28,6 +29,17 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <title>punjabi</title>
+    <style>
+        .cardcont{
+            width:100vw;
+            display:grid;
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            /* grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(5,1fr); */
+        }
+        </style>
 </head>
 
 <body>
@@ -37,9 +49,6 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
         
         <hr class="my-3" style="font-family:'Lobster',sans-serif">
         <p>Indulge in the rich and hearty flavors of Punjabi cuisine at our restaurant. Our menu features a wide selection of dishes that are made using traditional Punjabi spices and cooking techniques. From creamy butter chicken and tender tandoori chicken to savory chana masala and spicy biryani, our dishes are sure to tantalize your taste buds. Made with the freshest and highest quality ingredients, our dishes are cooked to perfection and served with warm and fluffy naan bread. So come and experience the authentic flavors of Punjab at our restaurant today.
-
-
-
 </p>
         
     </div>
@@ -79,20 +88,30 @@ if ($num) {
         echo '<img class="card-img-top" src="' . $row['file_path'] . '" alt="' . $row['name'] . '">';
         echo '<div class="card-body">';
         echo '<h5 class="card-title">' . $row['name'] . '</h5>';
+        
         if ($row['aviability'] == 1) {
             echo '<p class="card-text"><span class="stock green">In Stock</span> - Price: ' . $row['price'] . '</p>';
+            // add buy now button
+            echo '<form method="post" action="">';
+            echo '<input type="hidden" name="item_id" value="' . $row['id'] . '">';
+            echo '<input type="hidden" name="item_name" value="' . $row['name'] . '">';
+            echo '<input type="hidden" name="item_price" value="' . $row['price'] . '">';
+            echo '<input type="hidden" name="path" value="' . $row['file_path'] . '">';
+            echo '<button type="submit" class="btn btn-primary" value="true">Buy Now</button>';
+            echo '</form>';
         } else {
             echo '<p class="card-text"><span class="stock red">Out of Stock</span></p>';
         }
         
-        
         echo '</div>';
         echo '</div>';
     }
- 
-    echo '</div>';
-    echo '</div>';
+    
 }
+
+$session_id = session_id(); // get the current session ID
+echo "Session ID: " . $session_id;
+var_dump($_SESSION);
 ?>
 
 
@@ -108,5 +127,64 @@ if ($num) {
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 </body>
-
 </html>
+
+<?php
+if (isset($_POST['item_id'])) {
+  
+    $new_item = array(
+        'id' => $_POST['item_id'],
+        'name' => $_POST['item_name'],
+        'price' => $_POST['item_price'],
+        'path' => $_POST['path']
+
+    );
+
+    $item_names = array_column($_SESSION['cart'], 'name');
+    $item_index = array_search($new_item['name'], $item_names);
+
+    if ($item_index !== false) {
+        $_SESSION['cart'][$item_index]['price'] += $new_item['price'];
+    } else {
+        $_SESSION['cart'][] = $new_item;
+    }
+}
+
+if (isset($_SESSION['cart'])) {
+    echo '<h4>Cart</h4>';
+    echo '<table class="table">';
+    echo '<thead>';
+    echo '<tr>';
+    echo '<th scope="col">#</th>';
+    echo '<th scope="col">Name</th>';
+    echo '<th scope="col">Price</th>';
+    echo '<th scope="col">Photo</th>';
+    echo '</tr>';
+    echo '</thead>';
+    echo '<tbody>';
+    $total_price = 0;
+    $unique_items = array();
+    foreach ($_SESSION['cart'] as $index => $item) {
+        if (!in_array($item['name'], $unique_items)) {
+            $unique_items[] = $item['name'];
+            echo '<tr>';
+            echo '<th scope="row">' . (count($unique_items)) . '</th>';
+            echo '<td>' . $item['name'] . '</td>';
+            echo '<td>$' . $item['price'] . '</td>';
+
+            echo '<td><img src="' . $item['path'] . '" alt="' . $item['name'] . '" width="100px"></td>';
+          //  echo '<td>done</td>';
+            echo '</tr>';
+            $total_price += $item['price'];
+        }
+    }
+    echo '<tr>';
+    echo '<th scope="row"></th>';
+    echo '<td>Total Price</td>';
+    echo '<td>$' . $total_price . '</td>';
+    echo '</tr>';
+    echo '</tbody>';
+    echo '</table>';
+}
+session_abort();
+?>

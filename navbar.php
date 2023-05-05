@@ -68,13 +68,13 @@ session_start();
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav" style="color:white">
             <li class="nav-item active">
-                <a class="nav-link" style="color:white" href="/food2/homepage/home.php">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" style="color:white" href="/food/homepage/home.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" style="color:white" href="/food2/homepage/form.php">Feedback</a>
+                <a class="nav-link" style="color:white" href="/food/homepage/form.php">Feedback</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" style="color:white" href="/food2/homepage/about.php">About</a>
+                <a class="nav-link" style="color:white" href="/food/homepage/about.php">About</a>
             </li>
 
             <li class="nav-item dropdown">
@@ -83,16 +83,16 @@ session_start();
                     Catagory
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="/food2/catagory/gujarati.php">Gujrati Items</a>
-                    <a class="dropdown-item" href='/food2/catagory/punjabi.php'>Punjabi Items</a>
-                    <a class="dropdown-item" href='/food2/catagory/chinese.php'>Chinese Items</a>
-                    <a class="dropdown-item" href='/food2/catagory/snacks.php'>Snacks</a>
+                    <a class="dropdown-item" href="/food/catagory/gujarati.php">Gujrati Items</a>
+                    <a class="dropdown-item" href='/food/catagory/punjabi.php'>Punjabi Items</a>
+                    <a class="dropdown-item" href='/food/catagory/chinese.php'>Chinese Items</a>
+                    <a class="dropdown-item" href='/food/catagory/snacks.php'>Snacks</a>
                 </div>
             </li>
             </div>
         </ul>
         <div  class="cart" style="float:right" >
-               <a class="cartbtn" href="/food2/cart/maincart.php"  style="background-color:#E56C23;"> <img style="  height:40px ; width:40px ;margin-right:20px;" src="https://media.istockphoto.com/id/469047076/vector/white-icon-of-a-shopping-cart-on-orange-background.jpg?s=170667a&w=0&k=20&c=5OH1VrFlZ-Ndu1fL1h_ha_1p2hfPRIXPE1ZciKSVpXI="></a>
+               <a class="cartbtn" href="/food/catagory/cart.php"  style="background-color:#E56C23;"> <img style="  height:40px ; width:40px ;margin-right:20px;" src="https://media.istockphoto.com/id/469047076/vector/white-icon-of-a-shopping-cart-on-orange-background.jpg?s=170667a&w=0&k=20&c=5OH1VrFlZ-Ndu1fL1h_ha_1p2hfPRIXPE1ZciKSVpXI="></a>
                 <div class="ind">
                        <?php 
                        echo $_SESSION['totalItems'];

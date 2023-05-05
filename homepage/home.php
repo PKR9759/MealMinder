@@ -1,5 +1,5 @@
 <?php
-include 'C:\xampp\htdocs\food2\navbar.php';
+include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
 //Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php
 ?>
 <!doctype html>
@@ -134,27 +134,27 @@ include 'C:\xampp\htdocs\food2\navbar.php';
     <h3> Which type you Eat today? </h3>
     <div class="catsec">
       <div class="cat">
-        <a href='/food2/catagory/gujrati.php'><img src="https://source.unsplash.com/random/?Gujratifood-circle," alt="First catagory"></a>
+        <a href='/food/catagory/gujrati.php'><img src="https://source.unsplash.com/random/?Gujratifood-circle," alt="First catagory"></a>
       
         
       <p>Gujrati</p>
       </a>
       </div>
       <div class="cat">
-        <a href='/food2/catagory/punjabi.php'><img src="https://source.unsplash.com/random/?Punjabifood-circle," alt="First catagory"></a>
+        <a href='/food/catagory/punjabi.php'><img src="https://source.unsplash.com/random/?Punjabifood-circle," alt="First catagory"></a>
         <p>Punjabi</p>
       </div>
       <div class="cat">
-        <a href='/food2/catagory/jain.php'><img src="https://source.unsplash.com/random/?jainfood-circle," alt="First catagory"></a>
+        <a href='/food/catagory/jain.php'><img src="https://source.unsplash.com/random/?jainfood-circle," alt="First catagory"></a>
         <p>Jain</p>
         
       </div>
       <div class="cat">
-      <a href='/food2/catagory/snacks.php'><img src="https://source.unsplash.com/random/?jainfood-circle," alt="First catagory"></a>
+      <a href='/food/catagory/snacks.php'><img src="https://source.unsplash.com/random/?jainfood-circle," alt="First catagory"></a>
         <p>Snacks</p>
       </div>
       <div class="cat">
-        <a href='/food2/catagory/chinese.php'><img src="https://source.unsplash.com/random/?chinesefood-circle," alt="First catagory"></a>
+        <a href='/food/catagory/chinese.php'><img src="https://source.unsplash.com/random/?chinesefood-circle," alt="First catagory"></a>
         <p>Chinese</p>
       </div>
     </div>
