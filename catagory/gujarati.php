@@ -27,7 +27,7 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
         <hr class="my-3" style="font-family:'Lobster',sans-serif">
         <p>Whether you are a lifelong fan of Gujarati cuisine or trying it for the first time, our site is the perfect place to savor the flavors and textures of this unique regional cuisine. So come and join us for a culinary journey through the tastes and traditions of Gujarat!</p>
     </div>
-    <h4>Choose Your food and cold-drinks ...</h4>
+    <h4>Choose Your food2 and cold-drinks ...</h4>
     <hr>
     <div class="recsec">
 
@@ -55,22 +55,28 @@ $num = mysqli_num_rows($result);
 if ($num) {
     // start of container
     echo '<div class="recsec" >';
-
+    // catagory/img_dir
     // loop through the records and create a card for each one
     while ($row = mysqli_fetch_assoc($result)) {
         echo '<div class="card" style="width: 18rem;">';
         echo '<img class="card-img-top" src="' . $row['file_path'] . '" alt="' . $row['name'] . '">';
         echo '<div class="card-body">';
         echo '<h5 class="card-title">' . $row['name'] . '</h5>';
-        
+    
         if ($row['aviability'] == 1) {
+           
             echo '<p class="card-text"><span class="stock green">In Stock</span> - Price: ' . $row['price'] . '</p>';
-        } else {
+            // add buy now button
+            echo '<form method="post" action="">';
+            echo '<input type="hidden" name="item_id" value="' . $row['id'] . '">';
+            
+            echo '<button type="submit" class="btn btn-primary" value="false">Buy Now</button>';
+            echo '</form>';
+            }
+         else {
             echo '<p class="card-text"><span class="stock red">Out of Stock</span></p>';
         }
-        
-        
-        echo '</div>';
+         echo '</div>';
         echo '</div>';
     }
  

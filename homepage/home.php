@@ -1,5 +1,5 @@
 <?php
-include 'C:\xampp\htdocs\food2\navbar.php';
+include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
 //Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php
 ?>
 <!doctype html>
@@ -100,21 +100,21 @@ include 'C:\xampp\htdocs\food2\navbar.php';
     <div class="carousel-inner">
       <div class="carousel-item active">
        <a href="gujarati.php">
-  <img class="d-block w-100" src="https://source.unsplash.com/featured/?food,punjabi" alt="First slide">
+  <img class="d-block w-100" src="https://source.unsplash.com/featured/?food2,punjabi" alt="First slide">
 </a>
 
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="https://source.unsplash.com/featured/?food,chinese" alt="Second slide">
+        <img class="d-block w-100" src="https://source.unsplash.com/featured/?food2,chinese" alt="Second slide">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="https://source.unsplash.com/featured/?food,gujrati" alt="Third slide">
+        <img class="d-block w-100" src="https://source.unsplash.com/featured/?food2,gujrati" alt="Third slide">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="https://source.unsplash.com/featured/?food,south-indian" alt="Third slide">
+        <img class="d-block w-100" src="https://source.unsplash.com/featured/?food2,south-indian" alt="Third slide">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="https://source.unsplash.com/featured/?food,marathi" alt="Third slide">
+        <img class="d-block w-100" src="https://source.unsplash.com/featured/?food2,marathi" alt="Third slide">
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -134,27 +134,27 @@ include 'C:\xampp\htdocs\food2\navbar.php';
     <h3> Which type you Eat today? </h3>
     <div class="catsec">
       <div class="cat">
-        <a href='/food2/catagory/gujrati.php'><img src="https://source.unsplash.com/random/?Gujratifood-circle," alt="First catagory"></a>
+        <a href='/food2/catagory/gujrati.php'><img src="https://source.unsplash.com/random/?Gujratifood2-circle," alt="First catagory"></a>
       
         
       <p>Gujrati</p>
       </a>
       </div>
       <div class="cat">
-        <a href='/food2/catagory/punjabi.php'><img src="https://source.unsplash.com/random/?Punjabifood-circle," alt="First catagory"></a>
+        <a href='/food2/catagory/punjabi.php'><img src="https://source.unsplash.com/random/?Punjabifood2-circle," alt="First catagory"></a>
         <p>Punjabi</p>
       </div>
       <div class="cat">
-        <a href='/food2/catagory/jain.php'><img src="https://source.unsplash.com/random/?jainfood-circle," alt="First catagory"></a>
+        <a href='/food2/catagory/jain.php'><img src="https://source.unsplash.com/random/?jainfood2-circle," alt="First catagory"></a>
         <p>Jain</p>
         
       </div>
       <div class="cat">
-      <a href='/food2/catagory/snacks.php'><img src="https://source.unsplash.com/random/?jainfood-circle," alt="First catagory"></a>
+      <a href='/food2/catagory/snacks.php'><img src="https://source.unsplash.com/random/?jainfood2-circle," alt="First catagory"></a>
         <p>Snacks</p>
       </div>
       <div class="cat">
-        <a href='/food2/catagory/chinese.php'><img src="https://source.unsplash.com/random/?chinesefood-circle," alt="First catagory"></a>
+        <a href='/food2/catagory/chinese.php'><img src="https://source.unsplash.com/random/?chinesefood2-circle," alt="First catagory"></a>
         <p>Chinese</p>
       </div>
     </div>
@@ -164,7 +164,7 @@ include 'C:\xampp\htdocs\food2\navbar.php';
   <div class="recsec">
 
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
+      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood2-circle" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -174,7 +174,7 @@ include 'C:\xampp\htdocs\food2\navbar.php';
     </div>
 
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
+      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood2-circle" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -184,7 +184,7 @@ include 'C:\xampp\htdocs\food2\navbar.php';
     </div>
 
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
+      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood2-circle" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -194,7 +194,7 @@ include 'C:\xampp\htdocs\food2\navbar.php';
     </div>
 
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
+      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood2-circle" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -204,7 +204,7 @@ include 'C:\xampp\htdocs\food2\navbar.php';
     </div>
 
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
+      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood2-circle" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -214,7 +214,7 @@ include 'C:\xampp\htdocs\food2\navbar.php';
     </div>
 
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
+      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood2-circle" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -224,7 +224,7 @@ include 'C:\xampp\htdocs\food2\navbar.php';
     </div>
 
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
+      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood2-circle" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -234,7 +234,7 @@ include 'C:\xampp\htdocs\food2\navbar.php';
     </div>
 
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
+      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood2-circle" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's

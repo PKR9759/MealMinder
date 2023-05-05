@@ -43,12 +43,12 @@ include 'C:\xampp\htdocs\rbh\navbar.php';
         <p>Experience the purity and simplicity of Jain cuisine at our restaurant. Our menu features a delicious selection of dishes that are made without onions, garlic, and other root vegetables, yet are still bursting with flavor. We use only the freshest and finest ingredients in our dishes, and our expert chefs prepare them with care and attention to detail. So whether you're following a Jain diet or just looking for a healthy and flavorful meal, our restaurant is the perfect place to indulge in the flavors of Jain cuisine.</p>
         
     </div>
-    <h4>Chose Your food and cold-drinks ...<h4>
+    <h4>Chose Your food2 and cold-drinks ...<h4>
     <hr>
     <div class="recsec">
 
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
+      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood2-circle" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -58,7 +58,7 @@ include 'C:\xampp\htdocs\rbh\navbar.php';
     </div>
 
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
+      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood2-circle" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -68,7 +68,7 @@ include 'C:\xampp\htdocs\rbh\navbar.php';
     </div>
 
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
+      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood2-circle" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -78,7 +78,7 @@ include 'C:\xampp\htdocs\rbh\navbar.php';
     </div>
 
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
+      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood2-circle" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -88,7 +88,7 @@ include 'C:\xampp\htdocs\rbh\navbar.php';
     </div>
 
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
+      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood2-circle" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -98,7 +98,7 @@ include 'C:\xampp\htdocs\rbh\navbar.php';
     </div>
 
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
+      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood2-circle" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -108,7 +108,7 @@ include 'C:\xampp\htdocs\rbh\navbar.php';
     </div>
 
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
+      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood2-circle" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -118,7 +118,7 @@ include 'C:\xampp\htdocs\rbh\navbar.php';
     </div>
 
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood-circle" alt="Card image cap">
+      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood2-circle" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's

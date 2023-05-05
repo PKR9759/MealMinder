@@ -127,7 +127,7 @@ $showSucess=false;
 ?>
 <script>
 setTimeout(function() {
-  window.location.href = "/rbh/homepage/home.php";
+  window.location.href = "/food2/homepage/home.php";
 }, 2000); // 2000 milliseconds = 2 seconds
 </script>
 <?php

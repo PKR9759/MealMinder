@@ -21,13 +21,13 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
 <body>
     <br>
     <div class="jumbotron" style="background-color:#F17766">
-        <h1 class="display-4">Chinese Foods</h1>
+        <h1 class="display-4">Chinese food2s</h1>
         
         <hr class="my-3" style="font-family:'Lobster',sans-serif">
         <p>Savor the flavors of China with our authentic and delicious Chinese cuisine. From spicy Sichuan dishes to savory Cantonese classics, our menu features a wide variety of dishes that will transport your taste buds to the streets of China. Made with the freshest and highest quality ingredients, our dishes are cooked to perfection using authentic cooking techniques. So come and experience the rich and varied flavors of China at our site today.</p>
         
     </div>
-    <h4>Chose Your food and cold-drinks ...<h4>
+    <h4>Chose Your food2 and cold-drinks ...<h4>
     <hr>
     <?php
 //connecting to the database

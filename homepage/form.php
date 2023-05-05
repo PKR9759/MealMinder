@@ -5,7 +5,7 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Food Token Website Feedback Form</title>
+  <title>food2 Token Website Feedback Form</title>
   <!-- Link to Bootstrap CSS stylesheet -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+JQLh1ZiPKGmU6YlZkkV95S6sN9uHp6" crossorigin="anonymous">
