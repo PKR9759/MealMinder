@@ -1,6 +1,6 @@
 
 <?php
-include '/Applications/XAMPP/xamppfiles/htdocs/food/navbar.php';
+include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
 ?>
 
 <!doctype html>
@@ -29,7 +29,7 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food/navbar.php';
         <hr class="my-3" style="font-family:'Lobster',sans-serif">
         <p>Whether you are a lifelong fan of Gujarati cuisine or trying it for the first time, our site is the perfect place to savor the flavors and textures of this unique regional cuisine. So come and join us for a culinary journey through the tastes and traditions of Gujarat!</p>
     </div>
-    <h4>Choose Your food and cold-drinks ...</h4>
+    <h4>Choose Your food2 and cold-drinks ...</h4>
     <hr>
     <div class="recsec">
 
@@ -111,7 +111,7 @@ if ($num) {
             "amount": amt*100,
           
             "currency": "INR",
-            "name": "Food Token",
+            "name": "food2 Token",
             "description": "Test Transaction",
             "image": "https://cdn.pixabay.com/photo/2017/03/16/21/18/logo-2150297_640.png",
             "handler": function (response) {

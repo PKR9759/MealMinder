@@ -6,8 +6,8 @@ session_start();
 ?>
 
 <?php
-//include 'C:\xampp\htdocs\food\navbar.php';
-include '/Applications/XAMPP/xamppfiles/htdocs/food/navbar.php';
+//include 'C:\xampp\htdocs\food2\navbar.php';
+include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
 // start the session
 
 // get the current session id
@@ -52,7 +52,7 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food/navbar.php';
 </p>
         
     </div>
-    <h4>Chose Your food and cold-drinks ...<h4>
+    <h4>Chose Your food2 and cold-drinks ...<h4>
     <hr>
     <div class="recsec">
 

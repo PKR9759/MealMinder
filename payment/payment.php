@@ -21,7 +21,7 @@
             "amount": amt*100,
           
             "currency": "INR",
-            "name": "Food Token",
+            "name": "food2 Token",
             "description": "Test Transaction",
             "image": "https://cdn.pixabay.com/photo/2017/03/16/21/18/logo-2150297_640.png",
             "handler": function (response) {

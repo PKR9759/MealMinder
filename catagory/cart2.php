@@ -4,7 +4,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <?php
-include '/Applications/XAMPP/xamppfiles/htdocs/food/navbar.php';
+include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
 ?>
 <?php
 session_start();

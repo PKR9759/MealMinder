@@ -1,5 +1,5 @@
 <?php
-include '/Applications/XAMPP/xamppfiles/htdocs/food/navbar.php';
+include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food/navbar.php';
 <html lang="en">
 
 <head>
-    <title>About Us - Food Token</title>
+    <title>About Us - food2 Token</title>
     <!-- Add the Tailwind CSS CDN -->
     <link href="https://cdn.tailwindcss.com" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -181,17 +181,17 @@ font-weight: 700;
 
     <h1 class="h1">About Us</h1>
 
-    <p class="p">Welcome to the Food Token website! We are Parmar Lakhman and Kuldip Parmar, the creators of this
+    <p class="p">Welcome to the food2 Token website! We are Parmar Lakhman and Kuldip Parmar, the creators of this
         platform.</p>
 
-    <p class="p">Parmar Lakhman is an enthusiastic food lover who always wanted to find a better way to manage food
+    <p class="p">Parmar Lakhman is an enthusiastic food2 lover who always wanted to find a better way to manage food2
         tokens. He is passionate about building digital solutions that simplify everyday life. Kuldip Parmar is an
         experienced web developer with a keen eye for design. He enjoys creating intuitive interfaces that are both
         aesthetically pleasing and user-friendly.</p>
-    <p class="p">Together, we have combined our expertise to create Food Token, a website that simplifies the process of
-        getting food tokens. Our goal is to make it easy for you to get your hands on your favorite food without the
+    <p class="p">Together, we have combined our expertise to create food2 Token, a website that simplifies the process of
+        getting food2 tokens. Our goal is to make it easy for you to get your hands on your favorite food2 without the
         hassle of waiting in long lines.</p>
-    <p class="p">We hope you enjoy using Food Token and welcome any feedback you may have. Thank you for choosing our
+    <p class="p">We hope you enjoy using food2 Token and welcome any feedback you may have. Thank you for choosing our
         platform!</p>
     <div class="imgcont">
         <div><img src="kuldip.jpeg" alt="photo" class="img">
@@ -216,7 +216,7 @@ font-weight: 700;
    </div>
     <div class="copyright">
     <footer >
-        <p>&copy; 2023 Food Token</p>
+        <p>&copy; 2023 food2 Token</p>
     </footer>
     <div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

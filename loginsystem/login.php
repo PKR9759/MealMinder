@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 }
 
 
-                header('location:\food\homepage\home.php');
+                header('location:\food2\homepage\home.php');
 
                 exit();
             }
