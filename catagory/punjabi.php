@@ -1,17 +1,8 @@
-<?php
-session_start();
 
-// get the current session id
-
-?>
 
 <?php
 //include 'C:\xampp\htdocs\food2\navbar.php';
 include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
-// start the session
-
-// get the current session id
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -91,13 +82,12 @@ if ($num) {
         
         if ($row['aviability'] == 1) {
             echo '<p class="card-text"><span class="stock green">In Stock</span> - Price: ' . $row['price'] . '</p>';
-            // add buy now button
-            echo '<form method="post" action="">';
-            echo '<input type="hidden" name="item_id" value="' . $row['id'] . '">';
-            echo '<input type="hidden" name="item_name" value="' . $row['name'] . '">';
-            echo '<input type="hidden" name="item_price" value="' . $row['price'] . '">';
-            echo '<input type="hidden" name="path" value="' . $row['file_path'] . '">';
-            echo '<button type="submit" class="btn btn-primary" value="true">Buy Now</button>';
+            echo '<form method="POST" action="">';
+            echo '<input type="hidden" name="item_id" value="'.$row['id'].'">';
+            echo '<input type="hidden" name="item_name" value="'.$row['name'].'">';
+            echo '<input type="hidden" name="item_price" value="'.$row['price'].'">';
+            echo '<input type="hidden" name="path" value="'.$row['file_path'].'">';
+            echo '<input type="submit" class="btn btn-primary" name="buy_now" value="Buy Now">';
             echo '</form>';
         } else {
             echo '<p class="card-text"><span class="stock red">Out of Stock</span></p>';
@@ -109,9 +99,9 @@ if ($num) {
     
 }
 
-$session_id = session_id(); // get the current session ID
-echo "Session ID: " . $session_id;
-var_dump($_SESSION);
+// $session_id = session_id(); // get the current session ID
+// echo "Session ID: " . $session_id;
+// var_dump($_SESSION);
 ?>
 
 
@@ -130,61 +120,78 @@ var_dump($_SESSION);
 </html>
 
 <?php
-if (isset($_POST['item_id'])) {
-  
-    $new_item = array(
-        'id' => $_POST['item_id'],
-        'name' => $_POST['item_name'],
-        'price' => $_POST['item_price'],
-        'path' => $_POST['path']
+session_start();
 
+// get the item details from the form
+$item_id = $_POST['item_id'];
+$item_name = $_POST['item_name'];
+$item_price = $_POST['item_price'];
+$item_path = $_POST['path'];
+
+// check if the cart exists in the session
+if (!isset($_SESSION['cart'])) {
+    // if not, create a new cart
+    $_SESSION['cart'] = array();
+}
+
+// check if the item is already in the cart
+$item_names = array_column($_SESSION['cart'], 'name');
+$item_index = array_search($item_name, $item_names);
+
+// add the item to the cart
+if ($item_index !== false) {
+    // if already in the cart, increase the quantity
+    $_SESSION['cart'][$item_index]['quantity'] += 1;
+} else {
+    // if not, add the item to the cart
+    $item = array(
+        'id' => $item_id,
+        'name' => $item_name,
+        'price' => $item_price,
+        'path' => $item_path,
+        'quantity' => 1
     );
-
-    $item_names = array_column($_SESSION['cart'], 'name');
-    $item_index = array_search($new_item['name'], $item_names);
-
-    if ($item_index !== false) {
-        $_SESSION['cart'][$item_index]['price'] += $new_item['price'];
-    } else {
-        $_SESSION['cart'][] = $new_item;
-    }
+    array_push($_SESSION['cart'], $item);
 }
 
-if (isset($_SESSION['cart'])) {
-    echo '<h4>Cart</h4>';
-    echo '<table class="table">';
-    echo '<thead>';
-    echo '<tr>';
-    echo '<th scope="col">#</th>';
-    echo '<th scope="col">Name</th>';
-    echo '<th scope="col">Price</th>';
-    echo '<th scope="col">Photo</th>';
-    echo '</tr>';
-    echo '</thead>';
-    echo '<tbody>';
-    $total_price = 0;
-    $unique_items = array();
-    foreach ($_SESSION['cart'] as $index => $item) {
-        if (!in_array($item['name'], $unique_items)) {
-            $unique_items[] = $item['name'];
-            echo '<tr>';
-            echo '<th scope="row">' . (count($unique_items)) . '</th>';
-            echo '<td>' . $item['name'] . '</td>';
-            echo '<td>$' . $item['price'] . '</td>';
-
-            echo '<td><img src="' . $item['path'] . '" alt="' . $item['name'] . '" width="100px"></td>';
-          //  echo '<td>done</td>';
-            echo '</tr>';
-            $total_price += $item['price'];
-        }
+// display the cart table
+echo '<h4>Cart</h4>';
+echo '<div class="table-responsive">';
+echo '<table class="table table-bordered table-hover">';
+echo '<thead class="thead-light">';
+echo '<tr>';
+echo '<th scope="col">#</th>';
+echo '<th scope="col">Name</th>';
+echo '<th scope="col">Price</th>';
+echo '<th scope="col">Photo</th>';
+echo '<th scope="col">Quantity</th>';
+echo '</tr>';
+echo '</thead>';
+echo '<tbody>';
+$total_price = 0;
+$unique_items = array();
+foreach ($_SESSION['cart'] as $index => $item) {
+    if (!in_array($item['name'], $unique_items)) {
+        $unique_items[] = $item['name'];
+        echo '<tr>';
+        echo '<th scope="row">' . (count($unique_items)) . '</th>';
+        echo '<td>' . $item['name'] . '</td>';
+        echo '<td>$' . $item['price'] . '</td>';
+        echo '<td><img src="' . $item['path'] . '" alt="' . $item['name'] . '" width="100px"></td>';
+        echo '<td>' . $item['quantity'] . '</td>';
+        echo '</tr>';
+        $total_price += $item['price'] * $item['quantity'];
     }
-    echo '<tr>';
-    echo '<th scope="row"></th>';
-    echo '<td>Total Price</td>';
-    echo '<td>$' . $total_price . '</td>';
-    echo '</tr>';
-    echo '</tbody>';
-    echo '</table>';
 }
-session_abort();
+echo '<tr>';
+echo '<th scope="row"></th>';
+echo '<td>Total Price</td>';
+echo '<td>$' . $total_price . '</td>';
+echo '<td></td>';
+echo '<td></td>';
+echo '</tr>';
+echo '</tbody>';
+echo '</table>';
+echo '</div>';
+
 ?>
