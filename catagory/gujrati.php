@@ -114,7 +114,7 @@ include 'C:\xampp\htdocs\food2\navbar.php';
 
                 );
                 $_SESSION['totalItems']++;
-        
+                // $count++;
                 $_SESSION['cart'][] = $item;
                 echo '<script >alert("Item Successfully added to Cart");</script>';
                 

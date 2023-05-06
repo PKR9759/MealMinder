@@ -190,7 +190,24 @@ include 'C:\xampp\htdocs\food2\navbar.php';
     <?php
 
     //increase andd decrease the quantity
-    if(isset($_POST[]));
+    // if (isset($_POST['increase_quantity'])) {
+    //     // Get the item ID from the form
+    //     $item_id = $_POST['item_id'];
+    
+    //     // Increase the item quantity in the cart
+    //     $cart[$item_id]['quantity']++;
+    // }
+    
+    // if (isset($_POST['decrease_quantity'])) {
+    //     // Get the item ID from the form
+    //     $item_id = $_POST['item_id'];
+    
+    //     // Decrease the item quantity in the cart, but don't allow it to go below 1
+    //     if ($cart[$item_id]['quantity'] > 1) {
+    //         $cart[$item_id]['quantity']--;
+    //     }
+    // }
+    
     $subtotal = 0;
     echo '<div class="container">';
     echo '<div class="left">';
@@ -213,21 +230,7 @@ include 'C:\xampp\htdocs\food2\navbar.php';
 
             echo    '<div class="itemsright">';
 
-            echo        '<div class="contity">';
-            echo            ' <nav aria-label="Page navigation example">';
-            echo                '<ul class="pagination">';
-                              
-            echo '<form class="contform" method="post">';
-            echo'<button type="submit" name="increase_quantity">+</button>';
-            echo'<input type="hidden" name="item_id" value="'.$item['quantity'].'">';
-            echo'<button type="submit" name="decrease_quantity">-</button>';
-            echo'</form>';
-        
-                        
-            echo '                   </li>';
-            echo '               </ul>';
-            echo '            </nav>';
-            echo '      </div>';
+            
             echo '      <div>';
             echo '          <p>' . $_SESSION['cart']['price'] . '</p>';
             echo '      </div>';
@@ -237,12 +240,7 @@ include 'C:\xampp\htdocs\food2\navbar.php';
         echo '</div>';
         echo '</div>';
         echo '<div class="right">';
-        echo ' <div class="prcode">';
-
-        echo '<input type="text" placeholder="Apply Promo-Code">';
-        echo '<button class="btn btn" type="submit">Apply</button>';
-        echo '<hr style="height:2px;border:none;background-color:#C1BBB8">';
-        echo '</div>';
+        
         echo '<div class="subtotal">';
         echo ' <div class="">';
         echo '<p>SubTotal</p>';
