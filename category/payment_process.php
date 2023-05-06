@@ -17,9 +17,6 @@ $_SESSION['token'] = $random_number;
     {
         echo "connection sucessfull";
     }
-    
-    
-
 if(isset($_POST['payment_id'])&&isset($_POST['amt'])&&isset($_POST['name'])){
     $payment_id = $_POST['payment_id'];
     $amt = $_POST['amt'];

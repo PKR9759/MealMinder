@@ -10,6 +10,15 @@ session_start();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+JQLh1ZiPKGmU..."></script>
+
 </head>
 <style>.idea li{
         padding: 15px;
@@ -66,33 +75,33 @@ session_start();
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav" style="color:white">
-            <li class="nav-item active">
-                <a class="nav-link" style="color:white" href="/food2/homepage/home.php">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" style="color:white" href="/food2/homepage/form.php">Feedback</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" style="color:white" href="/food2/homepage/about.php">About</a>
-            </li>
+    <ul class="navbar-nav" style="color:white">
+    <li class="nav-item active">
+        <a class="nav-link" style="color:white" href="/food2/homepage/home.php">Home <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" style="color:white" href="/food2/homepage/form.php">Feedback</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" style="color:white" href="/food2/homepage/about.php">About</a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" style="color:white" href="#" id="navbarDropdownMenuLink"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Category
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="/food2/category/gujarati.php">Gujarati Items</a>
+            <a class="dropdown-item" href='/food2/category/punjabi.php'>Punjabi Items</a>
+            <a class="dropdown-item" href='/food2/category/chinese.php'>Chinese Items</a>
+            <a class="dropdown-item" href='/food2/category/snacks.php'>Snacks</a>
+        </div>
+    </li>
+</ul>
+</div><!--closing div for navbarNavDropdown-->
 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" style="color:white" href="#" id="navbarDropdownMenuLink"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Catagory
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="/food2/catagory/gujarati.php">Gujrati Items</a>
-                    <a class="dropdown-item" href='/food2/catagory/punjabi.php'>Punjabi Items</a>
-                    <a class="dropdown-item" href='/food2/catagory/chinese.php'>Chinese Items</a>
-                    <a class="dropdown-item" href='/food2/catagory/snacks.php'>Snacks</a>
-                </div>
-            </li>
-            </div>
-        </ul>
         <div  class="cart" style="float:right" >
-               <a class="cartbtn" href="/food2/catagory/cart.php"  style="background-color:#E56C23;"> <img style="  height:40px ; width:40px ;margin-right:20px;" src="https://media.istockphoto.com/id/469047076/vector/white-icon-of-a-shopping-cart-on-orange-background.jpg?s=170667a&w=0&k=20&c=5OH1VrFlZ-Ndu1fL1h_ha_1p2hfPRIXPE1ZciKSVpXI="></a>
+               <a class="cartbtn" href="/food2/category/cart.php"  style="background-color:#E56C23;"> <img style="  height:40px ; width:40px ;margin-right:20px;" src="https://media.istockphoto.com/id/469047076/vector/white-icon-of-a-shopping-cart-on-orange-background.jpg?s=170667a&w=0&k=20&c=5OH1VrFlZ-Ndu1fL1h_ha_1p2hfPRIXPE1ZciKSVpXI="></a>
                 <div class="ind">
                        <?php 
                             $count=0;

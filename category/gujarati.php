@@ -55,7 +55,7 @@ $num = mysqli_num_rows($result);
 if ($num) {
     // start of container
     echo '<div class="recsec" >';
-    // catagory/img_dir
+    // category/img_dir
     // loop through the records and create a card for each one
     while ($row = mysqli_fetch_assoc($result)) {
         echo '<div class="card" style="width: 18rem;">';

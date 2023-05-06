@@ -1,4 +1,5 @@
 <?php
+
 include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
 
 ?>
@@ -7,7 +8,7 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
 <?php
-session_start();
+
 
 // get the item details from the form
 $item_id = $_POST['item_id'];
@@ -58,7 +59,7 @@ echo '<tbody>';
 $total_price = 0;
 $unique_items = array();
 foreach ($_SESSION['cart'] as $index => $item) {
-    if (!in_array($item['name'], $unique_items)) {
+    if (!in_array($item['name'], $unique_items)&&$item['name']!=null) {
         $unique_items[] = $item['name'];
         echo '<tr>';
         echo '<th scope="row">' . (count($unique_items)) . '</th>';
@@ -91,7 +92,7 @@ echo '</tr>';
 echo '</tbody>';
 echo '</table>';
 echo '</div>';
-
+var_dump($_SESSION['cart']);
 ?>
 <button type="button" class="btn btn-danger" onclick="<?php session_destroy(); ?> window.location.reload();">Clear Cart</button>
 <script>

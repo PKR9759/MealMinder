@@ -130,31 +130,31 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
   <hr>
 
 
-  <div class="catagory">
+  <div class="category">
     <h3> Which type you Eat today? </h3>
     <div class="catsec">
       <div class="cat">
-        <a href='/food2/catagory/gujrati.php'><img src="https://source.unsplash.com/random/?Gujratifood2-circle," alt="First catagory"></a>
+        <a href='/food2/category/gujrati.php'><img src="https://source.unsplash.com/random/?Gujratifood2-circle," alt="First category"></a>
       
         
       <p>Gujrati</p>
       </a>
       </div>
       <div class="cat">
-        <a href='/food2/catagory/punjabi.php'><img src="https://source.unsplash.com/random/?Punjabifood2-circle," alt="First catagory"></a>
+        <a href='/food2/category/punjabi.php'><img src="https://source.unsplash.com/random/?Punjabifood2-circle," alt="First category"></a>
         <p>Punjabi</p>
       </div>
       <div class="cat">
-        <a href='/food2/catagory/jain.php'><img src="https://source.unsplash.com/random/?jainfood2-circle," alt="First catagory"></a>
+        <a href='/food2/category/jain.php'><img src="https://source.unsplash.com/random/?jainfood2-circle," alt="First category"></a>
         <p>Jain</p>
         
       </div>
       <div class="cat">
-      <a href='/food2/catagory/snacks.php'><img src="https://source.unsplash.com/random/?jainfood2-circle," alt="First catagory"></a>
+      <a href='/food2/category/snacks.php'><img src="https://source.unsplash.com/random/?jainfood2-circle," alt="First category"></a>
         <p>Snacks</p>
       </div>
       <div class="cat">
-        <a href='/food2/catagory/chinese.php'><img src="https://source.unsplash.com/random/?chinesefood2-circle," alt="First catagory"></a>
+        <a href='/food2/category/chinese.php'><img src="https://source.unsplash.com/random/?chinesefood2-circle," alt="First category"></a>
         <p>Chinese</p>
       </div>
     </div>

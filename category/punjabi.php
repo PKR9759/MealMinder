@@ -2,6 +2,7 @@
 
 <?php
 //include 'C:\xampp\htdocs\food2\navbar.php';
+
 include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
 ?>
 <!doctype html>
@@ -120,7 +121,7 @@ if ($num) {
 </html>
 
 <?php
-session_start();
+
 
 // get the item details from the form
 $item_id = $_POST['item_id'];
@@ -154,45 +155,6 @@ if ($item_index !== false) {
     array_push($_SESSION['cart'], $item);
 }
 
-// display the cart table
-echo '<h4>Cart</h4>';
-echo '<div class="table-responsive">';
-echo '<table class="table table-bordered table-hover">';
-echo '<thead class="thead-light">';
-echo '<tr>';
-echo '<th scope="col">#</th>';
-echo '<th scope="col">Name</th>';
-echo '<th scope="col">Price</th>';
-echo '<th scope="col">Photo</th>';
-echo '<th scope="col">Quantity</th>';
-echo '</tr>';
-echo '</thead>';
-echo '<tbody>';
-$total_price = 0;
-$unique_items = array();
-foreach ($_SESSION['cart'] as $index => $item) {
-    if (!in_array($item['name'], $unique_items)) {
-        $unique_items[] = $item['name'];
-        echo '<tr>';
-        echo '<th scope="row">' . (count($unique_items)) . '</th>';
-        echo '<td>' . $item['name'] . '</td>';
-        echo '<td>$' . $item['price'] . '</td>';
-        echo '<td><img src="' . $item['path'] . '" alt="' . $item['name'] . '" width="100px"></td>';
-        echo '<td>' . $item['quantity'] . '</td>';
-        echo '</tr>';
-        $total_price += $item['price'] * $item['quantity'];
-    }
-}
-$_SESSION['total_price'] = $total_price;
-echo '<tr>';
-echo '<th scope="row"></th>';
-echo '<td>Total Price</td>';
-echo '<td>$' . $total_price . '</td>';
-echo '<td></td>';
-echo '<td></td>';
-echo '</tr>';
-echo '</tbody>';
-echo '</table>';
-echo '</div>';
+
 
 ?>
