@@ -87,7 +87,7 @@ if ($num) {
  
     echo '</div>';
 }
-
+$total_price = isset($_SESSION['total_price']) ? $_SESSION['total_price'] : 0;
 ?>
 
     <!-- Optional JavaScript -->
@@ -104,7 +104,7 @@ if ($num) {
         <script>
     function pay_now(){
         var name = "<?php echo $_SESSION['name']; ?>";
-        var amt = "<?php echo $_SESSION['amt']; ?>";
+        var amt = <?php echo $total_price ?>;
 
         var options = {
             "key": "rzp_test_YsZR9BjT1yt4QF", 

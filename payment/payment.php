@@ -6,15 +6,15 @@
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
 <form action="payment_process.php" method="POST">
-    <input type="textbox" name="name" id="name" placeholder="enter your name"/><br><br>
-    <input type="textbox" name="amt" id="amt" placeholder="enter your amount"/><br><br>
+    <input type="text" name="name" id="name" placeholder="enter name"/>
+    
    <input type="button" name="pay" id="pay" value="pay now" onclick="pay_now()"/>
 </form>
 
 <script>
     function pay_now(){
         var name = jQuery('#name').val();
-        var amt = jQuery('#amt').val();
+        var amt = <?php echo $total_price; ?>;
 
         var options = {
             "key": "rzp_test_YsZR9BjT1yt4QF", 

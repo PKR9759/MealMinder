@@ -1,4 +1,5 @@
 <?php
+
 include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
 ?>
 
@@ -233,3 +234,4 @@ font-weight: 700;
 </body>
 
 </html>
+

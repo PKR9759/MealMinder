@@ -183,6 +183,7 @@ foreach ($_SESSION['cart'] as $index => $item) {
         $total_price += $item['price'] * $item['quantity'];
     }
 }
+$_SESSION['total_price'] = $total_price;
 echo '<tr>';
 echo '<th scope="row"></th>';
 echo '<td>Total Price</td>';

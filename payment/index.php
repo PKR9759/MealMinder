@@ -1,7 +1,8 @@
+
 <?php
+
 session_start();
-$_SESSION['name'] = "lakhman";
-$_SESSION['amt'] = "1000";
+$total_price = isset($_SESSION['total_price']) ? $_SESSION['total_price'] : 0;
 ?>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -9,15 +10,13 @@ $_SESSION['amt'] = "1000";
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
 <form action="payment_process.php" method="POST">
-    <input type="textbox" name="name2" id="name2" placeholder="enter your name"/><br><br>
-    <input type="textbox" name="amt2" id="amt2" placeholder="enter your amount"/><br><br>
    <input type="button" name="pay" id="pay" value="pay now" onclick="pay_now()"/>
 </form>
 
 <script>
     function pay_now(){
-        var name = "<?php echo $_SESSION['name']; ?>";
-        var amt = "<?php echo $_SESSION['amt']; ?>";
+        var name = "user1";
+        var amt = "<?php echo $total_price ?>";
 
         var options = {
             "key": "rzp_test_YsZR9BjT1yt4QF", 
