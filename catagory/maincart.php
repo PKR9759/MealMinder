@@ -316,7 +316,7 @@ if (isset($_POST['decrease_quantity'])) {
         echo ' </div>';
     }
     if (isset($_POST['place'])) {
-      
+      echo "<script>location.href='order.php';</script>";
     }
     ?>
 
