@@ -94,7 +94,7 @@ include 'C:\xampp\htdocs\food2\navbar.php';
         if (isset($_POST['addcart'])) {
 
             if (!isset($_SESSION['cart']) || !is_array($_SESSION['cart']) || empty($_SESSION['cart'])) {
-                $_SESSION['cart'] = array();
+                $_SESSION['cart'] =array();
             }
                 
 

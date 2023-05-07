@@ -90,23 +90,23 @@ session_start();
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" style="color:white" href="/food2/loginsystem/logout.php">LogOut</a>
+                <a  class="nav-link"  style="color:white" href="/food2/loginsystem/logout.php">Logout</a>
             </li>
             </div>
         </ul>
         <div  class="cart" style="float:right" >
-               <a class="cartbtn" href="/food2/cart/maincart.php"  style="background-color:#E56C23;"> <img style="  height:40px ; width:40px ;margin-right:20px;" src="https://media.istockphoto.com/id/469047076/vector/white-icon-of-a-shopping-cart-on-orange-background.jpg?s=170667a&w=0&k=20&c=5OH1VrFlZ-Ndu1fL1h_ha_1p2hfPRIXPE1ZciKSVpXI="></a>
+               <a class="cartbtn" href="/food2/catagory/maincart.php"  style="background-color:#E56C23;"> <img style="  height:40px ; width:40px ;margin-right:20px;" src="https://media.istockphoto.com/id/469047076/vector/white-icon-of-a-shopping-cart-on-orange-background.jpg?s=170667a&w=0&k=20&c=5OH1VrFlZ-Ndu1fL1h_ha_1p2hfPRIXPE1ZciKSVpXI="></a>
                 <div class="ind">
                 <?php 
                 //  $count=0;
                     
-                     if(isset($_SESSION['totalitems'])){
-                    echo $_SESSION['totalitems'];
+                     if(isset($_SESSION['totalitem'])){
+                    echo $_SESSION['totalItem'];
                      }
                      
                      else{
-                        $_SESSION['totalitems']=0;
-                    echo $_SESSION['totalitems'];
+                        $_SESSION['totalItem']=0;
+                    echo $_SESSION['totalItem'];
 
                      }
                     
@@ -117,3 +117,4 @@ session_start();
     </div>
     
 </nav>
+

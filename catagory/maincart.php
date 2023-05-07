@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 include 'C:\xampp\htdocs\food2\navbar.php';
@@ -38,7 +39,7 @@ include 'C:\xampp\htdocs\food2\navbar.php';
             padding: 0;
             display: flex;
             flex-direction: column;
-            width: 65%;
+            width: 60%;
             height: 100%;
             overflow-y: auto;
             box-shadow: 0px 2px 4px #4C4543;
@@ -47,12 +48,15 @@ include 'C:\xampp\htdocs\food2\navbar.php';
 
         .left p {
             font-family: 'Righteous', cursive;
-            margin-left: 12px;
+            margin-right: 12px;
+            max-width:100px;
+            width:60px;
+
         }
 
         .right {
             width: 30%;
-            height: 100%;
+            height: 60%;
             box-shadow: 0px 2px 4px #4C4543;
             border-radius: 10px;
             font-family: 'Righteous', cursive;
@@ -66,7 +70,7 @@ include 'C:\xampp\htdocs\food2\navbar.php';
             border-radius: 20px;
             height: 100px;
             padding: 4px;
-            ;
+            width:96%;
             font-family: 'Teko', sans-serif;
             font-weight: 600;
             box-shadow: 0px 2px 3px #ACA7A6;
@@ -78,12 +82,12 @@ include 'C:\xampp\htdocs\food2\navbar.php';
 
         .itemslft {
             display: flex;
-            justify-content: flex-start;
-            width: 60%;
+            justify-content:space-around;
+            /* width: 60%; */
             height: 100%;
             margin-right: 20px;
             align-items: center;
-            object-fit: contain;
+            object-fit:fill;
 
         }
 
@@ -92,11 +96,13 @@ include 'C:\xampp\htdocs\food2\navbar.php';
 
 
         .itemslft img {
-            /* height:50px;
-            width:50px; */
-            /* margin-right: 12px; */
-
-            object-fit: fill;
+            padding: 4px;
+            
+            height:100px;
+            width:100px; 
+            margin-right: 12px 15px;
+            max-width: 100%;
+            object-fit:fill;
             border-radius: 20px;
             ;
         }
@@ -106,7 +112,7 @@ include 'C:\xampp\htdocs\food2\navbar.php';
             justify-content: space-between;
 
             align-items: center;
-            /* text-align: right; */
+            text-align: right;
 
         }
 
@@ -114,13 +120,17 @@ include 'C:\xampp\htdocs\food2\navbar.php';
 
         .prcode {
             margin: 20px 5px 10px 5px;
+            /* border:1px solid #4C4543; */
         }
 
         .prcode button {
             margin: 0;
-
+            /* padding:0; */
             background-color: #F45817;
             color: aliceblue;
+            border-radius: 5px;
+            height: 30px;
+            width: 30px;
         }
 
         .prcode input {
@@ -166,9 +176,10 @@ include 'C:\xampp\htdocs\food2\navbar.php';
             background-color: #F45817;
             color: aliceblue;
         }
-        .contform{
-            display:inline-block;
-            
+
+        .contform {
+            display: inline-block;
+
         }
     </style>
     <link rel="stylesheet" href="cat.css">
@@ -189,38 +200,51 @@ include 'C:\xampp\htdocs\food2\navbar.php';
     </div>
     <?php
 
-    //increase andd decrease the quantity
-    // if (isset($_POST['increase_quantity'])) {
-    //     // Get the item ID from the form
-    //     $item_id = $_POST['item_id'];
-    
-    //     // Increase the item quantity in the cart
-    //     $cart[$item_id]['quantity']++;
-    // }
-    
-    // if (isset($_POST['decrease_quantity'])) {
-    //     // Get the item ID from the form
-    //     $item_id = $_POST['item_id'];
-    
-    //     // Decrease the item quantity in the cart, but don't allow it to go below 1
-    //     if ($cart[$item_id]['quantity'] > 1) {
-    //         $cart[$item_id]['quantity']--;
-    //     }
-    // }
-    
+   
+    // increase andd decrease the quantity
+    if (isset($_POST['increase_quantity'])) {
+        // Get the item ID from the form
+        $ind=$_POST['itemIndex'];
+        $_SESSION['cart'][$ind]['quantity']++;
+
+        // Increase the item quantity in the cart
+        
+    }
+
+    if (isset($_POST['decrease_quantity'])) {
+        // Get the item ID from the form
+        $ind=$_POST['itemIndex'];
+        if($_SESSION['cart'][$ind]['quantity']==1){
+            unset($_SESSION['cart'][$ind]);
+        }
+        else{
+        $ind=$_POST['itemIndex'];
+        $_SESSION['cart'][$ind]['quantity']--;
+        }
+
+        // Decrease the item quantity in the cart, but don't allow it to go below 1
+       
+    }
+
     $subtotal = 0;
     echo '<div class="container">';
     echo '<div class="left">';
-    // $totalItem = count($_SESSION['cart']);
-    if(!isset($_SESSION['cart'])){
-        $_SESSION['cart'] = array();
-    }
+    if(!isset($_SESSION['totalItem'])){
+
     
+    $_SESSION['totalItem'] =0;
+    }
+    if (!isset($_SESSION['cart'])) {
+        echo "Your cart is empty";
+    }
+
     // echo (isset($_SESSION['cart']));
     if (isset($_SESSION['cart'])) {
         // for($i=0;$i<count($_SESSION['cart']);$i++){
         for ($j = 0; $j < count($_SESSION['cart']); $j++) {
+            if(isset($_SESSION['cart'][$j])==null) continue;
             $item = $_SESSION['cart'][$j];
+            $_SESSION['totalItem']++;
             $subtotal += ($item['price'] * $item['quantity']);
             echo '<div class="carditems">';
             echo    '<div class="itemslft">';
@@ -230,21 +254,31 @@ include 'C:\xampp\htdocs\food2\navbar.php';
 
             echo    '<div class="itemsright">';
 
-            
-            echo '      <div>';
-            echo '          <p>' . $_SESSION['cart']['price'] . '</p>';
+            echo '<div class="cartform prcode">
+                    <form method="post">
+                    
+                    <input type="hidden" name="itemIndex" value="'.$j.'">
+
+                    <button type="submit" title="decrease  quantity" name="decrease_quantity">-</button>
+                    <span style="margin:0px 5px;">'.$item['quantity'].'</span>
+                    
+                    <button type="submit" title="increase quantity" name="increase_quantity">+</button>
+                    </form>
+                </div>';
+             echo '      <div>';
+            echo '          <p>&#8377;' . $item['price'] . '</p>';
             echo '      </div>';
             echo '</div>';
-            
+            echo '</div>';
         }
-        echo '</div>';
+       
         echo '</div>';
         echo '<div class="right">';
-        
+
         echo '<div class="subtotal">';
         echo ' <div class="">';
         echo '<p>SubTotal</p>';
-        echo '<P>' . $subtotal . '</P>';
+        echo '<P>&#8377;' . $subtotal . '</P>';
         echo '</div>';
         echo '<div>';
         echo ' <p>Shipping-fees</p>';
@@ -259,7 +293,7 @@ include 'C:\xampp\htdocs\food2\navbar.php';
 
         echo '<div class="total">';
         echo '<p>Total</p>';
-        echo '<P>' . ($subtotal - 40 + 20) . '</P>';
+        echo '<P>&#8377;' . ($subtotal - 40 + 20) . '</P>';
         echo ' </div>';
         echo '<hr style="height:2px;border:none;background-color:#C1BBB8">';
         echo '<div class="placeorder">';
@@ -273,19 +307,7 @@ include 'C:\xampp\htdocs\food2\navbar.php';
 
 
 
-    <script>
-        let plus=document.querySelector('.plus');
-        let munus=document.querySelector('.munus');
-        plus.addEventListener('click',()=>{
-            <?php 
-                
-            ?>
-
-        });
-        minus.addEventListener('click',()=>{
-
-        });
-
+    
     </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
