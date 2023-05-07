@@ -88,10 +88,10 @@
         
         <div class="menu">
             <ul>
-                <li><i class="fa-solid fa-house fa-0.5x"></i> <a href="/rbh/home.php">Home</a></li>
-                <li><i class="fa-solid fa-magnifying-glass"></i><a href="/rbh/home.php">Search</a></li>
-                <li><i class="fa-solid fa-list-music"></i><a href="/rbh/home.php">Playlist</a></li>
-                <li><i class="fa-sharp fa-solid fa-list-music"></i><a href="/rbh/home.php">About</a></li>
+                <li><i class="fa-solid fa-house fa-0.5x"></i> <a href="/rbh2/home.php">Home</a></li>
+                <li><i class="fa-solid fa-magnifying-glass"></i><a href="/rbh2/home.php">Search</a></li>
+                <li><i class="fa-solid fa-list-music"></i><a href="/rbh2/home.php">Playlist</a></li>
+                <li><i class="fa-sharp fa-solid fa-list-music"></i><a href="/rbh2/home.php">About</a></li>
             </ul>
         </div>
     </div>

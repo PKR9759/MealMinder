@@ -3,7 +3,7 @@
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
-define('DB_NAME', 'RBH');
+define('DB_NAME', 'rbh2');
 
 /* Attempt to connect to MySQL/MariaDB database */
 $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
@@ -14,3 +14,4 @@ if ($link === false) {
 } else {
     echo "Welcome!";
 }
+?>

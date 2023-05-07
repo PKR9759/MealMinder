@@ -7,7 +7,7 @@ $_SESSION['token'] = $random_number;
     $server="localhost";
     $username="root";
     $pass="";
-    $db="rbh";
+    $db="rbh2";
 
     $conn=mysqli_connect($server,$username,$pass,$db);
     if(!$conn){

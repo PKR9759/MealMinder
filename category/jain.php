@@ -1,5 +1,5 @@
 <?php
-include 'C:\xampp\htdocs\rbh\navbar.php';
+include 'C:\xampp\htdocs\rbh2\navbar.php';
 ?>
 <!doctype html>
 <html lang="en">

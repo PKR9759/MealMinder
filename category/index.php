@@ -1,7 +1,4 @@
 <?php include "upload.php";
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,8 +57,9 @@
 <!-- Display response messages -->
 
 
-<?php if(!empty($resMessage)) {
-    echo $resMessage['message'];
-}
+<?php 
+// if(!empty($resMessage)) {
+//     echo $resMessage['message'];
+// }
 ?>
 

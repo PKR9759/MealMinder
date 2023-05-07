@@ -1,7 +1,6 @@
 <?php
 
 include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
-
 ?>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
@@ -64,7 +63,7 @@ foreach ($_SESSION['cart'] as $index => $item) {
         echo '<tr>';
         echo '<th scope="row">' . (count($unique_items)) . '</th>';
         echo '<td>' . $item['name'] . '</td>';
-        echo '<td>$' . $item['price'] . '</td>';
+        echo '<td>₹' . $item['price'] . '</td>';
         echo '<td><img src="' . $item['path'] . '" alt="' . $item['name'] . '" width="100px"></td>';
         echo '<td>' . $item['quantity'] . '</td>';
         echo '</tr>';
@@ -75,7 +74,7 @@ foreach ($_SESSION['cart'] as $index => $item) {
 echo '<tr>';
 echo '<th scope="row"></th>';
 echo '<td>Total Price</td>';
-echo '<td>$' . $total_price . '</td>';
+echo '<td>₹' . $total_price . '</td>';
 echo '<td></td>';
 echo '<td></td>';
 echo '</tr>';
@@ -97,6 +96,7 @@ var_dump($_SESSION['cart']);
 <button type="button" class="btn btn-danger" onclick="<?php session_destroy(); ?> window.location.reload();">Clear Cart</button>
 <script>
     function pay_now(){
+      
         var name = "user2";
         var amt = "<?php echo $total_price ?>";
 
@@ -125,3 +125,27 @@ console.log(response);
         rzp1.open();
     }
 </script>
+<?php
+        include 'config.php';
+        if (!isset($_SESSION['cart'])) {
+            // if not, create a new cart
+            $_SESSION['cart'] = array();
+        }
+        
+        // insert the cart items into the database
+        foreach ($_SESSION['cart'] as $item) {
+            $name = $item['name'];
+            $price = $item['price'];
+            $path = $item['path'];
+            $quantity = $item['quantity'];
+            $token=$_SESSION['token'];
+        
+            $sql = "INSERT INTO token (name,token_id, price, path, quantity) VALUES (?, ?, ?, ?,?)";
+            $stmt = mysqli_prepare($link, $sql);
+            mysqli_stmt_bind_param($stmt, "ssssi",$name, $token, $price, $path, $quantity);
+            mysqli_stmt_execute($stmt);
+        }
+        
+        // clear the cart after inserting into the database
+        unset($_SESSION['cart']);
+        ?>
