@@ -56,18 +56,16 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
       font-size: larger;
       font-family: 'DynaPuff', sans-serif;
     }
-    .recsec{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content:space-around;
-      /* grid-template-rows: repeat(4,1fr); */
-      /* flex-wrap: wrap; */
-    }
-    .card{
-      margin-top:20px;
-      border-radius: 20px; 
-      
-    }
+    .cardcont{
+            width:100vw;
+            display:grid;
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            /* grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(5,1fr); */
+        }
+   
   </style>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -163,85 +161,79 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
   <hr>
   <div class="recsec">
 
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood2-circle" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
+  <?php
+//connecting to the database
+$servername = "localhost";
+$username="root";
+$password="";
+$database="rbh2";
+//creating a connection
+$conn = mysqli_connect($servername,$username,$password,$database);
 
-      </div>
-    </div>
+if (!$conn) {
+    die("sorry we failed to connect:" . mysqli_connect_error());
+} else {
+    // echo "connected successfully  ";
+    echo "<br>";
+}
 
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood2-circle" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
+$rand=rand(1,4);
+echo $rand;
+//selecting data from the database
+if($rand==1){
+$sql = "SELECT * FROM `gujarati_items`";
+}
+elseif($rand==2){
+  $sql = "SELECT * FROM `punjabi_items`";
+}
+elseif($rand==3){
+  $sql = "SELECT * FROM `chinese_items`";
+}
+elseif($rand==4){
+  $sql = "SELECT * FROM `snacks`";
+}
 
-      </div>
-    </div>
 
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood2-circle" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
+$result = mysqli_query($conn,$sql);
 
-      </div>
-    </div>
+//find the number of records if greater than zero we will do further process
+$num = mysqli_num_rows($result);
+if ($num) {
+    // start of container
+    echo '<div class="recsec" >';
+    echo '<div class="cardcont" >';
 
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood2-circle" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
+    // loop through the records and create a card for each one
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo '<div class="card" style="width: 18rem;">';
+        echo '<img class="card-img-top" src="' . $row['file_path'] . '" alt="' . $row['name'] . '">';
+        echo '<div class="card-body">';
+        echo '<h5 class="card-title">' . $row['name'] . '</h5>';
+        
+        if ($row['aviability'] == 1) {
+            echo '<p class="card-text"><span class="stock green">In Stock</span> - Price: ' . $row['price'] . '</p>';
+            echo '<form method="POST" action="">';
+            echo '<input type="hidden" name="item_id" value="'.$row['id'].'">';
+            echo '<input type="hidden" name="item_name" value="'.$row['name'].'">';
+            echo '<input type="hidden" name="item_price" value="'.$row['price'].'">';
+            echo '<input type="hidden" name="path" value="'.$row['file_path'].'">';
+            echo '<input type="submit" class="btn btn-primary" name="buy_now" value="Buy Now">';
+            echo '</form>';
+        } else {
+            echo '<p class="card-text"><span class="stock red">Out of Stock</span></p>';
+        }
+        
+        echo '</div>';
+        echo '</div>';
+    }
+    
+}
 
-      </div>
-    </div>
+// $session_id = session_id(); // get the current session ID
+// echo "Session ID: " . $session_id;
+// var_dump($_SESSION);
+?>
 
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood2-circle" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-
-      </div>
-    </div>
-
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood2-circle" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-
-      </div>
-    </div>
-
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood2-circle" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-
-      </div>
-    </div>
-
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://source.unsplash.com/random/?Gujratifood2-circle" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-
-      </div>
-    </div>
 
   </div>
 
