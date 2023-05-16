@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Apr 28, 2023 at 01:27 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.0.25
+-- Host: 127.0.0.1
+-- Generation Time: Jun 05, 2023 at 10:51 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Gujarati_items`
+-- Table structure for table `chinese_items`
 --
 
-CREATE TABLE `Gujarati_items` (
+CREATE TABLE `chinese_items` (
   `id` int(11) NOT NULL,
   `file_path` varchar(255) NOT NULL,
   `name` varchar(60) NOT NULL,
@@ -37,10 +37,10 @@ CREATE TABLE `Gujarati_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `Gujarati_items`
+-- Dumping data for table `chinese_items`
 --
 
-INSERT INTO `Gujarati_items` (`id`, `file_path`, `name`, `price`, `description`, `aviability`) VALUES
+INSERT INTO `chinese_items` (`id`, `file_path`, `name`, `price`, `description`, `aviability`) VALUES
 (1, 'img_dir/samosa.png', 'Samosa', 20, '2 Samosa for 20 rupees', 1),
 (2, 'img_dir/thepala.jpg', 'Thepala', 10, '1 Thepalu for 10 rupees', 0),
 (3, 'img_dir/fafda.png', 'fafada', 50, '100 grams of 50 rupees', 0),
@@ -52,7 +52,86 @@ INSERT INTO `Gujarati_items` (`id`, `file_path`, `name`, `price`, `description`,
 (12, 'img_dir/Screenshot 2023-03-30 at 9.19.54 PM.png', 'testing', 100, '200', 0),
 (13, 'img_dir/pavbhaji.jpg', 'pavbhaji', 100, 'ok then', 1),
 (14, 'img_dir/Screenshot 2023-04-04 at 7.55.52 PM.png', 'test please', 100, 'done', 1),
-(15, 'img_dir/Screenshot 2023-03-17 at 8.46.44 AM.png', 'fafada', 1000, 'done', 1);
+(15, 'img_dir/Screenshot 2023-03-17 at 8.46.44 AM.png', 'fafada', 1000, 'done', 1),
+(16, 'img_dir/WhatsApp Image 2023-04-24 at 7.13.10 PM.jpeg', 'test 10', 14342, 'done bro', 1),
+(17, 'img_dir/WhatsApp Image 2023-02-26 at 6.55.10 PM.jpeg', 'test done', 123, '2345', 1),
+(18, 'img_dir/chavmin.jpeg', 'Chawmein', 75, '', 1),
+(19, 'img_dir/chinesebhel.jpeg', 'Chinese Bhel', 90, '', 1),
+(20, 'img_dir/chineseburger.webp', 'Chinese Burger', 120, '', 1),
+(21, 'img_dir/manchuriyan.jpeg', 'Veg Manchuriyan', 130, '', 1),
+(22, 'img_dir/noodles.jpeg', 'Noodles', 80, '', 1),
+(23, 'img_dir/pasta.jpg', 'Pasta', 85, '', 1),
+(24, 'img_dir/schezwanrice.webp', 'Schezwan Rice', 140, '', 1),
+(25, 'img_dir/springroll.jpeg', 'Spring Roll', 0, '', 1),
+(26, 'img_dir/momos.avif', 'Momos', 150, '', 1),
+(27, 'img_dir/chavmin.jpeg', 'Chawmein', 75, '', 1),
+(28, 'img_dir/chinesebhel.jpeg', 'Chinese Bhel', 90, '', 1),
+(29, 'img_dir/chineseburger.webp', 'Chinese Burger', 120, '', 1),
+(30, 'img_dir/manchuriyan.jpeg', 'Veg Manchuriyan', 130, '', 1),
+(31, 'img_dir/noodles.jpeg', 'Noodles', 80, '', 1),
+(32, 'img_dir/pasta.jpg', 'Pasta', 85, '', 1),
+(33, 'img_dir/schezwanrice.webp', 'Schezwan Rice', 140, '', 1),
+(34, 'img_dir/springroll.jpeg', 'Spring Roll', 130, '', 1),
+(35, 'img_dir/momos.avif', 'Momos', 150, '', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `id` int(4) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `feedback` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`id`, `name`, `email`, `feedback`) VALUES
+(1, 'lakhman', 'lakh@gmail.com', 'ok done testing'),
+(2, 'parmar lakhman', 'lakhman@gmail.com', 'done well done'),
+(3, 'parmar lakhman', 'lakhman@gmail.com', 'done well done'),
+(4, 'parmar lakhman', 'lakhman@gmail.com', 'done well done'),
+(9, 'bhima jadeja', 'bhima@gmail.com', 'salads bhai'),
+(10, 'bhima jadeja', 'bhima@gmail.com', 'salads bhai'),
+(11, 'lakhman', 'lakhmanparmar@gmail.com', 'Sudhar beaker'),
+(12, 'ramde', 'ramde@gmail.com', 'ok done'),
+(13, 'ramde', 'ramde@gmail.com', 'ok done'),
+(14, 'lakhman', 'lakhman@gmail.com', 'done');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gujarati_items`
+--
+
+CREATE TABLE `gujarati_items` (
+  `id` int(11) NOT NULL,
+  `file_path` varchar(255) NOT NULL,
+  `name` varchar(60) NOT NULL,
+  `price` int(10) NOT NULL,
+  `description` text NOT NULL,
+  `aviability` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `gujarati_items`
+--
+
+INSERT INTO `gujarati_items` (`id`, `file_path`, `name`, `price`, `description`, `aviability`) VALUES
+(4, 'img_dir/gujaratidish.png', 'Gujarati Thali', 80, 'including 4 roti 2 sabji and dal rice', 1),
+(6, 'img_dir/thepala.jpg', 'Thepala', 30, '3 Thepala For 30 Rupees', 0),
+(7, 'img_dir/dhokala.jpeg', 'Dhokala', 50, '\r\nA Dish of Dhokala', 1),
+(8, 'img_dir/khandavi.webp', 'Khadavi', 40, 'A Dish', 1),
+(9, 'img_dir/Khaman.jpeg', 'Khaman', 50, 'A Dish Of Khaman', 1),
+(11, 'img_dir/Chass.jpeg', 'Chass', 10, 'For A Glass', 1),
+(12, 'img_dir/Fafada.jpeg', 'Fafada', 30, 'Per 100 Gm', 1),
+(13, 'img_dir/Jalebi.jpeg', 'Jalebi', 50, 'For 100 gm', 1),
+(14, 'img_dir/dal-rice.jpeg', 'Dal Rice', 30, 'ok done', 1);
 
 -- --------------------------------------------------------
 
@@ -121,10 +200,46 @@ INSERT INTO `items` (`id`, `name`, `photo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Punjabi_items`
+-- Table structure for table `payment`
 --
 
-CREATE TABLE `Punjabi_items` (
+CREATE TABLE `payment` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `payment_id` varchar(100) NOT NULL,
+  `amount` int(5) NOT NULL,
+  `payment_status` varchar(20) NOT NULL,
+  `token` varchar(255) NOT NULL,
+  `added_on` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `payment`
+--
+
+INSERT INTO `payment` (`id`, `name`, `payment_id`, `amount`, `payment_status`, `token`, `added_on`) VALUES
+(1, 'sadflhas', 'pay_LkruFflGF6NU6G', 23, 'success', '', '2023-05-02 16:58:31'),
+(2, 'staff', 'pay_Ll2L7c461KZdRj', 5, 'success', '', '2023-05-03 03:10:54'),
+(3, 'lakhman', 'pay_LlG3OqlQm24WmN', 1000, 'success', '', '2023-05-03 16:35:57'),
+(4, 'lakhman', 'pay_Llfe50cTblifTt', 1000, 'success', '', '2023-05-04 17:37:55'),
+(5, 'lakhman', 'pay_LlfkDnv6VoFFRZ', 1000, 'success', '', '2023-05-04 17:43:42'),
+(6, 'Vaibhav', 'pay_LlfmTF7oQwBvDF', 999, 'success', '', '2023-05-04 17:45:58'),
+(7, 'user1', 'pay_Lm1Yj7klfPPyGy', 329, 'success', '', '2023-05-05 15:04:05'),
+(8, 'user2', 'kfsjdfowifsndnfowuieh', 233, 'successful', 'fsjhfoiwhefs23749klfdasjfhoafh', '2023-05-05 15:28:09'),
+(9, 'user2', 'pay_Lm21HiSFZYdj1v', 50, 'successful', '2dc206d91af6b6856cf95d59ccf18087', '2023-05-05 12:01:07'),
+(10, 'user2', 'pay_Lm26ubItpfkPl7', 50, 'success', '807396ea5c4b85709e143db19d1e0dbb', '2023-05-05 15:36:27'),
+(11, 'user2', 'pay_Lm2iGm5zO4ZIap', 260, 'success', '69e70e2b36b5970344e5c920495558b8', '2023-05-05 16:11:49'),
+(12, 'user2', 'pay_Lm2mbgxvBshc3e', 20, 'success', '3499ff579a15ffbf778a6356eb578b6f', '2023-05-05 16:16:00'),
+(13, 'user2', 'pay_Lm4au8jLp2SPC9', 414, 'success', 'cfd92845e5676a0a7b981f5387968e1b', '2023-05-05 18:02:14'),
+(14, 'user2', 'pay_LmEsuwMDnOI3az', 70, 'success', '0d822563fd9d5c15ca4eb10197fc2407', '2023-05-06 04:06:13');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `punjabi_items`
+--
+
+CREATE TABLE `punjabi_items` (
   `id` int(11) NOT NULL,
   `file_path` varchar(255) NOT NULL,
   `name` varchar(60) NOT NULL,
@@ -134,22 +249,97 @@ CREATE TABLE `Punjabi_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `Punjabi_items`
+-- Dumping data for table `punjabi_items`
 --
 
-INSERT INTO `Punjabi_items` (`id`, `file_path`, `name`, `price`, `description`, `aviability`) VALUES
-(1, 'img_dir/samosa.png', 'Samosa', 20, '2 Samosa for 20 rupees', 0),
-(2, 'img_dir/thepala.jpg', 'Thepala', 10, '1 Thepalu for 10 rupees', 0),
-(3, 'img_dir/fafda.png', 'fafada', 50, '100 grams of 50 rupees', 0),
-(4, 'img_dir/pavbhaji.jpg', 'Pavbhaji', 70, '1 time bhaji and 4 pice of big bread', 0),
-(5, 'img_dir/dhokala.jpg', 'Dhokla', 30, 'per plate', 0),
-(6, 'img_dir/panipuri.png', 'pani puri', 20, 'per plate', 0),
-(7, 'img_dir/Screenshot 2023-04-22 at 9.37.46 AM.png', 'test', 1000, 'ignore', 0),
-(8, 'img_dir/Screenshot 2023-04-22 at 12.34.55 PM.png', 'nothing', 100, 'something', 0),
-(9, 'img_dir/Screenshot 2023-04-21 at 8.37.25 AM.png', 'nothing', 100, 'something', 0),
-(10, 'img_dir/Screenshot 2023-04-21 at 8.37.25 AM.png', 'nothing', 100, 'something', 0),
-(11, 'img_dir/it\'sok.png', 'nothing', 23, 'something', 0),
-(12, 'abcd.jpeg', 'kuch ghi', 100, 'done', 1);
+INSERT INTO `punjabi_items` (`id`, `file_path`, `name`, `price`, `description`, `aviability`) VALUES
+(6, 'img_dir/aloo mutter.jpeg', 'Aloo Mutter', 40, 'ok', 1),
+(7, 'img_dir/jeera-aloo-recipe.jpg', 'Jeera Aloo', 40, 'jeera aloo', 1),
+(8, 'img_dir/veg kolhapuri.webp', 'veg kolhapuri', 50, 'veg kolhapuri', 1),
+(9, 'img_dir/veg kadai.webp', 'Veg Kadai', 80, 'veg kadai', 1),
+(10, 'img_dir/Veg Jaipuri.jpeg', 'Veg Jaipuri', 35, 'Veg Jaipuri', 1),
+(11, 'img_dir/Veg Singapuri.jpeg', 'Veg Singapuri', 80, 'Veg Singapuri', 1),
+(12, 'img_dir/paneer tikka sabji.jpeg', 'paneer tikka ', 80, 'paneer tikka ', 1),
+(13, 'img_dir/Paneer Bhurji.jpeg', 'Paneer Bhurji', 50, 'paneer bhurji', 1),
+(14, 'img_dir/Dal Fry.jpeg', 'Dal Fry', 60, 'Dal Fry', 1),
+(15, 'img_dir/Veg Pulav.jpeg', 'Veg Pulav', 40, 'ok done', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `snacks`
+--
+
+CREATE TABLE `snacks` (
+  `id` int(11) NOT NULL,
+  `file_path` varchar(255) NOT NULL,
+  `name` varchar(60) NOT NULL,
+  `price` int(10) NOT NULL,
+  `description` text NOT NULL,
+  `aviability` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `snacks`
+--
+
+INSERT INTO `snacks` (`id`, `file_path`, `name`, `price`, `description`, `aviability`) VALUES
+(1, 'img_dir/chai.jpg', 'Chai', 20, '', 1),
+(2, 'img_dir/chas.jpg', 'Masala Chas', 15, '', 1),
+(3, 'img_dir/chavanu.jpg', 'Chavanu (Nadiadi)', 130, '', 1),
+(4, 'img_dir/chips.jpg', 'Chips(Wafers)', 40, '', 1),
+(5, 'img_dir/coconutwater.webp', 'Coconut Water', 35, '', 1),
+(6, 'img_dir/coffee.jpeg', 'Cofee', 60, '', 1),
+(7, 'img_dir/fafda.png', 'Fafada', 60, '', 1),
+(8, 'img_dir/frenchfries.jpeg', 'French Fries', 130, '', 1),
+(9, 'img_dir/gathiya.jpg', 'Gathiya', 150, '', 1),
+(10, 'img_dir/lassi.jpg', 'Lassi (punjabi)', 30, '', 1),
+(11, 'img_dir/manchow.jpg', 'Manchow Soup', 120, '', 1),
+(12, 'img_dir/mazza.jpeg', 'Mazza', 40, '', 1),
+(13, 'img_dir/pepsi.png', 'Pepsi', 50, '', 1),
+(14, 'img_dir/sandwich.jpg', 'Sandwich', 110, '', 1),
+(15, 'img_dir/sarbat.webp', 'Sarbat', 20, '', 1),
+(16, 'img_dir/sprite.png', 'Sprite', 40, '', 1),
+(17, 'img_dir/cocacola.jpeg', 'Coca Cola', 40, '', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `south_items`
+--
+
+CREATE TABLE `south_items` (
+  `id` int(11) NOT NULL,
+  `file_path` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `name` varchar(60) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `price` int(10) NOT NULL,
+  `description` varchar(200) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `aviability` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `south_items`
+--
+
+INSERT INTO `south_items` (`id`, `file_path`, `name`, `price`, `description`, `aviability`) VALUES
+(1, 'img_dir/idli.jpg', 'Idli', 100, '', 1),
+(2, 'img_dir/coconutpak.jpeg', 'Coconut Pak', 220, '', 1),
+(3, 'img_dir/idli.jpg', 'Idli', 100, '', 1),
+(4, 'img_dir/coconutpak.jpeg', 'Coconut Pak', 220, '', 1),
+(5, 'img_dir/dosa.jpg', 'Masala Dosa', 150, '', 1),
+(6, 'img_dir/maisurpak.jpg', 'Mysore Pak', 0, '', 1),
+(7, 'img_dir/menduvada.webp', 'Mendu vada', 110, '', 1),
+(8, 'img_dir/mysoredosa.jpg', 'Mysore Dosa', 140, '', 1),
+(9, 'img_dir/pongal.jpg', 'Pongal', 230, '', 1),
+(10, 'img_dir/uttapam.jpeg', 'Uttapam', 55, '', 1),
+(11, 'img_dir/SoojiHalwa.webp', 'Sooji Hakwa', 0, '', 1),
+(12, 'img_dir/dosa.jpg', 'Masala Dosa', 150, '', 1),
+(13, 'img_dir/maisurpak.jpg', 'Mysore Pak', 270, '', 1),
+(14, 'img_dir/menduvada.webp', 'Mendu vada', 110, '', 1),
+(15, 'img_dir/mysoredosa.jpg', 'Mysore Dosa', 140, '', 1),
+(16, 'img_dir/pongal.jpg', 'Pongal', 230, '', 1),
+(17, 'img_dir/uttapam.jpeg', 'Uttapam', 55, '', 1),
+(18, 'img_dir/SoojiHalwa.webp', 'Sooji Hakwa', 160, '', 1);
 
 -- --------------------------------------------------------
 
@@ -173,16 +363,53 @@ INSERT INTO `users` (`sno`, `email`, `password`, `date`) VALUES
 (40, 'hotheebhai@gmail.com', '$2y$10$rriVTxpOrcyWm/yx.9jkouOZYbtBH2DDWCbUoV.6XH7.KITMXgHPW', '2023-04-15 15:54:51'),
 (41, 'vb@gmail.com', '$2y$10$bEHaWMKAJp7tdhymkCfj/eoo5e7CovBg/KH7eKkMHWnN58KJyd5le', '2023-04-17 21:01:07'),
 (42, 'utsav@gmail.com', '$2y$10$9E2.qkNqZsnHQLby0N/iuO4Y.BVkWis8IN9ZgVYYbuGYEtP0S/v/G', '2023-04-19 19:18:37'),
-(43, 'om@gmail', '$2y$10$jZz3UeJA6pROB7ahl3G/TOCY7Xx9CDbnSuuKgdJOWNK.CJkty.qhq', '2023-04-25 20:49:30');
+(43, 'om@gmail', '$2y$10$jZz3UeJA6pROB7ahl3G/TOCY7Xx9CDbnSuuKgdJOWNK.CJkty.qhq', '2023-04-25 20:49:30'),
+(44, 'hotheebhai123@gmail.com', '$2y$10$KX8x6ffhNRWPB2nztTtxB.jX8sBbXqCTNJ7a.A84P7pmcjg7eW6Py', '2023-04-29 16:13:30'),
+(45, 'om2@gmail.com', '$2y$10$1o3MUjsRgYAEbVnVGav/.OLso0vEEPQhZqcX73AOq2xm/kLiONqg6', '2023-04-29 16:16:19'),
+(46, 'lakhman@gmail.com', '$2y$10$GF9vCJtF4zbSBYVfb9A5PuWZkRQ5Uoysv28GHQi1mGI1Hd5fP1Nr2', '2023-05-04 17:33:02'),
+(47, '1@gmail.com', '$2y$10$w40bBTbcUhBeUoAAm8TmWOs30B/uugxpi/bk41E.F8UWLoOaPoISK', '2023-05-04 22:03:18'),
+(48, 'lakhman1@gmail.com', '$2y$10$MTB/LZUor4LuKX7fFHRG5.nqEZy2ldgcK/qJ/mghkqthlITc97zKe', '2023-05-05 18:57:01'),
+(49, '1234@gmail.com', '$2y$10$DFGiLQ91HzPZntZQ0M/ZxeVZ3mI0vB..g.W6mwjLvTV/iIpQaf9WS', '2023-05-05 21:41:13'),
+(50, '123@gmail.com', '$2y$10$n2vwvmEarDz9FrcrCZPBIOq.43AF7NOSa5e8vzuj3taZ2XoWGkDvK', '2023-05-06 10:38:33'),
+(51, 'kuli@m', '$2y$10$UpkYnf6KPMAWPui1bRfpYegiBURsUAWfkmjAUaMbXs5QqVC6ia5vy', '2023-05-06 11:36:10'),
+(52, 'kupl@mail', '$2y$10$0v/mZHzWTcyyVBLbhHkUpuOU3z9/Ek2j00YMZfzS2GfhrbTqVVn4q', '2023-05-06 13:34:29'),
+(53, 'wded@m', '$2y$10$7kM3LsmmfqdfYBADkH8RDOnpO60509Ns5ACBkOyiHkqX0zMv4do0u', '2023-05-06 23:02:33'),
+(54, 'k@M', '$2y$10$p4O/dM41yUOax4.PTnyuGeWds8ydqfxH7cMdJR5l0DSXmfWodxWP2', '2023-05-09 09:57:27'),
+(55, 'kul@mail.com', '$2y$10$HsC.SPgBQd/3Ikblebukw.yTtUQtGCFCYZfA0jC39uHL3fo4FAYi6', '2023-05-09 14:06:18'),
+(56, 'j@m', '$2y$10$Wi.slIiH/R2w9rRFiduzQOWeg6zxJWBYMxz9ED.2P5/STZ3TXWQtu', '2023-05-09 14:07:27'),
+(57, 'j@ma', '$2y$10$K2gKg6p3BumHCX6y47xohu...HmZplSx2xDhzkCVl9Z1zEk2ewrXa', '2023-05-09 14:09:24'),
+(58, 'j@mail', '$2y$10$GCyLnZxtCK2fIr9pryYBqOOUL4/cIviMkwKcokZEaWsVzkxez.cEC', '2023-05-09 14:11:39'),
+(59, 'kul@maaa', '$2y$10$DyymlNMEg3mBHxq66yki7eDRxD5RQt2FJY4grbFoevq.mAeHQEQki', '2023-05-09 14:13:10'),
+(60, 'kul@maaai', '$2y$10$09E1Ms7Vg/ooQhBGo.fbD.eZxxZ8oV67awiNaKFejP3fJFWQcR9H6', '2023-05-09 14:16:36'),
+(61, 'coco2004592@g', '$2y$10$mCwoBUWrBnKafm5lQd9yku6NYd6v2HWe8b/7y3iDp9gL0olBGjChS', '2023-05-09 19:29:36'),
+(62, 'kul@m', '$2y$10$V6b0/ukl5KMlJa1oT4IszeOnR6zlWRMeO4HBUyVT3QtUyoS9RKUkK', '2023-05-13 09:43:46'),
+(63, 'kuldi@gn', '$2y$10$ERnX9TdFbGQayE3h1ax6kuLeM2L1kYjdiy15I/7tLIPyqkgwcnXBa', '2023-05-13 10:43:59'),
+(64, 'ku@m', '$2y$10$iZOZhwCVO94U0PlAcy/FAe6VsX13.c.09pnzAIzhvTtxMlvOljSkC', '2023-05-13 10:45:58'),
+(65, 'kul@mmmm', '$2y$10$WUlDxqW8.jcoszCMBbRBAe6Ipm1r.q1Hy.4DuAkeHwfpF3Bk7EOC2', '2023-05-14 10:01:38'),
+(66, 'kullllllll2MEW@fdsd', '$2y$10$PeCfG6QccUZbEC/LLj.EperGnmWzZ8V0VCOUoyd2Gg.vDkF2/cBey', '2023-05-16 12:47:01'),
+(67, 'kul@gg', '$2y$10$e7qgj81eArUPyPBptWRLOuBp2t6IS/OGwADo6R4PNCThtr7/0Cwya', '2023-06-03 02:21:49'),
+(68, 'kul@gggg', '$2y$10$OKmaSP94DbeDCKbic9bnGeO2E6yXWLzctysgQI/of6YX8ceAbsE66', '2023-06-03 14:11:36');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `Gujarati_items`
+-- Indexes for table `chinese_items`
 --
-ALTER TABLE `Gujarati_items`
+ALTER TABLE `chinese_items`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `gujarati_items`
+--
+ALTER TABLE `gujarati_items`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -198,9 +425,27 @@ ALTER TABLE `items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `Punjabi_items`
+-- Indexes for table `payment`
 --
-ALTER TABLE `Punjabi_items`
+ALTER TABLE `payment`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `punjabi_items`
+--
+ALTER TABLE `punjabi_items`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `snacks`
+--
+ALTER TABLE `snacks`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `south_items`
+--
+ALTER TABLE `south_items`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -214,9 +459,21 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `Gujarati_items`
+-- AUTO_INCREMENT for table `chinese_items`
 --
-ALTER TABLE `Gujarati_items`
+ALTER TABLE `chinese_items`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+
+--
+-- AUTO_INCREMENT for table `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT for table `gujarati_items`
+--
+ALTER TABLE `gujarati_items`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
@@ -232,16 +489,34 @@ ALTER TABLE `items`
   MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `Punjabi_items`
+-- AUTO_INCREMENT for table `payment`
 --
-ALTER TABLE `Punjabi_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+ALTER TABLE `payment`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT for table `punjabi_items`
+--
+ALTER TABLE `punjabi_items`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `snacks`
+--
+ALTER TABLE `snacks`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `south_items`
+--
+ALTER TABLE `south_items`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

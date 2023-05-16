@@ -1,15 +1,16 @@
+<?php
+include '/Applications/XAMPP/xamppfiles/htdocs/food2/loginsystem/conn.php';
+include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Payment Confirmation</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   
     <style>
-        body {
-            background-color: #f8f9fa;
-            padding: 20px;
-        }
-
         .container {
+           align-items: center;
             max-width: 900px;
             margin: 0 auto;
             text-align: center;
@@ -33,11 +34,37 @@
 <body>
     <div class="container">
         <h1>Payment Done</h1>
-        <h2>Your Order ID is:</h2>
+        <h2>Your Order ID is:
         <?php
-        session_start();
-        echo '<h2>' . $_SESSION['token'] . '</h2>';
+       if (!$order_placed) {
+        $order_id = 1;
+        $userNamesQuery = "SELECT name_user FROM orders ORDER BY id";
+        
+        // Execute the query
+        $result = $conn->query($userNamesQuery);
+
+        if ($result->num_rows > 0) {
+            $previousUserName = "";
+            while ($row = $result->fetch_assoc()) {
+                $currentUserName = $row['name_user'];
+
+                if ($previousUserName !== $currentUserName) {
+                    // Perform your desired action when the name changes
+                    $order_id++;
+                }
+
+                // Assign the current name as the previous name for the next iteration
+                $previousUserName = $currentUserName;
+            }
+            echo $order_id;
+        } 
+        // Free the result set
+        $result->free_result();
+       }
+      
+
         ?>
+        </h2>
     </div>
 </body>
 </html>

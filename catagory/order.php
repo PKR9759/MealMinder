@@ -1,11 +1,12 @@
 <?php
 include '/Applications/XAMPP/xamppfiles/htdocs/food2/loginsystem/conn.php';
 include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
+$oreder_placed=0;
 ?>
 
 <?php
 // Check if the data has already been inserted
-if (!isset($_SESSION['order_placed'])) {
+if (!$oreder_placed) {
     // Fetch values from the session cart and insert them into the table
     if (isset($_SESSION['cart'])) {
         foreach ($_SESSION['cart'] as $item) {
@@ -29,7 +30,8 @@ if (!isset($_SESSION['order_placed'])) {
 
             // Execute the prepared statement
             if ($stmt->execute()) {
-                echo "New record inserted successfully";
+             
+               header('location:/food2/catagory/payment_success.php');
             } else {
                 echo "Error inserting record: " . $stmt->error;
             }
@@ -38,8 +40,11 @@ if (!isset($_SESSION['order_placed'])) {
             $stmt->close();
         }
 
-        // Set the session variable to indicate that the order has been placed
-        $_SESSION['order_placed'] = true;
+       
+       
+      $oreder_placed=1;
+      unset($_SESSION['totalItem']);
+      unset($_SESSION['cart']);
     }
 }
 

@@ -103,18 +103,6 @@ if(!isset($_SESSION['logedin']) || !$_SESSION['logedin']){
                 <div class="ind">
                 <?php 
                 echo (isset($_SESSION['totalItem'])) ?$_SESSION['totalItem'] : 0;
-                //  $count=0;
-                //  if(isset($_SESSION['cart'])){
-                //  foreach( $_SESSION['cart'] as $item)
-                //     {
-                //       $count++;
-                //     }
-                //     if(count($_SESSION['cart'])>1){
-                //         $count-=1;
-                //     }
-                // }
-                // echo $count;
-                    
                 ?>
                 </div>
         </div>

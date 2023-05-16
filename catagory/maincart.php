@@ -195,16 +195,7 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
    </script>
     <title>punjabi</title>
 </head>
-
 <body>
-
-
-
-
-
-
-
-
 <?php
 if (isset($_POST['increase_quantity'])) {
     // Get the item ID from the form
@@ -249,7 +240,7 @@ if (isset($_POST['decrease_quantity'])) {
     echo '<div class="container">';
     echo '<div class="left">';
     // echo (isset($_SESSION['cart']));
-    
+   
     if (isset($_SESSION['cart'])) {
         
         
