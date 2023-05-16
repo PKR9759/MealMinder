@@ -5,6 +5,18 @@ $login = true;
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     if (isset($_POST['submit'])) {
+        if ($_POST['drop'] === "Admin") {
+            include 'conn.php';
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            if($email=="admin123@gmail.com" && $password=="admin123") {
+                header('location:\food2\admin\home.php');
+            }
+            else{
+                $login=false;
+            }
+        }
+        else{
         include 'conn.php';
         $email = $_POST['email'];
         $password = $_POST['password'];
@@ -28,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 }
 
 
-                header('location:\rbh\homepage\home.php');
+                header('location:\food2\homepage\home.php');
 
                 exit();
             }
@@ -36,6 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $login = false;
         }
     }
+}
 }
 ?>
 
@@ -67,7 +80,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             border-radius: 15px;
         }
 
-        input[type="email"],input[type="password"] {
+        input[type="email"],
+        input[type="password"],
+        select {
             width: 100%;
             padding: 10px;
             margin: 12px 0px;
@@ -77,7 +92,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             background-color: #E8E4E1;
         }
 
-        input:focus {
+        input,
+        select:focus {
             outline: none;
             border: 2px solid #f49644;
         }
@@ -97,15 +113,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             background-color: #cf7c34;
         }
 
-       
 
-        
-        .rem input,.rem label{
-            display:inline;
+
+
+        .rem input,
+        .rem label {
+            display: inline;
         }
 
-        #submit{
-        color: #fff;
+        #submit {
+            color: #fff;
             background-color: #f49644;
             border: none;
             border-radius: 18px;
@@ -113,12 +130,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             cursor: pointer;
             transition: all 0.2s ease-in-out;
             margin: 7% 0px 0px 6%;
-            width:30%;
-       }
-       #submit:hover{
-        background-color: #cf7c34;
-       }
+            width: 30%;
+        }
 
+        #submit:hover {
+            background-color: #cf7c34;
+        }
     </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -135,26 +152,38 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 echo "
             <p style='color:white;background-color:red;padding:3px;'>invalid Details </p>
             ";
-           
+
                 $login = true;
             }
             ?>
             <div>
+                <div class="dropdown">
+
+
+                    <select name="drop"required>
+                        <option value="" disabled selected>Who are You:</option>
+                        <option value="User">User</option>
+                        <option value="Admin">Admin</option>
+
+                    </select>
+
+                </div>
+            </div>
             <input type="email" id="email" name="email" placeholder="E-mail" required>
             <input type="password" id="password" name="password" placeholder="Password " required>
             <div>
-            <br>
-            <div class="rem">
-                <input type="checkbox" id="remember-me" name="rme">
-                <label for="remember-me">Remember me</label>
-            </div>
-            <div>
-            <button type="submit" id="submit" name="submit">Login</button>
-            </div>   
-            <br><br>
-            <div>
-            <a href=" signup.php">Not Have An Account , Sign-Up first</a>
-            </div>
+                <br>
+                <div class="rem">
+                    <input type="checkbox" id="remember-me" name="rme">
+                    <label for="remember-me">Remember me</label>
+                </div>
+                <div>
+                    <button type="submit" id="submit" name="submit">Login</button>
+                </div>
+                <br><br>
+                <div>
+                    <a href=" signup.php">Not Have An Account , Sign-Up first</a>
+                </div>
         </form>
     </div>
 </body>

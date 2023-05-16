@@ -8,6 +8,7 @@ include 'C:\xampp\htdocs\food2\navbar.php';
 
 <head>
     <style>
+        
         .cardcont {
             width: 100vw;
             display: grid;
@@ -54,6 +55,9 @@ include 'C:\xampp\htdocs\food2\navbar.php';
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap|Fjalla+One&display=swap" rel="stylesheet">
+    <script>
+    if(window.history.replaceState) window.history.replaceState(null, null,window.location.href);
+   </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>guj</title>
 </head>
@@ -70,8 +74,9 @@ include 'C:\xampp\htdocs\food2\navbar.php';
     <div class="recsec">
 
         <?php
-
-        // session_start();
+        if(session_status() !== PHP_SESSION_ACTIVE){
+        session_start();
+        }
         //connecting to the database
         $servername = "localhost";
         $username = "root";
@@ -90,15 +95,17 @@ include 'C:\xampp\htdocs\food2\navbar.php';
         //add to cart scripts
         if(!isset($_SESSION['totalItems'])){
             $_SESSION['totalItems'] = 0;
-            }
-        if (isset($_POST['addcart'])) {
+        }
+        if($_SERVER['REQUEST_METHOD']=='POST'){
+        if (isset($_POST['addcart']) ) {
 
-            if (!isset($_SESSION['cart']) || !is_array($_SESSION['cart']) || empty($_SESSION['cart'])) {
-                $_SESSION['cart'] =array();
-            }
+            // if (!isset($_SESSION['cart']) || !is_array($_SESSION['cart']) || empty($_SESSION['cart'])) {
+            //     $_SESSION['cart'] =array();
+            // }
                 
+                
+            $myItems = isset($_SESSION['cart']) ? array_column($_SESSION['cart'], 'name') : array();
 
-                $myItems=array_column($_SESSION['cart'],'name');
                 if(in_array($_POST['name'],$myItems)){
                     echo'<script >alert("This item is already Exist in cart");</script>';
                 }
@@ -108,35 +115,35 @@ include 'C:\xampp\htdocs\food2\navbar.php';
                     'id' => $_POST['id'],
                     'name' => $_POST['name'],
                     'price' => $_POST['price'],
-                    'file_path' => $_POST['file_path'],
-                    // 'available' =>  $_POST['available'],
+                    'path' => $_POST['file_path'],
+                    'available' =>  $_POST['available'],
                     'quantity' => 1
 
                 );
                 $_SESSION['totalItems']++;
                 // $count++;
                 $_SESSION['cart'][] = $item;
+                // echo "<script>location.reload();</script>";
                 echo '<script >alert("Item Successfully added to Cart");</script>';
                 
-                //  header('Location: ["PHP_SELF"]');
+               
                 // exit();
             }
         }
     
 
-
+    }
 
         $sql = "SELECT * FROM `gujarati_items`";
         $result = mysqli_query($conn, $sql);
 
-        //find the number of records if greater than zero we will do further process
-        $num = mysqli_num_rows($result);
-        if ($num) {
+        
             // start of container
             echo '<div class="recsec" >';
             echo '<div class="cardcont"">';
             // loop through the records and create a card for each one
-            while ($row = mysqli_fetch_assoc($result)) {
+           
+            while (($row = mysqli_fetch_assoc($result) ) ) {
 
                 echo '<div class="card" style="width: 18rem;">';
                 echo '<img class="card-img-top" src="' . $row['file_path'] . '" alt="' . $row['name'] . '">';
@@ -164,10 +171,12 @@ include 'C:\xampp\htdocs\food2\navbar.php';
                 echo '</div>';
                 echo '</div>';
             }
+        
+       
 
             echo '</div>';
             echo '</div>';
-        }
+        
         ?>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

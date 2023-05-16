@@ -1,11 +1,15 @@
 <?php
 if(session_status() !== PHP_SESSION_ACTIVE){
-session_start();
+    session_start();
+    }
+if(!isset($_SESSION['logedin']) || !$_SESSION['logedin']){
+    header("location:/food2/loginsystem/login.php");
+    exit();
 }
+
 ?>
 <head>
     
-    <!-- Add the Tailwind CSS CDN -->
   
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -98,17 +102,13 @@ session_start();
                <a class="cartbtn" href="/food2/catagory/maincart.php"  style="background-color:#E56C23;"> <img style="  height:40px ; width:40px ;margin-right:20px;" src="https://media.istockphoto.com/id/469047076/vector/white-icon-of-a-shopping-cart-on-orange-background.jpg?s=170667a&w=0&k=20&c=5OH1VrFlZ-Ndu1fL1h_ha_1p2hfPRIXPE1ZciKSVpXI="></a>
                 <div class="ind">
                 <?php 
-                //  $count=0;
-                    
-                     if(isset($_SESSION['totalitem'])){
-                    echo $_SESSION['totalItem'];
-                     }
-                     
-                     else{
-                        $_SESSION['totalItem']=0;
-                    echo $_SESSION['totalItem'];
-
-                     }
+                
+                 $count=0;
+                 foreach( $_SESSION['cart'] as $item)
+                    {
+                      $count++;
+                    }
+                      echo $count;
                     
                 ?>
                 </div>

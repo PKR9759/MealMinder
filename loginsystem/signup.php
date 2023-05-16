@@ -1,5 +1,6 @@
 
 <?php
+session_start();
  $exist= false;
  $passSame = false;
  $showSucess = false;
@@ -16,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         if ($password == $cpassword) {
            
             $passSame = true;
+           
         }
         else{
             $passSame=false;
@@ -34,7 +36,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $sql = " INSERT INTO `users` ( `email`, `password`, `date`) VALUES ( '$email', '$hash', current_timestamp())";
 
             if (($result = mysqli_query($conn, $sql))) {
-                 $showSucess = true;   
+                 $showSucess = true;
+                 
+                 $_SESSION['logedin'] = true;  
             }
             else
                 die("something Wrong");
@@ -127,8 +131,8 @@ $showSucess=false;
 ?>
 <script>
 setTimeout(function() {
-  window.location.href = "/food2/homepage/home.php";
-}, 2000); // 2000 milliseconds = 2 seconds
+  window.location.replace ( "/food2/homepage/home.php");
+}, 2000); 
 </script>
 <?php
 }

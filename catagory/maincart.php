@@ -56,7 +56,7 @@ include 'C:\xampp\htdocs\food2\navbar.php';
 
         .right {
             width: 30%;
-            height: 60%;
+            height: 70%;
             box-shadow: 0px 2px 4px #4C4543;
             border-radius: 10px;
             font-family: 'Righteous', cursive;
@@ -100,7 +100,7 @@ include 'C:\xampp\htdocs\food2\navbar.php';
             
             height:100px;
             width:100px; 
-            margin-right: 12px 15px;
+            margin-right:15px;
             max-width: 100%;
             object-fit:fill;
             border-radius: 20px;
@@ -190,7 +190,9 @@ include 'C:\xampp\htdocs\food2\navbar.php';
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+   <script>
+    if(window.history.replaceState) window.history.replaceState(null, null,window.location.href);
+   </script>
     <title>punjabi</title>
 </head>
 
@@ -202,53 +204,26 @@ include 'C:\xampp\htdocs\food2\navbar.php';
 
    
     // increase andd decrease the quantity
-    if (isset($_POST['increase_quantity'])) {
-        // Get the item ID from the form
-        $ind=$_POST['itemIndex'];
-        $_SESSION['cart'][$ind]['quantity']++;
-
-        // Increase the item quantity in the cart
-        
-    }
-
-    if (isset($_POST['decrease_quantity'])) {
-        // Get the item ID from the form
-        $ind=$_POST['itemIndex'];
-        if($_SESSION['cart'][$ind]['quantity']==1){
-            unset($_SESSION['cart'][$ind]);
-        }
-        else{
-        $ind=$_POST['itemIndex'];
-        $_SESSION['cart'][$ind]['quantity']--;
-        }
-
-        // Decrease the item quantity in the cart, but don't allow it to go below 1
-       
-    }
+    
 
     $subtotal = 0;
+    
+    $emp=array();
     echo '<div class="container">';
     echo '<div class="left">';
-    if(!isset($_SESSION['totalItem'])){
-
-    
-    $_SESSION['totalItem'] =0;
-    }
-    if (!isset($_SESSION['cart'])) {
-        echo "Your cart is empty";
-    }
-
     // echo (isset($_SESSION['cart']));
+    
     if (isset($_SESSION['cart'])) {
+        
         // for($i=0;$i<count($_SESSION['cart']);$i++){
-        for ($j = 0; $j < count($_SESSION['cart']); $j++) {
-            if(isset($_SESSION['cart'][$j])==null) continue;
-            $item = $_SESSION['cart'][$j];
-            $_SESSION['totalItem']++;
+        foreach ($_SESSION['cart'] as $key=> $item) {
+           if(!($item===$emp)) {
+            
+            
             $subtotal += ($item['price'] * $item['quantity']);
             echo '<div class="carditems">';
             echo    '<div class="itemslft">';
-            echo        ' <img src="' . $item['file_path'] . '">';
+            echo        ' <img src="' . $item['path'] . '">';
             echo         '<p>' . $item['name'] . '</p>';
             echo    '</div>';
 
@@ -257,7 +232,7 @@ include 'C:\xampp\htdocs\food2\navbar.php';
             echo '<div class="cartform prcode">
                     <form method="post">
                     
-                    <input type="hidden" name="itemIndex" value="'.$j.'">
+                    <input type="hidden" name="itemIndex" value="'.$key.'">
 
                     <button type="submit" title="decrease  quantity" name="decrease_quantity">-</button>
                     <span style="margin:0px 5px;">'.$item['quantity'].'</span>
@@ -270,15 +245,15 @@ include 'C:\xampp\htdocs\food2\navbar.php';
             echo '      </div>';
             echo '</div>';
             echo '</div>';
-        }
-       
+        }}
+    
         echo '</div>';
         echo '<div class="right">';
 
         echo '<div class="subtotal">';
         echo ' <div class="">';
         echo '<p>SubTotal</p>';
-        echo '<P>&#8377;' . $subtotal . '</P>';
+        echo '<P>&#8377;' .$subtotal . '</P>';
         echo '</div>';
         echo '<div>';
         echo ' <p>Shipping-fees</p>';
@@ -286,14 +261,15 @@ include 'C:\xampp\htdocs\food2\navbar.php';
         echo ' </div>';
         echo '<div class="">';
         echo ' <p>Discount</p>';
-        echo '<P>-' . '&#8377;' . '40</P>';
+        $disc=20;
+        echo '<P>-' . '&#8377;' .$disc. '</P>';
         echo '</div>';
         echo ' </div>';
         echo '<hr style="height:3px;border:none;background-color:#C1BBB8">';
 
         echo '<div class="total">';
         echo '<p>Total</p>';
-        echo '<P>&#8377;' . ($subtotal - 40 + 20) . '</P>';
+        echo '<P>&#8377;' . ($subtotal - $disc + 20) . '</P>';
         echo ' </div>';
         echo '<hr style="height:2px;border:none;background-color:#C1BBB8">';
         echo '<div class="placeorder">';
@@ -307,13 +283,40 @@ include 'C:\xampp\htdocs\food2\navbar.php';
 
 
 
+    <?php
+if (isset($_POST['increase_quantity'])) {
+    // Get the item ID from the form
+    $ind=$_POST['itemIndex'];
+    $_SESSION['cart'][$ind]['quantity']++;
+
+    // Increase the item quantity in the cart
     
+}
+
+if (isset($_POST['decrease_quantity'])) {
+    // Get the item ID from the form
+    $ind=$_POST['itemIndex'];
+    if($_SESSION['cart'][$ind]['quantity']==1){
+        unset($_SESSION['cart'][$ind]);
+        $_SESSION['cart']=array_values($_SESSION['cart']);
+        $_SESSION['totalItem']--;
+    }
+    else{
+    $ind=$_POST['itemIndex'];
+    $_SESSION['cart'][$ind]['quantity']--;
+    }
+
+    // Decrease the item quantity in the cart, but don't allow it to go below 1
+   
+}
+    ?>
     </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
