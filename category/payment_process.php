@@ -27,6 +27,17 @@ if(isset($_POST['payment_id'])&&isset($_POST['amt'])&&isset($_POST['name'])){
     mysqli_query($conn,"insert into payment(name,payment_id,amount,payment_status,token,added_on) values('$name','$payment_id','$amt','$payment_status','$token',current_timestamp())");
 }
 // INSERT INTO `payment` (`id`, `name`, `payment_id`, `amount`, `payment_status`, `added_on`) VALUES (NULL, 'lakhman', 'shfdlhsalf@okdsf', '10', 'success', current_timestamp());
+foreach ($_SESSION['cart'] as $item) {
+    $name = $item['name'];
+    $price = $item['price'];
+    $path = $item['path'];
+    $quantity = $item['quantity'];
+    $token=$_SESSION['token'];
+    $sql = "INSERT INTO token (name,token_id, price, path, quantity) VALUES (?, ?, ?, ?,?)";
+    $stmt = mysqli_prepare($link, $sql);
+    mysqli_stmt_bind_param($stmt, "ssssi",$name, $token, $price, $path, $quantity);
+    mysqli_stmt_execute($stmt);
+}
 ?>
 
 

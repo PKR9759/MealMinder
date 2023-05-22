@@ -127,11 +127,7 @@ console.log(response);
 </script>
 <?php
         include 'config.php';
-        if (!isset($_SESSION['cart'])) {
-            // if not, create a new cart
-            $_SESSION['cart'] = array();
-        }
-        
+      
         // insert the cart items into the database
         foreach ($_SESSION['cart'] as $item) {
             $name = $item['name'];
@@ -139,7 +135,6 @@ console.log(response);
             $path = $item['path'];
             $quantity = $item['quantity'];
             $token=$_SESSION['token'];
-        
             $sql = "INSERT INTO token (name,token_id, price, path, quantity) VALUES (?, ?, ?, ?,?)";
             $stmt = mysqli_prepare($link, $sql);
             mysqli_stmt_bind_param($stmt, "ssssi",$name, $token, $price, $path, $quantity);
@@ -147,5 +142,5 @@ console.log(response);
         }
         
         // clear the cart after inserting into the database
-        unset($_SESSION['cart']);
+
         ?>
