@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 16, 2023 at 03:01 PM
+-- Generation Time: May 22, 2023 at 06:51 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -174,27 +174,14 @@ CREATE TABLE `payment` (
 --
 
 INSERT INTO `payment` (`id`, `name`, `payment_id`, `amount`, `payment_status`, `token`, `added_on`) VALUES
-(8, 'user2', 'kfsjdfowifsndnfowuieh', 233, 'successful', 'fsjhfoiwhefs23749klfdasjfhoafh', '2023-05-05 15:28:09'),
-(9, 'user2', 'pay_Lm21HiSFZYdj1v', 50, 'successful', '2dc206d91af6b6856cf95d59ccf18087', '2023-05-05 12:01:07'),
-(10, 'user2', 'pay_Lm26ubItpfkPl7', 50, 'success', '807396ea5c4b85709e143db19d1e0dbb', '2023-05-05 15:36:27'),
-(11, 'user2', 'pay_Lm2iGm5zO4ZIap', 260, 'success', '69e70e2b36b5970344e5c920495558b8', '2023-05-05 16:11:49'),
-(12, 'user2', 'pay_Lm2mbgxvBshc3e', 20, 'success', '3499ff579a15ffbf778a6356eb578b6f', '2023-05-05 16:16:00'),
-(13, 'user2', 'pay_Lm4au8jLp2SPC9', 414, 'success', 'cfd92845e5676a0a7b981f5387968e1b', '2023-05-05 18:02:14'),
-(14, 'user2', 'pay_LmEsuwMDnOI3az', 70, 'success', '0d822563fd9d5c15ca4eb10197fc2407', '2023-05-06 04:06:13'),
-(15, 'user2', 'pay_LmRjncmemTnToG', 110, 'success', 'd6e7bd3aca35a70c3191f2c7f1b485e8', '2023-05-06 16:40:37'),
-(16, 'user2', 'pay_LmSG3dUIGpa1aT', 100, 'success', '8f86b68f99f724ea46381f3bf012f6fc', '2023-05-06 17:11:08'),
-(17, 'user2', 'pay_LmSJzeI36EF6NV', 280, 'success', '0f81efae2d3ada62b2208b530c89a820', '2023-05-06 17:14:52'),
-(18, 'user2', 'pay_LmSMYuNvQS6MT3', 249, 'success', '9acd09f9c8b6991cfb734e9dbd3acd05', '2023-05-06 17:17:18'),
-(19, 'user2', 'pay_LmSOxEw2twNDxT', 30, 'success', '4296c050a9ef05b0a56b5f0994e56719', '2023-05-06 17:19:35'),
-(20, 'user2', 'pay_LmSPmSEqvdh56G', 30, 'success', '133b3752e52bae42230364cb720f81f7', '2023-05-06 17:20:20'),
-(21, 'user2', 'pay_LmT4T9fMI1K0Ct', 364, 'success', '64126291a78b0949415681f9c9e8446d', '2023-05-06 17:58:52'),
-(22, 'user2', 'pay_LmT9c0K3iRDMce', 130, 'success', 'ed164c2412284ebffb9b5fe457b207b9', '2023-05-06 18:03:43'),
-(23, 'user2', 'pay_LnyQCczD3x2Te6', 309, 'success', '98b9b1c82f99a4dbd10268497a56f4fd', '2023-05-10 13:17:56'),
-(24, 'user2', 'pay_LoEWFXx6whEu9m', 150, 'success', '3423c8199b1e39e91245326376364445', '2023-05-11 05:02:46'),
-(25, 'user2', 'pay_LofXYlvAY3kwHH', 180, 'success', '3a6802517c3f6f02fcb69e5803b53fff', '2023-05-12 07:28:45'),
-(26, 'user2', 'pay_Lofb4ovoeEWC63', 180, 'success', 'c646a3b8b24cb64c1314c03292fff0fd', '2023-05-12 07:32:05'),
-(27, 'user2', 'pay_LpdHPAoFXhkyTY', 130, 'success', '1b7dd8c35bffb46f3bd9f6e8571144df', '2023-05-14 17:55:04'),
-(28, 'user2', 'pay_LpdbIge8iyjJ4w', 115, 'success', '52b6de33bd9faffd702aaa6149177cda', '2023-05-14 18:13:54');
+(33, 'user2', 'pay_LslaZbcKneowRX', 80, 'success', '3dc55387cb95423475a19dea9e939b87', '2023-05-22 00:29:46'),
+(34, 'user2', 'pay_LsldmlsAm9XPlZ', 249, 'success', '186fd4121a6d7c09537c63e8c1b3b5a4', '2023-05-22 16:02:47'),
+(35, 'user2', 'pay_LslgeHdKHjesKe', 249, 'success', 'c609904f7b808e873d2e57d2820088bd', '2023-05-22 16:05:30'),
+(36, 'user2', 'pay_Lsll6JpVRNA7M2', 65, 'success', '1b23efd731b5ddc9418f65cdfd7b5408', '2023-05-22 16:09:43'),
+(37, 'user2', 'pay_Lslrk5NxnTyQHg', 150, 'success', '08eac1d7ee7ce0f8c4a4d22ba0c72f03', '2023-05-22 16:16:00'),
+(38, 'user2', 'pay_LslsMUV52OvzIq', 150, 'success', 'f6096f8dd13f456db9ce806e41493b51', '2023-05-22 16:16:43'),
+(39, 'user2', 'pay_LsmKtIX50cYX3c', 130, 'success', 'ab7a710458b8378b523e39143a6764d6', '2023-05-22 16:43:37'),
+(40, 'user2', 'pay_LsmRX1zEjQsZbA', 175, 'success', 'd37a5f293c9e1666e6b1a4079cdf5774', '2023-05-22 16:49:54');
 
 -- --------------------------------------------------------
 
@@ -290,16 +277,17 @@ CREATE TABLE `token` (
 --
 
 INSERT INTO `token` (`id`, `name`, `token_id`, `price`, `path`, `quantity`) VALUES
-(8, 'Samosa', '4296c050a9ef05b0a56b5f0994e56719', 20, 'img_dir/samosa.png', 1),
-(10, 'Samosa', '64126291a78b0949415681f9c9e8446d', 20, 'img_dir/samosa.png', 1),
-(11, 'chole bhature', '64126291a78b0949415681f9c9e8446d', 50, 'img_dir/527539577_ultra detailed 4k realistic chole  with bhature  _xl-beta-v2-2-2.png', 1),
-(12, 'lassi', '64126291a78b0949415681f9c9e8446d', 30, 'img_dir/572947211_ultra detailed 4k realistic punjabi lassi _xl-beta-v2-2-2.png', 2),
-(13, 'paneer tava', '98b9b1c82f99a4dbd10268497a56f4fd', 100, 'img_dir/Unknown-3.jpg', 1),
-(14, 'punjabi', '3a6802517c3f6f02fcb69e5803b53fff', 99, 'img_dir/2800235923_ultra detailed 4k realistic punjabi food _xl-beta-v2-2-2.png', 2),
-(15, 'kaju masala', '3a6802517c3f6f02fcb69e5803b53fff', 100, 'img_dir/1242866752_ultra detailed 4k realistic punjabi food _xl-beta-v2-2-2.png', 1),
-(16, 'chole bhature', '3a6802517c3f6f02fcb69e5803b53fff', 50, 'img_dir/527539577_ultra detailed 4k realistic chole  with bhature  _xl-beta-v2-2-2.png', 1),
-(17, 'lassi', '3a6802517c3f6f02fcb69e5803b53fff', 30, 'img_dir/572947211_ultra detailed 4k realistic punjabi lassi _xl-beta-v2-2-2.png', 1),
-(18, 'chole roti', '1b7dd8c35bffb46f3bd9f6e8571144df', 50, '/Applications/XAMPP/xamppfiles/htdocs/food2/catagory/motorcycle1-.png', 1);
+(19, 'samosa', 'hjfdk08437ujahfd1248hfkjah', 99, 'akslhfdshdjflsf.png', 2),
+(20, 'kadhi', 'c609904f7b808e873d2e57d2820088bd', 50, 'img_dir/WhatsApp Image 2023-05-06 at 6.24.36 PM-3.jpeg', 1),
+(21, 'roti', 'c609904f7b808e873d2e57d2820088bd', 5, 'img_dir/gujaratidish.png', 3),
+(22, 'paneer massala', 'ab7a710458b8378b523e39143a6764d6', 60, 'img_dir/3630528153_ultra detailed 4k realistic chole bhature  _xl-beta-v2-2-2.png', 1),
+(23, 'paneer anger', 'ab7a710458b8378b523e39143a6764d6', 70, 'img_dir/3320259520_ultra detailed 4k realistic punjabi food _xl-beta-v2-2-2.png', 1),
+(24, 'paneer massala', 'ab7a710458b8378b523e39143a6764d6', 60, 'img_dir/3630528153_ultra detailed 4k realistic chole bhature  _xl-beta-v2-2-2.png', 1),
+(25, 'paneer anger', 'ab7a710458b8378b523e39143a6764d6', 70, 'img_dir/3320259520_ultra detailed 4k realistic punjabi food _xl-beta-v2-2-2.png', 1),
+(26, 'paneer massala', 'ab7a710458b8378b523e39143a6764d6', 60, 'img_dir/3630528153_ultra detailed 4k realistic chole bhature  _xl-beta-v2-2-2.png', 1),
+(27, 'paneer anger', 'ab7a710458b8378b523e39143a6764d6', 70, 'img_dir/3320259520_ultra detailed 4k realistic punjabi food _xl-beta-v2-2-2.png', 1),
+(28, 'paneer massala', 'ab7a710458b8378b523e39143a6764d6', 60, 'img_dir/3630528153_ultra detailed 4k realistic chole bhature  _xl-beta-v2-2-2.png', 1),
+(29, 'paneer anger', 'ab7a710458b8378b523e39143a6764d6', 70, 'img_dir/3320259520_ultra detailed 4k realistic punjabi food _xl-beta-v2-2-2.png', 1);
 
 -- --------------------------------------------------------
 
@@ -435,7 +423,7 @@ ALTER TABLE `items`
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `Punjabi_items`
@@ -453,7 +441,7 @@ ALTER TABLE `snacks`
 -- AUTO_INCREMENT for table `token`
 --
 ALTER TABLE `token`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `users`
