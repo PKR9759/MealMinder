@@ -186,12 +186,12 @@ include 'C:\xampp\htdocs\food2\navbar.php';
     $subtotal = 0;
     echo '<div class="container">';
     echo '<div class="left">';
-    // $totalItem = count($_SESSION['cart']);
-    $totalItem = $_SESSION['totalItems'];
+    
+   
     echo '<p>you are selected (' . $totalItem . ') items</p>';
-    // echo (isset($_SESSION['cart']));
+    
     if (isset($_SESSION['cart'])) {
-        // for($i=0;$i<count($_SESSION['cart']);$i++){
+       
         foreach ($_SESSION['cart'] as  $item) {
             $subtotal += ($item["price"] * $item["quantity"]);
             echo '<div class="carditems">';
@@ -232,12 +232,9 @@ include 'C:\xampp\htdocs\food2\navbar.php';
     }
         echo '</div>';
         echo '<div class="right">';
-        // echo ' <div class="prcode">';
-        // echo'<p></p>;
-        // echo '<input type="text" placeholder="Apply Promo-Code">';
-        // echo '<button class="btn btn" type="submit">Apply</button>';
+       
         echo '<hr style="height:4px;border:none;background-color:#958D89">';
-        // echo '</div>';
+        
         echo '<div class="subtotal">';
         echo ' <div class="">';
         echo '<p>SubTotal</p>';

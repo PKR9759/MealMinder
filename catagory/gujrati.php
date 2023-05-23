@@ -93,8 +93,8 @@ include 'C:\xampp\htdocs\food2\navbar.php';
         }
 
         //add to cart scripts
-        if(!isset($_SESSION['totalItems'])){
-            $_SESSION['totalItems'] = 0;
+        if(!isset($_SESSION['totalItem'])){
+            $_SESSION['totalItem'] = 0;
         }
         if($_SERVER['REQUEST_METHOD']=='POST'){
         if (isset($_POST['addcart']) ) {
@@ -104,12 +104,12 @@ include 'C:\xampp\htdocs\food2\navbar.php';
             // }
                 
                 
-            $myItems = isset($_SESSION['cart']) ? array_column($_SESSION['cart'], 'name') : array();
+            // $myItems = isset($_SESSION['cart']) ? array_column($_SESSION['cart'], 'name') : array();
 
-                if(in_array($_POST['name'],$myItems)){
-                    echo'<script >alert("This item is already Exist in cart");</script>';
-                }
-                else{
+            //     if(in_array($_POST['name'],$myItems)){
+            //         echo'<script >alert("This item is already Exist in cart");</script>';
+            //     }
+            //     else{
                     
                 $item = array(
                     'id' => $_POST['id'],
@@ -117,10 +117,10 @@ include 'C:\xampp\htdocs\food2\navbar.php';
                     'price' => $_POST['price'],
                     'path' => $_POST['file_path'],
                     'available' =>  $_POST['available'],
-                    'quantity' => 1
+                    'quantity' => (isset($_POST['name'])) ? 1 :NULL,
 
                 );
-                $_SESSION['totalItems']++;
+               
                 // $count++;
                 $_SESSION['cart'][] = $item;
                 // echo "<script>location.reload();</script>";
@@ -128,7 +128,7 @@ include 'C:\xampp\htdocs\food2\navbar.php';
                 
                
                 // exit();
-            }
+            // }
         }
     
 
@@ -140,7 +140,7 @@ include 'C:\xampp\htdocs\food2\navbar.php';
         
             // start of container
             echo '<div class="recsec" >';
-            echo '<div class="cardcont"">';
+            echo '<div class="cardcont">';
             // loop through the records and create a card for each one
            
             while (($row = mysqli_fetch_assoc($result) ) ) {
@@ -156,6 +156,9 @@ include 'C:\xampp\htdocs\food2\navbar.php';
                 echo '<input type="hidden" name="price" value="' . $row['price'] . '" />';
                 echo '<input type="hidden" name="file_path" value="' . $row['file_path'] . '" />';
                 echo '<input type="hidden" name="available" value="' . $row['available'].'" />';
+                
+
+
 
                 if ($row['available'] == 1) {
 

@@ -205,7 +205,7 @@ include 'C:\xampp\htdocs\food2\navbar.php';
    
     // increase andd decrease the quantity
     
-
+    error_reporting(0);
     $subtotal = 0;
     
     $emp=array();
@@ -215,10 +215,10 @@ include 'C:\xampp\htdocs\food2\navbar.php';
     
     if (isset($_SESSION['cart'])) {
         
-        // for($i=0;$i<count($_SESSION['cart']);$i++){
+        var_dump($_SESSION['cart']);
         foreach ($_SESSION['cart'] as $key=> $item) {
-           if(!($item===$emp)) {
-            
+           if(!($item===$emp) && ($item!==null) && ($item['quantity']!==null)) {
+            $_SESSION['totalItem']++;
             
             $subtotal += ($item['price'] * $item['quantity']);
             echo '<div class="carditems">';
