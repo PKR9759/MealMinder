@@ -84,16 +84,17 @@ echo '<td><form action="payment_process.php" method="POST">
 <input type="button" class="btn btn-primary" name="pay" id="pay" value="pay now" onclick="pay_now()"/>
 </form>
 </td>';
-echo '<td></td>';
+echo '<td><button type="button" class="btn btn-danger" onclick="<?php session_destroy(); ?> ">Clear Cart</button></td>';
 echo '<td></td>';
 echo '<td></td>';
 echo '</tr>';
 echo '</tbody>';
 echo '</table>';
 echo '</div>';
-var_dump($_SESSION['cart']);
+
+
 ?>
-<button type="button" class="btn btn-danger" onclick="<?php session_destroy(); ?> window.location.reload();">Clear Cart</button>
+
 <script>
     function pay_now(){
       
@@ -125,22 +126,4 @@ console.log(response);
         rzp1.open();
     }
 </script>
-<?php
-        include 'config.php';
-      
-        // insert the cart items into the database
-        foreach ($_SESSION['cart'] as $item) {
-            $name = $item['name'];
-            $price = $item['price'];
-            $path = $item['path'];
-            $quantity = $item['quantity'];
-            $token=$_SESSION['token'];
-            $sql = "INSERT INTO token (name,token_id, price, path, quantity) VALUES (?, ?, ?, ?,?)";
-            $stmt = mysqli_prepare($link, $sql);
-            mysqli_stmt_bind_param($stmt, "ssssi",$name, $token, $price, $path, $quantity);
-            mysqli_stmt_execute($stmt);
-        }
-        
-        // clear the cart after inserting into the database
 
-        ?>

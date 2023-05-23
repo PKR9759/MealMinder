@@ -132,7 +132,7 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
     <h3> Which type you Eat today? </h3>
     <div class="catsec">
       <div class="cat">
-        <a href='/food2/category/gujrati.php'><img src="https://source.unsplash.com/random/?Gujratifood2-circle," alt="First category"></a>
+        <a href='/food2/category/gujarati.php'><img src="https://source.unsplash.com/random/?Gujratifood2-circle," alt="First category"></a>
       
         
       <p>Gujrati</p>
@@ -177,8 +177,8 @@ if (!$conn) {
     echo "<br>";
 }
 
-$rand=rand(1,4);
-echo $rand;
+$rand=2;
+
 //selecting data from the database
 if($rand==1){
 $sql = "SELECT * FROM `gujarati_items`";
