@@ -191,10 +191,10 @@ include 'C:\xampp2\htdocs\food2\loginsystem\conn.php';
     $name = $_POST['name'];
     $price = $_POST['price'];
     $path = $_POST['url'];
-    $avail = $_POST['availability'];
+    $avail = $_POST['aviability'];
 
 
-    $sql = "UPDATE `gujarati_items` SET `file_path` = '$path', `name` = '$name', `price` = '$price', `availability` = '$avail' WHERE `gujarati_items`.`id` = $id;";
+    $sql = "UPDATE `gujarati_items` SET `file_path` = '$path', `name` = '$name', `price` = '$price', `aviability` = '$avail' WHERE `gujarati_items`.`id` = $id;";
     $result = mysqli_query($conn, $sql);
   }
   if (isset($_POST['remove'])) {
@@ -233,7 +233,7 @@ include 'C:\xampp2\htdocs\food2\loginsystem\conn.php';
       echo '<label for="name">file path or URL:</label>';
       echo '<input type="text" name="url" value="' . $row['file_path'] . '" />';
       echo '<label for="name">Item Availibility:</label>';
-      echo '<input type="text" name="availability" value="' . $row['availability'] . '" />';
+      echo '<input type="text" name="aviability" value="' . $row['aviability'] . '" />';
       echo '<div class="btns">';
       echo ' <button class="save" type="submit" name="save" class="btn btn-secondary"><span class="material-symbols-outlined">
                 save

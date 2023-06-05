@@ -252,13 +252,14 @@ if (isset($_POST['decrease_quantity'])) {
     
     if (isset($_SESSION['cart'])) {
         
-        var_dump($_SESSION['cart']);
+        
         foreach ($_SESSION['cart'] as $key=> $item) {
            if(!($item===$emp) && ($item!==null) && ($item['quantity']!==null)) {
            
             
             $subtotal += ($item['price'] * $item['quantity']);
             echo '<div class="carditems">';
+            
             echo    '<div class="itemslft">';
             echo        ' <img src="' . $item['path'] . '">';
             echo         '<p>' . $item['name'] . '</p>';
@@ -280,8 +281,10 @@ if (isset($_POST['decrease_quantity'])) {
              echo '      <div>';
             echo '          <p>&#8377;' . $item['price'] . '</p>';
             echo '      </div>';
+            
             echo '</div>';
             echo '</div>';
+            
         }}
     
         echo '</div>';
@@ -292,21 +295,17 @@ if (isset($_POST['decrease_quantity'])) {
         echo '<p>SubTotal</p>';
         echo '<P>&#8377;' .$subtotal . '</P>';
         echo '</div>';
-        echo '<div>';
-        echo ' <p>Shipping-fees</p>';
-        echo '<P>' . '&#8377;' . '20</P>';
-        echo ' </div>';
+       
         echo '<div class="">';
-        echo ' <p>Discount</p>';
-        $disc=20;
-        echo '<P>-' . '&#8377;' .$disc. '</P>';
+        echo ' <p>GST</p>';
+        echo '<P>+' . '&#8377;' .$subtotal*0.18.' (18%)</p>';
         echo '</div>';
         echo ' </div>';
         echo '<hr style="height:3px;border:none;background-color:#C1BBB8">';
 
         echo '<div class="total">';
         echo '<p>Total</p>';
-        echo '<P>&#8377;' . ($subtotal - $disc + 20) . '</P>';
+        echo '<P>&#8377;' . ($subtotal+$subtotal*0.18) . '</P>';
         echo ' </div>';
         echo '<hr style="height:2px;border:none;background-color:#C1BBB8">';
         echo '<div class="placeorder">';
@@ -320,7 +319,7 @@ if (isset($_POST['decrease_quantity'])) {
 
 
    
-    ?>
+
     </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

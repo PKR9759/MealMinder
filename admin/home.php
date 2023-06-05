@@ -1,6 +1,7 @@
 <?php
 // session_start();
 include 'C:\xampp2\htdocs\food2\admin\nav.php';
+restore_error_handler();
 ?>
 <!doctype html>
 <html lang="en">

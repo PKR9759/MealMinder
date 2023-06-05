@@ -7,7 +7,7 @@ if(isset($_POST['additem'])){
     $price=$_POST['price'];
     $path=$_POST['url'];
 
-    $q="INSERT INTO `gujarati_items` ( `file_path`, `name`, `price`, `description`, `availability`) VALUES ('$path', '$name', '$price', '', '1')";
+    $q="INSERT INTO `gujarati_items` ( `file_path`, `name`, `price`, `description`, `aviability`) VALUES ('$path', '$name', '$price', '', '1')";
     $result = mysqli_query($conn, $q);
 
         //find the number of records if greater than zero we will do further process

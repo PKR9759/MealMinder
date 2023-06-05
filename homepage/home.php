@@ -1,5 +1,6 @@
 <?php
 include 'C:\xampp2\htdocs\food2\navbar.php';
+
 //Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php
 ?>
 <!doctype html>
@@ -81,17 +82,9 @@ include 'C:\xampp2\htdocs\food2\navbar.php';
 
 <body>
 
-  <div class="search">
-    <nav class="navbar navbar-light bg-#EC451C" style="float:right; ">
-      <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color:#EC451C;color:white"
-          ;>Search</button>
-      </form>
-    </nav>
-  </div><br><br>
+  
 
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <div id="carouselExampleIndicators" style="height:500px" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
       <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -100,22 +93,19 @@ include 'C:\xampp2\htdocs\food2\navbar.php';
     <div class="carousel-inner">
       <div class="carousel-item active">
        <a href="gujarati.php">
-  <img class="d-block w-100" src="https://source.unsplash.com/featured/?food,punjabi" alt="First slide">
+  <img class="d-block w-100" src="slide1.avif" alt="First slide">
 </a>
 
       </div>
+      
       <div class="carousel-item">
-        <img class="d-block w-100" src="https://source.unsplash.com/featured/?food,chinese" alt="Second slide">
+        <img class="d-block w-100" src="slide2.avif" alt="Third slide">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="https://source.unsplash.com/featured/?food,gujrati" alt="Third slide">
+        <img class="d-block w-100" src="slide3.avif" alt="Third slide">
       </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="https://source.unsplash.com/featured/?food,south-indian" alt="Third slide">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="https://source.unsplash.com/featured/?food,marathi" alt="Third slide">
-      </div>
+      
+      
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -141,22 +131,23 @@ include 'C:\xampp2\htdocs\food2\navbar.php';
       </a>
       </div>
       <div class="cat">
-        <a href='/food2/catagory/punjabi.php'><img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Chakli_in_a_bowl.jpg" alt="First catagory"></a>
+        <a href='/food2/catagory/punjabi.php'><img src="https://t4.ftcdn.net/jpg/02/12/69/59/360_F_212695921_GaiXzq0hWQHwAtNzTNkEu7HYKpBfcgmj.jpg" alt="First catagory"></a>
         <p>Punjabi</p>
       </div>
       <div class="cat">
-        <a href='/food2/catagory/jain.php'><img src="https://source.unsplash.com/random/?jainfood-circle," alt="First catagory"></a>
-        <p>Jain</p>
+        <a href='/food2/catagory/jain.php'><img src="https://as2.ftcdn.net/v2/jpg/02/95/46/33/1000_F_295463303_8tHIfwhbHygFrxLcVptH934mRzL7xJ4w.jpg" alt="First catagory"></a>
+        <p>South Indian</p>
         
       </div>
       <div class="cat">
-      <a href='/food2/catagory/snacks.php'><img src="https://source.unsplash.com/random/?jainfood-circle," alt="First catagory"></a>
-        <p>Snacks</p>
+      <a href='/food2/catagory/snacks.php'><img src="https://media.istockphoto.com/id/520134277/photo/take-out-food-classic-cheeseburger-meal-isolated-on-white.jpg?s=612x612&w=0&k=20&c=-e-sj-hieOBQclUBRu8E7wRfIxqe4mB_CKnkJwyr-es=" alt="First catagory"></a>
+        <p>Snacks & Drinks</p>
       </div>
       <div class="cat">
-        <a href='/food2/catagory/chinese.php'><img src="https://b.zmtcdn.com/data/o2_assets/c21624eac87ed1c8c87ef1ea52980ded1632716659.png" alt="First catagory"></a>
+        <a href='/food2/catagory/chinese.php'><img src="https://previews.123rf.com/images/espies/espies1904/espies190400176/121497894-manchurian-hakka-schezwan-noodles-popular-indochinese-food-served-in-a-bowl-selective-focus.jpg" alt="First catagory"></a>
         <p>Chinese</p>
       </div>
+      
     </div>
 
   </div>

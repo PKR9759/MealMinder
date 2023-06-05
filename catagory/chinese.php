@@ -81,7 +81,7 @@ include 'C:\xampp2\htdocs\food2\navbar.php';
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $database = "RBH";
+        $database = "rbh";
         //creating a connection
         $conn = mysqli_connect($servername, $username, $password, $database);
 
@@ -107,7 +107,7 @@ include 'C:\xampp2\htdocs\food2\navbar.php';
             $myItems = isset($_SESSION['cart']) ? array_column($_SESSION['cart'], 'name') : array();
 
                 if(in_array($_POST['name'],$myItems)){
-                    echo'<script >alert("This item is already Exist in cart");</script>';
+                    //echo'<script >alert("This item is already Exist in cart");</script>';
                 }
                 else{
                     
@@ -116,7 +116,7 @@ include 'C:\xampp2\htdocs\food2\navbar.php';
                     'name' => $_POST['name'],
                     'price' => $_POST['price'],
                     'path' => $_POST['file_path'],
-                    'availability' =>  $_POST['availability'],
+                    'aviability' =>  $_POST['aviability'],
                     'quantity' => (isset($_POST['name'])) ? 1 :NULL,
 
                 );
@@ -155,22 +155,18 @@ include 'C:\xampp2\htdocs\food2\navbar.php';
                 echo '<input type="hidden" name="name" value="' . $row['name'] . '" />';
                 echo '<input type="hidden" name="price" value="' . $row['price'] . '" />';
                 echo '<input type="hidden" name="file_path" value="' . $row['file_path'] . '" />';
-                echo '<input type="hidden" name="availability" value="' . $row['availability'].'" />';
+                echo '<input type="hidden" name="aviability" value="' . $row['aviability'].'" />';
                 
 
 
 
-                if ($row['availability'] == 1) {
+                if ($row['aviability'] == 1) {
 
                     echo ' <button class="addcart" type="submit" name="addcart" class="btn btn-secondary">Add to Cart</button>';
                 } else {
                     echo '<p class="card-text"><span class="stock" style="color:red">Out of Stock</span></p>';
                 }
                 echo '</form>';
-
-
-
-
                 echo '</div>';
                 echo '</div>';
             }

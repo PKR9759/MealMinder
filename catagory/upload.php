@@ -4,13 +4,14 @@ include "config.php";
 
 if (isset($_POST["submit"])) {
     // Set image placement folder 
-    $target_dir = "img_dir/";
+    $target_dir = "/Applications/XAMPP/xamppfiles/htdocs/food2/cart/img_dir/";
+    
     // Get file path
     $target_file = $target_dir . basename($_FILES["fileUpload"]["name"]);
     // Get file extension
     $imageExt = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
     // Allowed file types
-    $allowd_file_ext = array("jpg", "jpeg", "png");
+    $allowd_file_ext = array("jpg", "jpeg", "png","webp");
 
     if (!file_exists($_FILES["fileUpload"]["tmp_name"])) {
         $resMessage = array(

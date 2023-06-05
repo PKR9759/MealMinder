@@ -90,7 +90,9 @@ if(!isset($_SESSION['logedin']) || !$_SESSION['logedin']){
                     <a class="dropdown-item" href="/food2/catagory/gujrati.php">Gujrati Items</a>
                     <a class="dropdown-item" href='/food2/catagory/punjabi.php'>Punjabi Items</a>
                     <a class="dropdown-item" href='/food2/catagory/chinese.php'>Chinese Items</a>
+                    <a class="dropdown-item" href='/food2/catagory/south.php'>South Indian Items</a>
                     <a class="dropdown-item" href='/food2/catagory/snacks.php'>Snacks</a>
+
                 </div>
             </li>
             <li class="nav-item">

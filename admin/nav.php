@@ -1,5 +1,5 @@
 <?php
-include 'C:\xampp\htdocs\food2\loginsystem\conn.php';
+include 'C:\xampp2\htdocs\food2\loginsystem\conn.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -46,7 +46,7 @@ include 'C:\xampp\htdocs\food2\loginsystem\conn.php';
       <a class="nav-link " id="v-pills-home-tab" href="/food2/admin/guj.php" role="tab" aria-controls="v-pills-home" aria-selected="true">Gujrati Items</a>
       <a class="nav-link" id="v-pills-profile-tab" href="/food2/admin/punj.php" role="tab" aria-controls="v-pills-profile" aria-selected="true">Punjabi Items</a>
       <a class="nav-link" id="v-pills-messages-tab" href="/food2/admin/chins.php" role="tab" aria-controls="v-pills-messages" aria-selected="true">Chinese Items</a>
-      <a class="nav-link" id="v-pills-settings-tab" href="/food2/admin/jain.php" role="tab" aria-controls="v-pills-settings" aria-selected="true">Jain Items</a>
+      <a class="nav-link" id="v-pills-settings-tab" href="/food2/admin/south.php" role="tab" aria-controls="v-pills-settings" aria-selected="true">SouthIndian Items</a>
       <a class="nav-link" id="v-pills-settings-tab" href="/food2/admin/snacks.php" role="tab" aria-controls="v-pills-settings" aria-selected="true">Snacks</a>
     </div>
     <div class="tab-content" id="v-pills-tabContent">

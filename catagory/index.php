@@ -38,7 +38,7 @@
         </select>
     </div>
   
-    <label for="aviability">Availability:</label>
+    <label for="aviability">aviability:</label>
 <div>
     <input type="radio" name="aviability" id="aviable" value="1">
     <label for="aviable" class="radio-label green-label">In Stock</label>
