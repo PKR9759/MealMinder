@@ -11,7 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $email = $_POST['email'];
         $password = $_POST['password'];
         $cpassword = $_POST['cpassword'];
-
+        
+        
        
         //password validation && unique user taking
         if ($password == $cpassword) {
@@ -119,6 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 <?php
 if(isset($_POST['submit']) && $showSucess){
+    $_SESSION['name']=$_POST['email'];
 echo "
 <p style='color:white;background-color:#00FF00;padding:4px;'>Sign-Up Sucessfully </p>
 ";
@@ -131,7 +133,7 @@ $showSucess=false;
 ?>
 <script>
 setTimeout(function() {
-  window.location.replace ( "/food2/homepage/home.php");
+  window.location.replace ( "\food2\homepage\home.php");
 }, 2000); 
 </script>
 <?php

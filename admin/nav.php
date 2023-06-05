@@ -1,5 +1,5 @@
 <?php
-include 'C:\xampp2\htdocs\food2\loginsystem\conn.php';
+include '/Applications/XAMPP/xamppfiles/htdocs/food2/loginsystem/conn.php';
 ?>
 <!doctype html>
 <html lang="en">

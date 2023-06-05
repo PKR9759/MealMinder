@@ -1,7 +1,7 @@
 
 <?php
 session_start();
-include 'C:\xampp2\htdocs\food2\navbar.php';
+include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
 ?>
 
 <!doctype html>
@@ -195,16 +195,7 @@ include 'C:\xampp2\htdocs\food2\navbar.php';
    </script>
     <title>punjabi</title>
 </head>
-
 <body>
-
-
-
-
-
-
-
-
 <?php
 if (isset($_POST['increase_quantity'])) {
     // Get the item ID from the form
@@ -249,7 +240,7 @@ if (isset($_POST['decrease_quantity'])) {
     echo '<div class="container">';
     echo '<div class="left">';
     // echo (isset($_SESSION['cart']));
-    
+   
     if (isset($_SESSION['cart'])) {
         
         
@@ -309,12 +300,14 @@ if (isset($_POST['decrease_quantity'])) {
         echo ' </div>';
         echo '<hr style="height:2px;border:none;background-color:#C1BBB8">';
         echo '<div class="placeorder">';
-        echo '<button class="btn btn-block" name="place" type="submit">Place-Order</button>';
+        echo '<form action="order.php" method="post">
+        <button class="btn btn-block" name="place" type="submit">Place-Order</button>';
 
         echo ' </div>';
         echo '</div>';
         echo ' </div>';
     }
+   
     ?>
 
 
