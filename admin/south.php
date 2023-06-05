@@ -159,10 +159,10 @@ include 'C:\xampp2\htdocs\food2\loginsystem\conn.php';
       
     }
 
-    .addItem:hover {
+    .addItem:hover,.addItem a:hover {
       background-color: #4265C4;
       color: whitesmoke;
-      box-shadow: 0px 2px 10px black;
+      /* box-shadow: 0px 2px 10px black; */
     }
 
     .addItem:focus {

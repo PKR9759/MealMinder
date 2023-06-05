@@ -10,11 +10,13 @@ include 'C:\xampp2\htdocs\food2\loginsystem\conn.php';
       float: left;
       height: 100vh;
       width: 20%;
-      background-color: black;
+      background-color:aliceblue;
     }
 
     .nav a {
       width: 200px;
+      font-size:25px;
+
     }
 
     .content {
@@ -22,11 +24,14 @@ include 'C:\xampp2\htdocs\food2\loginsystem\conn.php';
       float: right;
       margin: 0px 12px;
       font-family: 'Fjalla One', sans-serif;
+      /* font-size:200px; */
     }
-
-    /* .nav a:focus{
+    .itemlist a{
+      font-size:25px;
+    }
+    .nav a:focus{
         background-color: blue;
-     } */
+     }
   </style>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -42,7 +47,7 @@ include 'C:\xampp2\htdocs\food2\loginsystem\conn.php';
 
   <div class="nav">
     <a class="nav-link" id="v-pills-profile-tab" href="/food2/admin/home.php" role="tab" aria-controls="v-pills-profile" aria-selected="true">Home</a>
-    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+    <div class="nav flex-column nav-pills itemlist" id="v-pills-tab" role="tablist" aria-orientation="vertical">
       <a class="nav-link " id="v-pills-home-tab" href="/food2/admin/guj.php" role="tab" aria-controls="v-pills-home" aria-selected="true">Gujrati Items</a>
       <a class="nav-link" id="v-pills-profile-tab" href="/food2/admin/punj.php" role="tab" aria-controls="v-pills-profile" aria-selected="true">Punjabi Items</a>
       <a class="nav-link" id="v-pills-messages-tab" href="/food2/admin/chins.php" role="tab" aria-controls="v-pills-messages" aria-selected="true">Chinese Items</a>

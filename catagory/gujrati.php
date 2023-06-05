@@ -25,10 +25,12 @@ include 'C:\xampp2\htdocs\food2\navbar.php';
         }
 
         .card-img-top {
-            height: 250px;
-            width: 100px;
-        }
 
+width: 100%;
+height: 200px; /* you can adjust the height to your preference */
+object-fit: cover;
+
+}
         .addcart {
             color: aliceblue;
             background-color: #F17766;
