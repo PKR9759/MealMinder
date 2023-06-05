@@ -116,7 +116,7 @@ include 'C:\xampp2\htdocs\food2\navbar.php';
                     'name' => $_POST['name'],
                     'price' => $_POST['price'],
                     'path' => $_POST['file_path'],
-                    'available' =>  $_POST['available'],
+                    'availability' =>  $_POST['availability'],
                     'quantity' => (isset($_POST['name'])) ? 1 :NULL,
 
                 );
@@ -155,12 +155,12 @@ include 'C:\xampp2\htdocs\food2\navbar.php';
                 echo '<input type="hidden" name="name" value="' . $row['name'] . '" />';
                 echo '<input type="hidden" name="price" value="' . $row['price'] . '" />';
                 echo '<input type="hidden" name="file_path" value="' . $row['file_path'] . '" />';
-                echo '<input type="hidden" name="available" value="' . $row['available'].'" />';
+                echo '<input type="hidden" name="availability" value="' . $row['availability'].'" />';
                 
 
 
 
-                if ($row['available'] == 1) {
+                if ($row['availability'] == 1) {
 
                     echo ' <button class="addcart" type="submit" name="addcart" class="btn btn-secondary">Add to Cart</button>';
                 } else {

@@ -1,12 +1,13 @@
 <?php 
-    include 'C:\xampp\htdocs\food2\loginsystem\conn.php';
+    include 'C:\xampp2\htdocs\food2\admin\nav.php';
+    include 'C:\xampp2\htdocs\food2\loginsystem\conn.php';
 
 if(isset($_POST['additem'])){
     $name=$_POST['name'];
     $price=$_POST['price'];
     $path=$_POST['url'];
 
-    $q="INSERT INTO `gujarati_items` ( `file_path`, `name`, `price`, `description`, `available`) VALUES ('$path', '$name', '$price', '', '1')";
+    $q="INSERT INTO `gujarati_items` ( `file_path`, `name`, `price`, `description`, `availability`) VALUES ('$path', '$name', '$price', '', '1')";
     $result = mysqli_query($conn, $q);
 
         //find the number of records if greater than zero we will do further process
@@ -139,7 +140,7 @@ if(isset($_POST['additem'])){
                 <br><br>
                 <input type="number" id="price" name="price" placeholder="Price" required>
                 <br><br> 
-                <input type="url" id="url" name="url" name="url" placeholder="URL of Image of Food Item" required>
+                <input type="text" id="url" name="url" name="url" placeholder="URL of Image of Food Item" required>
                 <br><br>
 
                 <!-- <div class="caterory"> -->

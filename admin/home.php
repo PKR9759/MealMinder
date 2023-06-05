@@ -1,6 +1,6 @@
 <?php
 // session_start();
-include 'C:\xampp\htdocs\food2\admin\nav.php';
+include 'C:\xampp2\htdocs\food2\admin\nav.php';
 ?>
 <!doctype html>
 <html lang="en">

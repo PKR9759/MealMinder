@@ -197,6 +197,43 @@ include 'C:\xampp2\htdocs\food2\navbar.php';
 </head>
 
 <body>
+
+
+
+
+
+
+
+
+<?php
+if (isset($_POST['increase_quantity'])) {
+    // Get the item ID from the form
+    $ind=$_POST['itemIndex'];
+    $_SESSION['cart'][$ind]['quantity']++;
+
+    // Increase the item quantity in the cart
+    
+}
+
+
+if (isset($_POST['decrease_quantity'])) {
+    // Get the item ID from the form
+    $ind=$_POST['itemIndex'];
+    if($_SESSION['cart'][$ind]['quantity']==1){
+        unset($_SESSION['cart'][$ind]);
+        $_SESSION['cart']=array_values($_SESSION['cart']);
+        $_SESSION['totalItem']--;
+        echo "<script>location.reload();</script>";
+    }
+    else{
+    $ind=$_POST['itemIndex'];
+    $_SESSION['cart'][$ind]['quantity']--;
+    }
+
+    // Decrease the item quantity in the cart, but don't allow it to go below 1
+   
+}
+?>
     <div class="title">
         <h2>Welcome to Cart..</h2>
     </div>
@@ -273,7 +310,7 @@ include 'C:\xampp2\htdocs\food2\navbar.php';
         echo ' </div>';
         echo '<hr style="height:2px;border:none;background-color:#C1BBB8">';
         echo '<div class="placeorder">';
-        echo '<button class="btn btn-block" type="submit">Place-Order</button>';
+        echo '<button class="btn btn-block" name="place" type="submit">Place-Order</button>';
 
         echo ' </div>';
         echo '</div>';
@@ -282,32 +319,7 @@ include 'C:\xampp2\htdocs\food2\navbar.php';
     ?>
 
 
-    <?php
-if (isset($_POST['increase_quantity'])) {
-    // Get the item ID from the form
-    $ind=$_POST['itemIndex'];
-    $_SESSION['cart'][$ind]['quantity']++;
-
-    // Increase the item quantity in the cart
-    
-}
-
-if (isset($_POST['decrease_quantity'])) {
-    // Get the item ID from the form
-    $ind=$_POST['itemIndex'];
-    if($_SESSION['cart'][$ind]['quantity']==1){
-        unset($_SESSION['cart'][$ind]);
-        $_SESSION['cart']=array_values($_SESSION['cart']);
-        $_SESSION['totalItem']--;
-    }
-    else{
-    $ind=$_POST['itemIndex'];
-    $_SESSION['cart'][$ind]['quantity']--;
-    }
-
-    // Decrease the item quantity in the cart, but don't allow it to go below 1
    
-}
     ?>
     </script>
     <!-- Optional JavaScript -->
