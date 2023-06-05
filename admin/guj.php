@@ -47,7 +47,7 @@ include 'C:\xampp2\htdocs\food2\loginsystem\conn.php';
       /* margin: 20px 0px 0px 20px; */
       border-radius: 20px;
       /* width: 18rem; */
-      height:100px;
+      /* height:100px; */
 
       /* height: 30rem; */
       background-color: #fff;
