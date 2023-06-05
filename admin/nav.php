@@ -29,8 +29,14 @@ include 'C:\xampp2\htdocs\food2\loginsystem\conn.php';
     .itemlist a{
       font-size:25px;
     }
+    .itemlist a:hover,.nav a:hover{
+      font-size:27px;
+      background-color: blue;
+      color:white
+    }
     .nav a:focus{
         background-color: blue;
+        color:white
      }
   </style>
   <!-- Required meta tags -->
@@ -48,10 +54,10 @@ include 'C:\xampp2\htdocs\food2\loginsystem\conn.php';
   <div class="nav">
     <a class="nav-link" id="v-pills-profile-tab" href="/food2/admin/home.php" role="tab" aria-controls="v-pills-profile" aria-selected="true">Home</a>
     <div class="nav flex-column nav-pills itemlist" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-      <a class="nav-link " id="v-pills-home-tab" href="/food2/admin/guj.php" role="tab" aria-controls="v-pills-home" aria-selected="true">Gujrati Items</a>
-      <a class="nav-link" id="v-pills-profile-tab" href="/food2/admin/punj.php" role="tab" aria-controls="v-pills-profile" aria-selected="true">Punjabi Items</a>
-      <a class="nav-link" id="v-pills-messages-tab" href="/food2/admin/chins.php" role="tab" aria-controls="v-pills-messages" aria-selected="true">Chinese Items</a>
-      <a class="nav-link" id="v-pills-settings-tab" href="/food2/admin/south.php" role="tab" aria-controls="v-pills-settings" aria-selected="true">SouthIndian Items</a>
+      <a class="nav-link " id="v-pills-home-tab" href="/food2/admin/guj.php" role="tab" aria-controls="v-pills-home" aria-selected="true">Gujrati Dishes</a>
+      <a class="nav-link" id="v-pills-profile-tab" href="/food2/admin/punj.php" role="tab" aria-controls="v-pills-profile" aria-selected="true">Punjabi Dishes</a>
+      <a class="nav-link" id="v-pills-messages-tab" href="/food2/admin/chins.php" role="tab" aria-controls="v-pills-messages" aria-selected="true">Chinese Dishes</a>
+      <a class="nav-link" id="v-pills-settings-tab" href="/food2/admin/south.php" role="tab" aria-controls="v-pills-settings" aria-selected="true">SouthIndian Dishes</a>
       <a class="nav-link" id="v-pills-settings-tab" href="/food2/admin/snacks.php" role="tab" aria-controls="v-pills-settings" aria-selected="true">Snacks</a>
     </div>
     <div class="tab-content" id="v-pills-tabContent">

@@ -37,7 +37,7 @@ include 'C:\xampp2\htdocs\food2\loginsystem\conn.php';
       height: 100vh;
       display: flex;
       flex-wrap: wrap;
-      /* justify-content: space-around; */
+      justify-content: space-around;
       overflow-y: auto;
       /* padding: 20px; */
     }
@@ -46,7 +46,9 @@ include 'C:\xampp2\htdocs\food2\loginsystem\conn.php';
     .card {
       /* margin: 20px 0px 0px 20px; */
       border-radius: 20px;
-      width: 18rem;
+      /* width: 18rem; */
+      height:100px;
+
       /* height: 30rem; */
       background-color: #fff;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
@@ -214,7 +216,7 @@ include 'C:\xampp2\htdocs\food2\loginsystem\conn.php';
   if ($num) {
     // start of container
 
-    echo '<div class="cardcont"">';
+    echo '<div class="cardcont">';
     echo ' <a href="/food2/admin/form.php"> <button class="addItem"  type="submit" name="add" class="btn btn-secondary"><span class="material-symbols-outlined">
             add_circle
             </span>Add Item</a></button>';
