@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $email = $_POST['email'];
             $password = $_POST['password'];
             if($email=="admin123@gmail.com" && $password=="admin123") {
-                header('location:\food2\admin\home.php');
+                header('location:/food2/admin/home.php');
             }
             else{
                 $login=false;
@@ -38,9 +38,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 if (isset($_POST['rme'])) {
                     $_SESSION['email'] = $email;
                 }
-
-
-                header('location:\food2\homepage\home.php');
+                $_SESSION['name']=$_POST['email'];
+                header('location:/food2/homepage/home.php');
 
                 exit();
             }

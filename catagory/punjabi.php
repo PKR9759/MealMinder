@@ -1,5 +1,5 @@
 <?php
-include 'C:\xampp2\htdocs\food2\navbar.php';
+include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
 
 // include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
 ?>
@@ -79,16 +79,13 @@ include 'C:\xampp2\htdocs\food2\navbar.php';
     <div class="recsec">
 
     <?php
-        if(session_status() !== PHP_SESSION_ACTIVE){
-        session_start();
-        }
-        //connecting to the database
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $database = "rbh";
-        //creating a connection
-        $conn = mysqli_connect($servername, $username, $password, $database);
+//connecting to the database
+$servername = "localhost";
+$username="root";
+$password="";
+$database="rbh2";
+//creating a connection
+$conn = mysqli_connect($servername,$username,$password,$database);
 
         if (!$conn) {
             die("sorry we failed to connect:" . mysqli_connect_error());
@@ -142,50 +139,45 @@ include 'C:\xampp2\htdocs\food2\navbar.php';
         $sql = "SELECT * FROM `punjabi_items`";
         $result = mysqli_query($conn, $sql);
 
+//find the number of records if greater than zero we will do further process
+$num = mysqli_num_rows($result);
+if ($num) {
+    // start of container
+    echo '<div class="recsec" >';
+    echo '<div class="cardcont" >';
+
+    // loop through the records and create a card for each one
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo '<div class="card" style="width: 18rem;">';
+        echo '<img class="card-img-top" src="' . $row['file_path'] . '" alt="' . $row['name'] . '">';
+        echo '<div class="card-body">';
+        echo '<h5 class="card-title">' . $row['name'] . '</h5>';
         
-            // start of container
-            echo '<div class="recsec" >';
-            echo '<div class="cardcont">';
-            // loop through the records and create a card for each one
-           
-            while (($row = mysqli_fetch_assoc($result) ) ) {
-
-                echo '<div class="card" style="width: 18rem;">';
-                echo '<img class="card-img-top" src="' . $row['file_path'] . '" alt="' . $row['name'] . '">';
-                echo '<div class="card-body">';
-                echo '<form method="post">';
-                echo '<h5 class="card-title">' . $row['name'] . '</h5>';
-                echo '<p class="card-text">' . '&#8377;' . $row['price'] . '</p>';
-                echo '<input type="hidden" name="id" value="' . $row['id'] . '" />';
-                echo '<input type="hidden" name="name" value="' . $row['name'] . '" />';
-                echo '<input type="hidden" name="price" value="' . $row['price'] . '" />';
-                echo '<input type="hidden" name="file_path" value="' . $row['file_path'] . '" />';
-                echo '<input type="hidden" name="aviability" value="' . $row['aviability'].'" />';
-                
-
-
-
-                if ($row['aviability'] == 1) {
-
-                    echo ' <button class="addcart" type="submit" name="addcart" class="btn btn-secondary">Add to Cart</button>';
-                } else {
-                    echo '<p class="card-text"><span class="stock" style="color:red">Out of Stock</span></p>';
-                }
-                echo '</form>';
-                echo '</div>';
-                echo '</div>';
-            }
+        if ($row['aviability'] == 1) {
+            echo '<p class="card-text"><span class="stock green">In Stock</span> - Price: ' . $row['price'] . '</p>';
+            echo '<form method="POST" action="">';
+            echo '<input type="hidden" name="item_id" value="'.$row['id'].'">';
+            echo '<input type="hidden" name="item_name" value="'.$row['name'].'">';
+            echo '<input type="hidden" name="item_price" value="'.$row['price'].'">';
+            echo '<input type="hidden" name="path" value="'.$row['file_path'].'">';
+            echo '<input type="submit" class="btn btn-primary" name="buy_now" value="Add To Cart">';
+            echo '</form>';
+        } else {
+            echo '<p class="card-text"><span class="stock red">Out of Stock</span></p>';
+        }
         
-       
+        echo '</div>';
+        echo '</div>';
+    }
+    
+}
 
-            echo '</div>';
-            echo '</div>';
-        
-        ?>
+// $session_id = session_id(); // get the current session ID
+// echo "Session ID: " . $session_id;
+var_dump($_SESSION);
+?>
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>

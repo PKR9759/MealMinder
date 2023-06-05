@@ -1,7 +1,7 @@
 
 <?php
 session_start();
-include 'C:\xampp2\htdocs\food2\navbar.php';
+include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
 ?>
 
 <!doctype html>
@@ -309,15 +309,14 @@ if (isset($_POST['decrease_quantity'])) {
         echo ' </div>';
         echo '<hr style="height:2px;border:none;background-color:#C1BBB8">';
         echo '<div class="placeorder">';
-        echo '<button class="btn btn-block" name="place" type="submit">Place-Order</button>';
+        echo '<form action="order.php" method="post">
+        <button class="btn btn-block" name="place" type="submit">Place-Order</button>';
 
         echo ' </div>';
         echo '</div>';
         echo ' </div>';
     }
-    if (isset($_POST['place'])) {
-      echo "<script>location.href='order.php';</script>";
-    }
+   
     ?>
 
 
