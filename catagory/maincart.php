@@ -315,6 +315,9 @@ if (isset($_POST['decrease_quantity'])) {
         echo '</div>';
         echo ' </div>';
     }
+    if (isset($_POST['place'])) {
+      
+    }
     ?>
 
 
