@@ -44,4 +44,3 @@ echo "New record created successfully";
 $stmt->close();
 $conn->close();
 ?>
-

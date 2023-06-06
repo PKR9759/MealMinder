@@ -1,7 +1,7 @@
 <?php
 // session_start();
 include 'nav.php';
-include '/Applications/XAMPP/xamppfiles/htdocs/food2/loginsystem/conn.php';
+include 'C:\xampp2/htdocs/food2/loginsystem/conn.php';
 
 ?>
 <!doctype html>
@@ -233,6 +233,8 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/loginsystem/conn.php';
       echo '<label for="name">file path or URL:</label>';
       echo '<input type="text" name="url" value="' . $row['file_path'] . '" />';
       echo '<label for="name">Item Availibility:</label>';
+      echo '<input type="hidden" name="cat" value="' . "snacks" . '" />';
+
       echo '<input type="text" name="aviability" value="' . $row['aviability'] . '" />';
       echo '<div class="btns">';
       echo ' <button class="save" type="submit" name="save" class="btn btn-secondary"><span class="material-symbols-outlined">

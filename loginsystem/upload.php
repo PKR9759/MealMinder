@@ -10,10 +10,7 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
 if (isset($_POST["submit"])) {
     // Set image placement folder 
-    if(!($_POST['url'])&& isset($_POST['url'])){
-        
-    }
-    $target_dir = "C:/xampp2/htdocs/food2/admin/img_dir/";
+    $target_dir = "C:/xampp2/htdocs/food2/cart/img_dir/";
     
     // Get file path
     $target_file = $target_dir . basename($_FILES["fileUpload"]["name"]);
@@ -86,4 +83,3 @@ if (isset($_POST["submit"])) {
     }
 }
 ?>
-

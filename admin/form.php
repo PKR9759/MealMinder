@@ -6,6 +6,7 @@ if (isset($_POST['additem'])) {
     $name = $_POST['name'];
     $price = $_POST['price'];
     $path = $_POST['url'];
+    $cate=$_POST['cat'];
 
     $q = "INSERT INTO `gujarati_items` ( `file_path`, `name`, `price`, `description`, `aviability`) VALUES ('$path', '$name', '$price', '', '1')";
     $result = mysqli_query($conn, $q);
@@ -49,7 +50,7 @@ if (isset($_POST['additem'])) {
             margin-left: 50%;
             padding: 50px;
             /* border: solid black; */
-            box-shadow: 0px 0px 10px #f49644;
+            box-shadow: 0px 0px 10px #7b68ee;
             border-radius: 30px;
             display: flex;
             flex-direction: column;
@@ -87,7 +88,7 @@ if (isset($_POST['additem'])) {
 
         input[type='submit'] {
             color: #fff;
-            background-color: #f49644;
+            background-color: #7b68ee;
             border: none;
             border-radius: 20px;
             padding: 10px 20px;
@@ -109,7 +110,7 @@ if (isset($_POST['additem'])) {
         input:focus,
         select:focus {
             outline: none;
-            border: 2px solid #f49644;
+            border: 2px solid #7b68ee;
         }
 
         p {
@@ -150,8 +151,8 @@ if (isset($_POST['additem'])) {
 
                 <input type="text" id="url" name="url" name="url" placeholder="URL of Image of Food Item" required>
                 <br><br>
-                <P style="text-align:center;font-size:400">OR</P>
-                <input type="file" id="fileInput" class="file-input">
+                <!-- <P style="text-align:center;font-size:400">OR</P>
+                <input type="file" id="fileInput" class="file-input"> -->
 
                 <!-- <div class="caterory"> -->
                 <!-- <select id="category" name="category" class="category" required>
@@ -170,28 +171,7 @@ if (isset($_POST['additem'])) {
                     <input type="submit" id="add" name="additem" value="Add Item" title="Add Item">
                 </div>
             </form>
-            <script>
-                
-    document.getElementById('add').addEventListener('click', function(e) {
-        e.preventDefault(); // Prevent form submission
-
-        var url = document.getElementById('url').value;
-        var file = document.getElementById('fileInput').files[0];
-
-        if (url && file) {
-            alert('Please choose either a URL or a file, not both.');
-            return;
-        }
-
-        if (!url && !file) {
-            alert('Please enter a URL or choose a file.');
-            return;
-        }
-
-        // Continue with form submission
-        document.getElementById('Myform').submit();
-    });
-</script>
+          
 
             
         </div>

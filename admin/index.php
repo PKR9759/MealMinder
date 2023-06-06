@@ -1,6 +1,6 @@
 <?php include "upload.php";
 
-
+include 'C:\xampp2\htdocs\food2\admin\nav.php';
 
 ?>
 <!DOCTYPE html>
@@ -15,7 +15,7 @@
 </head>
 <body>
     
-    <form action="" method="post" enctype="multipart/form-data">
+    <form action="upload.php" method="post"  enctype="multipart/form-data">
         <div class="form-group">
             <label for="name">Name:</label>
             <input type="text" class="form-control" id="name" name="name" placeholder="Enter name">
@@ -34,7 +34,9 @@
             <option value="1" id="1">Gujarati</option>
             <option value="2" id="2">Punjabi</option>
             <option value="3" id="3">Chinese</option>
-            <option value="4" id="4">Snacks</option>
+            <option value="4" id="4">South Indian</option>
+
+            <option value="5" id="5">Snacks</option>
         </select>
     </div>
   
@@ -49,11 +51,36 @@
 
         <div class="form-group">
             <label for="file">File:</label>
-            <input type="file" class="form-control-file" id="chooseFile" name="fileUpload">
+            <input type="file" class="form-control-file fileInput" id="chooseFile" name="fileUpload">
+             <P style="text-align:center;font-size:400">OR</P>
+             <input type="text" id="url" name="url" name="url" placeholder="URL of Image of Food Item" >
         </div>
-        <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" name="submit" id="submit"class="btn btn-primary">Submit</button>
     </form>
-      
+      <script>
+          
+                
+                document.getElementById('submit').addEventListener('click', function(e) {
+                    // e.preventDefault(); // Prevent form submission
+            
+                    var url = document.getElementById('url').value;
+                    var file = document.querySelector('.fileInput').files[0];
+            
+                    if (url && file) {
+                        alert('Please choose either a URL or a file, not both.');
+                        return;
+                    }
+            
+                    if (!url && !file) {
+                        alert('Please enter a URL or choose a file.');
+                        return;
+                    }
+            
+                    // Continue with form submission
+                    document.getElementById('Myform').submit();
+                });
+            
+      </script>
 </body>
 </html>
 

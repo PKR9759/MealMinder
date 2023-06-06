@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             include 'conn.php';
             $email = $_POST['email'];
             $password = $_POST['password'];
-            if($email=="admin123@gmail.com" && $password=="admin123") {
+            if($email=="kuldiprparmar9759@gmail.com" && $password=="Kuldip@9759") {
                 header('location:/food2/admin/home.php');
             }
             else{

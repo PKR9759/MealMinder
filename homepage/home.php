@@ -1,7 +1,7 @@
 <?php
-include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
+include 'C:\xampp2/htdocs/food2/navbar.php';
 
-//Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php
+
 ?>
 <!doctype html>
 <html lang="en">

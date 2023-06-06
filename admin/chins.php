@@ -1,7 +1,7 @@
 <?php
 // session_start();
 include 'nav.php';
-include '/Applications/XAMPP/xamppfiles/htdocs/food2/loginsystem/conn.php';
+include 'C:\xampp2/htdocs/food2/loginsystem/conn.php';
 
 ?>
 <!doctype html>
@@ -216,7 +216,6 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/loginsystem/conn.php';
 
     echo '<div class="cardcont"">';
     echo ' <a href="/food2/admin/form.php"> <button class="addItem"  type="submit" name="add" class="btn btn-secondary"><span class="material-symbols-outlined">
-            add_circle
             </span>Add Item</a></button>';
     // loop through the records and create a card for each one
     while ($row = mysqli_fetch_assoc($result)) {

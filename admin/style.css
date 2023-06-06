@@ -63,3 +63,6 @@ background-color: #2ecc71;
 input[type="radio"][value="0"]:checked + label.red-label {
 background-color: #e74c3c;
 }
+.form-group p{
+    
+}

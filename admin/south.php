@@ -1,7 +1,7 @@
 <?php
 // session_start();
 include 'nav.php';
-include '/Applications/XAMPP/xamppfiles/htdocs/food2/loginsystem/conn.php';
+include 'C:\xampp2/htdocs/food2/loginsystem/conn.php';
 
 ?>
 <!doctype html>

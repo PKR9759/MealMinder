@@ -1,6 +1,6 @@
 <?php
-include '/Applications/XAMPP/xamppfiles/htdocs/food2/loginsystem/conn.php';
-include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
+include 'C:\xampp2\htdocs\food2\loginsystem\conn.php';
+include 'C:\xampp2\htdocs\food2\navbar.php';
 ?>
 
 <!DOCTYPE html>
@@ -36,6 +36,7 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
         <h1>Payment Done</h1>
         <h2>Your Order ID is:
         <?php
+        $order_placed=0;
        if (!$order_placed) {
         $order_id = 1;
         $userNamesQuery = "SELECT name_user FROM orders ORDER BY id";

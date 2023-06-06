@@ -1,17 +1,7 @@
-
 <?php
 // session_start();
 include 'nav.php';
 restore_error_handler();
-
-// Database connection details
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "rbh";
-
-// Create a connection to the database
-$conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check the connection
 if ($conn->connect_error) {
@@ -60,19 +50,21 @@ if ($result->num_rows > 0) {
 </head>
 
 <body>
+
   <div class="content">
-    <div class="jumbotron jumbotron-fluid">
-      <!-- ... -->
-    </div>
+   
+      <h2>Orders Details</h2>
+   
 
     <table class="table table-striped">
-      <thead class="thead-dark">
+      <thead class="thead-light" >
         <tr>
-          <th>User Name</th>
-          <th>Order ID</th>
-          <th>Item Name</th>
-          <th>Quantity</th>
-          <th>Image</th>
+          <th style="color:blue">User Name</th>
+          
+          <th style="color:blue">Item Name</th>
+          <th style="color:blue">Quantity</th>
+          <th style="color:blue">Image</th>
+          <th style="color:blue">Order Status</th>
         </tr>
       </thead>
       <tbody>
@@ -91,11 +83,12 @@ if ($result->num_rows > 0) {
                         echo "<td rowspan='" . count($orders) . "'>" . $userName . "</td>";
                     }
                     // echo "<td>" . $order["id"] . "</td>";
-                    echo "<td><form action='' method='post'><input type='hidden' name='last_order_id' value='" . ($order['id']) . "'><input type='submit' name='done' value='Done'></form></td>";
+                   
 
                     echo "<td>" . $order["name_item"] . "</td>";
                     echo "<td>" . $order["quantity"] . "</td>";
                     echo "<td><img src='" . $order["img_path"] . "' alt='Image' width='100px'></td>";
+                    echo "<td><form action='' method='post'><input type='hidden' name='last_order_id' value='" . ($order['id']) . "'><input type='submit' name='done' value='Order Completed'></form></td>";
                     echo "</tr>";
                 }
             }

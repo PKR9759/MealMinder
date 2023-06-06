@@ -46,7 +46,7 @@ else{
                 <h4 class="alert-heading">Record Added Successfully!</h4>
                 <p>Your feedback has been recorded. Thank you for taking the time to share your thoughts with us!</p>
                 <hr>
-                <p class="mb-0">Click <a href="form.php">here</a> to go back to the feedback form.</p>
+                <p class="mb-0">Click <a href="index.php">here</a> to go back to the feedback form.</p>
             </div>
         </div>
     </body>

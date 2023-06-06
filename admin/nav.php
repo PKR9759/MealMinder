@@ -1,5 +1,5 @@
 <?php
-include '/Applications/XAMPP/xamppfiles/htdocs/food2/loginsystem/conn.php';
+include 'C:\xampp2/htdocs/food2/loginsystem/conn.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -10,13 +10,13 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/loginsystem/conn.php';
       float: left;
       height: 100vh;
       width: 20%;
-      background-color:aliceblue;
+      background-color:alice#7b68ee;
     }
 
     .nav a {
       width: 200px;
       font-size:25px;
-
+      color:#ab80d5;
     }
 
     .content {
@@ -27,15 +27,16 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/loginsystem/conn.php';
       /* font-size:200px; */
     }
     .itemlist a{
-      font-size:25px;
+      font-size:22px;
+      color:#ab80d5;
     }
     .itemlist a:hover,.nav a:hover{
-      font-size:27px;
-      background-color: blue;
+      
+      background-color: #7b68ee;
       color:white
     }
     .nav a:focus{
-        background-color: blue;
+        background-color: #7b68ee;
         color:white
      }
   </style>
