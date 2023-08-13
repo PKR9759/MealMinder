@@ -19,23 +19,13 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-          /* animation:  blur 1s ease-out 1s forwards; */
-          
+        
         }
         .container:hover{
             filter: brightness(90%);
         }
-      
-        @keyframes blur {
-            0% {
-                filter: blur(10px);
-                opacity: 0;
-            }
-            100% {
-                filter: blur(0px);
-                opacity: 1;
-            }
-        }
+
+        
         h1 {
             color: #007bff;
             margin-bottom: 20px;

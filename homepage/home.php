@@ -1,7 +1,5 @@
 <?php
 include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
-
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -61,12 +59,8 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
       transition: 0.5s ease-in-out;
       transform: scale(1.1);
     }
-   //a animation to change border color like circular path
-    .cat img:hover {
-      border: 2px solid red;
-      border-radius: 50%;
-      transition: 0.5s ease-in-out;
-    }
+
+  
     </style>
   <link rel="stylesheet" href="cat.css">
   <meta charset="utf-8">
@@ -209,16 +203,6 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
         }
       }
     }
-
-
-
-
-
-
-
-
-
-    // start of container
     echo '<div class="recsec" >';
     echo '<div class="cardcont">';
     // loop through the records and create a card for each one
@@ -257,22 +241,10 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
         echo '</div>';
       }
     }
-
-
-
     echo '</div>';
     echo '</div>';
-
     ?>
-
-
-
-
-
-
-
   </div>
-
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
