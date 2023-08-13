@@ -1,56 +1,14 @@
 
 <?php
-include 'C:\xampp2/htdocs/food2/navbar.php';
+include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
+include 'config.php';
 ?>
 
 <!doctype html>
 <html lang="en">
-
 <head>
-    <style>
-        
-        .cardcont {
-            width: 100vw;
-            display: grid;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            /* grid-template-columns: repeat(3,1fr);
-            grid-template-rows: repeat(5,1fr); */
-        }
-
-        .card {
-            margin: 20px 0px 0px 20px;
-            border-radius: 20px;
-        }
-
-        .card-img-top {
-
-width: 100%;
-height: 200px; /* you can adjust the height to your preference */
-object-fit: cover;
-
-}
-        .addcart {
-            color: aliceblue;
-            background-color: #F17766;
-            border-radius: 7px;
-            border: none;
-            font-size: 20px;
-            ;
-            font-family: 'Fjalla One', sans-serif;
-        }
-
-        .addcart:hover {
-            box-shadow: 0px 2px 2px black;
-        }
-
-        .addcart:focus {
-            box-shadow: none;
-            outline: none;
-            border: outset;
-        }
-    </style>
+  
+    <link rel="stylesheet" href="cat.css">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -79,14 +37,6 @@ object-fit: cover;
         if(session_status() !== PHP_SESSION_ACTIVE){
         session_start();
         }
-        //connecting to the database
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $database = "rbh";
-        //creating a connection
-        $conn = mysqli_connect($servername, $username, $password, $database);
-
         if (!$conn) {
             die("sorry we failed to connect:" . mysqli_connect_error());
         } else {

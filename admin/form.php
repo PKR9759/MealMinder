@@ -1,6 +1,6 @@
 <?php
 include 'C:\xampp2\htdocs\food2\admin\nav.php';
-// include 'C:\xampp2\htdocs\food2\loginsystem\conn.php';
+// include '/Applications/XAMPP/xamppfiles/htdocs/food2/loginsystem/conn.php';
 
 if (isset($_POST['additem'])) {
     $name = $_POST['name'];

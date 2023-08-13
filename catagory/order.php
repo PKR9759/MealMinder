@@ -1,6 +1,6 @@
 <?php
-include 'C:\xampp2\htdocs\food2\loginsystem\conn.php';
-include 'C:\xampp2\htdocs\food2\navbar.php';
+include '/Applications/XAMPP/xamppfiles/htdocs/food2/loginsystem/conn.php';
+include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
 $order_placed=0;
 ?>
 
@@ -28,10 +28,11 @@ if (!$order_placed) {
             // Bind parameters to the prepared statement
             $stmt->bind_param("ssis", $nameItem, $nameUser, $quantity, $imgPath);
 
+            
             // Execute the prepared statement
             if ($stmt->execute()) {
              
-               header('location:\food2\catagory\payment_success.php');
+               header('location:/food2/catagory/payment_success.php');
             } else {
                 echo "Error inserting record: " . $stmt->error;
             }

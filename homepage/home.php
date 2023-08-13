@@ -1,5 +1,5 @@
 <?php
-include 'C:\xampp2/htdocs/food2/navbar.php';
+include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
 
 
 ?>
@@ -48,71 +48,27 @@ include 'C:\xampp2/htdocs/food2/navbar.php';
       width: 200px;
       height: 200px;
       border-radius: 50%;
-
-      /* margin-bottom:10px; */
+      border: 2px solid black;
+     
     }
 
     .cat p {
       font-size: larger;
       font-family: 'DynaPuff', sans-serif;
     }
-
-    .recsec {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      /* grid-template-rows: repeat(4,1fr); */
-      /* flex-wrap: wrap; */
+    .cat:hover{
+      color: rebeccapurple;
+      transition: 0.5s ease-in-out;
+      transform: scale(1.1);
     }
-
-    .card {
-      margin-top: 20px;
-      border-radius: 20px;
-
+   //a animation to change border color like circular path
+    .cat img:hover {
+      border: 2px solid red;
+      border-radius: 50%;
+      transition: 0.5s ease-in-out;
     }
-    .cardcont {
-            width: 100vw;
-            display: grid;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            /* grid-template-columns: repeat(3,1fr);
-            grid-template-rows: repeat(5,1fr); */
-        }
-
-        .card {
-            margin: 20px 0px 0px 20px;
-            border-radius: 20px;
-        }
-
-        .card-img-top {
-
-width: 100%;
-height: 200px; /* you can adjust the height to your preference */
-object-fit: cover;
-
-}
-        .addcart {
-            color: aliceblue;
-            background-color: #F17766;
-            border-radius: 7px;
-            border: none;
-            font-size: 20px;
-            ;
-            font-family: 'Fjalla One', sans-serif;
-        }
-
-        .addcart:hover {
-            box-shadow: 0px 2px 2px black;
-        }
-
-        .addcart:focus {
-            box-shadow: none;
-            outline: none;
-            border: outset;
-        }
     </style>
-  </style>
+  <link rel="stylesheet" href="cat.css">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -163,7 +119,7 @@ object-fit: cover;
 
 
   <div class="catagory">
-    <h3> Which type you Eat today? </h3>
+    <h3> what you want to eat today ?</h3>
     <div class="catsec">
       <div class="cat">
         <a href='/food2/catagory/gujrati.php'><img src="https://b.zmtcdn.com/data/o2_assets/52eb9796bb9bcf0eba64c643349e97211634401116.png" alt="First catagory"></a>
