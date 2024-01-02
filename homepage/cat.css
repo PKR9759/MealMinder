@@ -13,6 +13,7 @@
 
 .card {
     margin: 20px 0px 0px 20px;
+    font-size: larger;
 }
 
 .card:hover {
@@ -39,11 +40,13 @@
 
 .addcart {
   color: aliceblue;
+ 
   background-color: #f17766;
   border-radius: 7px;
   border: none;
   font-size: 20px;
   font-family: "Fjalla One", sans-serif;
+  
 }
 
 .addcart:hover {

@@ -10,18 +10,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $path = $_POST['url'];
         $avail = $_POST['aviability'];
 
-        $sql = "UPDATE `snacks` SET `file_path` = '$path', `name` = '$name', `price` = '$price', `aviability` = '$avail' WHERE `id` = $id";
+        $sql = "UPDATE `punjabi_items` SET `file_path` = '$path', `name` = '$name', `price` = '$price', `aviability` = '$avail' WHERE `id` = $id";
         $result = mysqli_query($conn, $sql);
     }
 
     if (isset($_POST['remove'])) {
         $id = $_POST['id'];
-        $q1 = "DELETE FROM `snacks` WHERE `id` = $id";
+        $q1 = "DELETE FROM `punjabi_items` WHERE `id` = $id";
         mysqli_query($conn, $q1);
     }
 }
 
-$sql = "SELECT * FROM `snacks`";
+$sql = "SELECT * FROM `punjabi_items`";
 $result = mysqli_query($conn, $sql);
 
 $num = mysqli_num_rows($result);
@@ -41,7 +41,8 @@ $num = mysqli_num_rows($result);
         <h3 class="text-3xl font-semibold mb-4">Admin Panel - Item List</h3>
 
         <?php
-        $tablename="south_items";
+        $tablename = "punjabi_items";
+        //  echo $tablename;
         if ($num) {
             echo '<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">';
 
@@ -59,14 +60,15 @@ $num = mysqli_num_rows($result);
                 echo '</div>';
             }
             echo '</div>';
-               echo '<form action="form.php" method="POST">';
+            echo '<form action="form.php" method="POST">';
     echo '<input type="hidden" id="tablename" name="tablename" value="' . $tablename . '" />';
    
     echo '<button type="submit" class="fixed bottom-10 right-10 bg-blue-500 text-white py-3 px-6 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50">Add Item</button>';
     echo '</form>';
         }
+        
         ?>
-
+         
         <!-- Modal -->
         <div id="editModal" class="hidden fixed top-0 left-0 z-50 w-full h-full bg-gray-800 bg-opacity-50">
             <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded shadow-md">
@@ -90,7 +92,7 @@ $num = mysqli_num_rows($result);
         <!-- Your JavaScript code -->
         <script>
             function openModal(itemId) {
-                fetch(`/food2/admin/fetch_items.php?id=${itemId}&table=snacks`)
+                fetch(`/food2/admin/fetch_items.php?id=${itemId}&table=punjabi_items`)
                     .then(response => response.json())
                     .then(item => {
                       item=item[0];
@@ -138,7 +140,7 @@ function saveChanges() {
     formData.append('save', 'true'); // Set the 'save' key to true to indicate save action
 
     // Perform POST request to save changes
-    fetch('snacks.php', {
+    fetch('punjabi.php', {
         method: 'POST',
         body: formData
     })
@@ -162,7 +164,7 @@ function removeItem() {
     formData.append('remove', 'true'); // Set the 'remove' key to true to indicate delete action
 
     // Perform POST request to remove item
-    fetch('snacks.php', {
+    fetch('punjabi.php', {
         method: 'POST',
         body: formData
     })
@@ -171,6 +173,7 @@ function removeItem() {
         console.log('Item deleted successfully');
         closeModal(); // Close the modal after deletion
         location.reload();
+
     })
     .catch(error => {
         console.error('Error deleting item:', error);

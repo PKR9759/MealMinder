@@ -59,6 +59,10 @@ if(!isset($_SESSION['logedin']) || !$_SESSION['logedin']){
         box-shadow: 0px 2px 4px #E56C23;
         border:none;
     }
+    html {
+  scroll-behavior: smooth;
+}
+
     </style>
 <div class="idea">
 <nav class="navbar navbar-expand-lg navbar-expand-lg navbar-expand-sm navbar-expand-xl " style="background-color:#E56C23;padding:2px">

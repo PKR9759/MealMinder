@@ -10,27 +10,43 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
     <link rel="stylesheet" href="cart.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap|Audiowide&Righteous&display&Alfa+Slab+One&Titan+One&display|Sigmar&display=swap|Poltawski+Nowy&display=swap|Teko&display=swap|Righteous&display=swap">
-    <link rel="stylesheet" href="cat.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <style>
-        /* Your custom styles here */
-    </style>
-    <script>
-        if (window.history.replaceState) window.history.replaceState(null, null, window.location.href);
-    </script>
+  
     <title>Punjabi</title>
 </head>
-
+ <script>
+    if(window.history.replaceState) window.history.replaceState(null, null,window.location.href);
+   </script>
 <body>
     <?php
     if (isset($_POST['increase_quantity'])) {
-        // Handle quantity increase logic
+    // Get the item ID from the form
+    $ind=$_POST['itemIndex'];
+    $_SESSION['cart'][$ind]['quantity']++;
+
+    // Increase the item quantity in the cart
+    
+}
+
+if (isset($_POST['decrease_quantity'])) {
+    // Get the item ID from the form
+    $ind=$_POST['itemIndex'];
+    if($_SESSION['cart'][$ind]['quantity']==1){
+        unset($_SESSION['cart'][$ind]);
+        $_SESSION['cart']=array_values($_SESSION['cart']);
+        $_SESSION['totalItem']--;
+    }
+    else{
+    $ind=$_POST['itemIndex'];
+    $_SESSION['cart'][$ind]['quantity']--;
     }
 
-    if (isset($_POST['decrease_quantity'])) {
-        // Handle quantity decrease logic
-    }
+    // Decrease the item quantity in the cart, but don't allow it to go below 1
+   
+}
     ?>
 
     <div class="title">
@@ -41,6 +57,7 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
         <div class="left">
             <?php
             // Display cart items
+            
             if (isset($_SESSION['cart'])) {
                 foreach ($_SESSION['cart'] as $key => $item) {
                     if (!empty($item) && isset($item['quantity'])) {

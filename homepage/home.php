@@ -16,7 +16,6 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
       padding: 19px 15px;
       width: 100%;
       height: 400px;
-
       overflow: hidden;
       background-size: cover;
       background-repeat: no-repeat;
@@ -25,10 +24,10 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
 
     .catsec {
       display: flex;
-      overflow: auto;
+      overflow-y: hidden;
       margin: 0;
       padding: 0;
-
+     
     }
 
     .cat {
@@ -59,8 +58,14 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
       transition: 0.5s ease-in-out;
       transform: scale(1.1);
     }
+    .catagory{
+      margin: 0 40px;
+    
+    }
+  .carousel-item img {
+  pointer-events: none;
+}
 
-  
     </style>
   <link rel="stylesheet" href="cat.css">
   <meta charset="utf-8">
@@ -74,8 +79,6 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
 
 <body>
 
-
-
   <div id="carouselExampleIndicators" style="height:500px" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -84,9 +87,9 @@ include '/Applications/XAMPP/xamppfiles/htdocs/food2/navbar.php';
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <a href="gujarati.php">
+        
           <img class="d-block w-100" src="slide1.avif" alt="First slide">
-        </a>
+      
 
       </div>
 
