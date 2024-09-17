@@ -66,9 +66,19 @@ if (isset($_POST["submit"])) {
             }
         } else {
             $resMessage = array(
-                "message" => "Error uploading file.",
+                "message" => "Error uploading file: " . $_FILES["fileUpload"]["error"],
             );
         }
     }
 }
 ?>
+<div class="alert <?php echo isset($resMessage) ? ($resMessage['type'] == 'error' ? 'alert-danger' : 'alert-success') : ''; ?>">
+    <?php echo isset($resMessage) ? $resMessage['message'] : ''; ?>
+</div>
+<!-- if (move_uploaded_file($_FILES["fileUpload"]["tmp_name"], $target_file)) {
+    // Your code here
+} else {
+    $resMessage = array(
+       
+    );
+} -->

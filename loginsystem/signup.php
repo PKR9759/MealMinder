@@ -164,11 +164,14 @@ setTimeout(function() {
                     <input type="password" id="password" name="password" placeholder="Password " required >
                 </div>
                 <br>
+                <!-- <div>
+                    <label for="cpassword">Confirm Password:</label>
+                    <input type="password" id="cpassword" name="cpassword" placeholder="Re-enter password Here"
                 <div>
                     
                     <input type="password" id="cpassword" name="cpassword" placeholder="Confirm password "
                         required>
-                </div>
+                </div> -->
                 <div class="valid">
                     <?php
                     if ( (isset($_POST['submit'])) && !$passSame ) {
@@ -179,6 +182,11 @@ setTimeout(function() {
                 </div>
 
                 <br>
+                <!-- <div>
+                    <button id="submit" name="submit" type="submit"
+                        style="background-color:#195fce;color:aliceblue; width:100px;padding:7px;border-radius:7px; ">Sign
+                        Up</button>
+                </div> -->
                 <div>
                     <button id="submit" name="submit" type="submit">Sign Up</button>
                 </div>
